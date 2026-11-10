@@ -10,7 +10,7 @@ runs 3, mean cost US$ 0.012, mean turns 1.0, mean cache write 2830 tokens, mean 
 | browser-harness | 10 | 17.5 [15.5, 19.7] | 0.134 [0.121, 0.148] | 0.145 [0.133, 0.159] | 64.8 [57.4, 73.8] |
 | playwright-mcp | 30 | 12.8 [12.6, 13.0] | 0.061 [0.058, 0.064] | 0.073 [0.070, 0.075] | 30.5 [29.6, 31.3] |
 
-## Failures (definition: docs/methodology.md, 'Failure definition')
+## Failures (definition: methodology.md, 'Failure definition')
 | tool | agent runs failed / runs | of which no valid reply | battery checks failed / checks |
 |---|---|---|---|
 | agent-browser | 0 / 10 | 0 | 0 / 35 |
@@ -44,7 +44,7 @@ Battery failures by task:
 | chrome-devtools-axi minus agent-browser | 10 | 4.5 [3.7, 5.4] | 0.005 [-0.010, 0.021] | 23.8 [21.4, 26.2] | separated (primary metric) |
 | browser-harness minus chrome-devtools-axi | 10 | 5.5 [3.4, 7.8] | 0.031 [0.018, 0.044] | 12.6 [4.9, 21.5] | separated (primary metric) |
 
-## Ranking (docs/ranking-rule.md)
+## Ranking (ranking-rule.md)
 | rank | tool | failure tier |
 |---|---|---|
 | 1 | playwright-mcp | 0 |

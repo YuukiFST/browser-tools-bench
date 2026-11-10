@@ -13,7 +13,7 @@ This repo compares five of them on one real web app, measuring cost, speed, toke
 
 ## Result (v2, 2026-11-10)
 
-Ranked by a rule written before the paid runs (`docs/ranking-rule.md`): agent turns and agent cost above a no-browser baseline, with ties when the 95% bootstrap interval of the paired per-block difference does not separate two tools.
+Ranked by a rule written before the paid runs (`ranking-rule.md`): agent turns and agent cost above a no-browser baseline, with ties when the 95% bootstrap interval of the paired per-block difference does not separate two tools.
 
 | rank | tool | agent turns | agent US$ | agent time | agent runs failed |
 |---|---|---|---|---|---|
@@ -25,7 +25,7 @@ Ranked by a rule written before the paid runs (`docs/ranking-rule.md`): agent tu
 
 Means per run of Claude Sonnet (`claude-sonnet-5-5`) through `claude -p`, with bootstrap 95% intervals over blocks.
 playwright-mcp and surf-cli tie: playwright-mcp is cheaper and surf-cli takes fewer turns, both outside their intervals.
-The full table is in `results/benchmark.html`, every number in `results/v2/analysis.md`, and how each was produced, with its limits, in `docs/methodology.md`.
+The full table is in `results/benchmark.html`, every number in `results/v2/analysis.md`, and how each was produced, with its limits, in `methodology.md`.
 
 The v1 ranking (surf-cli, agent-browser, playwright-mcp, browser-harness, chrome-devtools-axi) rested on 2 runs per tool and is superseded; its data stays in `results/` and its report in `results/benchmark-v1.html`.
 
@@ -33,12 +33,10 @@ The v1 ranking (surf-cli, agent-browser, playwright-mcp, browser-harness, chrome
 
 | path | content |
 |---|---|
-| `docs/methodology.md` | setup, phases, metrics, failure definition, known limitations |
-| `docs/ranking-rule.md` | the v2 ranking rule, committed before the paid runs |
-| `docs/review-prompt.md` | prompt for an independent methodology review |
-| `docs/linkedin-post.md` | draft post, English translation |
+| `methodology.md` | setup, phases, metrics, failure definition, known limitations |
+| `ranking-rule.md` | the v2 ranking rule, committed before the paid runs |
 | `results/` | report (`benchmark.html`), v1 report and data as JSONL |
 | `results/v2/` | v2 data as JSONL, `analysis.md` and `ranking.json` |
 | `harness/` | scripts that produced the data, and how to rerun them |
 
-Client data (credentials, ground truth, screenshots, page dumps, logs) is not published; `docs/methodology.md` §14 lists what was left out.
+Client data (credentials, ground truth, screenshots, page dumps, logs) is not published; `methodology.md` §14 lists what was left out.
