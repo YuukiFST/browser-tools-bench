@@ -1,35 +1,35 @@
-{"tool":"bx","task":"login","iter":1,"pos":1,"ts":"2026-11-10T18:34:37Z","tool_version":"bx 0.1.0 c5255f6","ms":2047,"cmds":1,"chars":185,"ok":true,"detail":""}
-{"tool":"bx","task":"search","iter":1,"pos":1,"ts":"2026-11-10T18:34:39Z","tool_version":"bx 0.1.0 c5255f6","ms":1565,"cmds":1,"chars":1630,"ok":true,"detail":"7/7 found"}
-{"tool":"bx","task":"read","iter":1,"pos":1,"ts":"2026-11-10T18:34:41Z","tool_version":"bx 0.1.0 c5255f6","ms":1145,"cmds":2,"chars":9999,"ok":true,"detail":"snapshot=6097 interactive=3902 floor=3048"}
-{"tool":"bx","task":"screenshot","iter":1,"pos":1,"ts":"2026-11-10T18:34:42Z","tool_version":"bx 0.1.0 c5255f6","ms":852,"cmds":1,"chars":136,"ok":true,"detail":""}
-{"tool":"bx","task":"console","iter":1,"pos":1,"ts":"2026-11-10T18:34:43Z","tool_version":"bx 0.1.0 c5255f6","ms":164,"cmds":1,"chars":28,"ok":true,"detail":""}
-{"tool":"bx","task":"mobile","iter":1,"pos":1,"ts":"2026-11-10T18:34:43Z","tool_version":"bx 0.1.0 c5255f6","ms":1450,"cmds":1,"chars":168,"ok":true,"detail":""}
-{"tool":"bx","task":"sweep","iter":1,"pos":1,"ts":"2026-11-10T18:34:45Z","tool_version":"bx 0.1.0 c5255f6","ms":17140,"cmds":16,"chars":1191,"ok":true,"detail":"16/16"}
-{"tool":"bx","task":"login","iter":2,"pos":1,"ts":"2026-11-10T18:35:05Z","tool_version":"bx 0.1.0 c5255f6","ms":1991,"cmds":1,"chars":185,"ok":true,"detail":""}
-{"tool":"bx","task":"search","iter":2,"pos":1,"ts":"2026-11-10T18:35:07Z","tool_version":"bx 0.1.0 c5255f6","ms":1620,"cmds":1,"chars":1630,"ok":true,"detail":"7/7 found"}
-{"tool":"bx","task":"read","iter":2,"pos":1,"ts":"2026-11-10T18:35:09Z","tool_version":"bx 0.1.0 c5255f6","ms":1014,"cmds":2,"chars":9999,"ok":true,"detail":"snapshot=6097 interactive=3902 floor=3048"}
-{"tool":"bx","task":"screenshot","iter":2,"pos":1,"ts":"2026-11-10T18:35:10Z","tool_version":"bx 0.1.0 c5255f6","ms":846,"cmds":1,"chars":136,"ok":true,"detail":""}
-{"tool":"bx","task":"console","iter":2,"pos":1,"ts":"2026-11-10T18:35:11Z","tool_version":"bx 0.1.0 c5255f6","ms":155,"cmds":1,"chars":29,"ok":true,"detail":""}
-{"tool":"bx","task":"mobile","iter":2,"pos":1,"ts":"2026-11-10T18:35:11Z","tool_version":"bx 0.1.0 c5255f6","ms":1253,"cmds":1,"chars":168,"ok":true,"detail":""}
-{"tool":"bx","task":"sweep","iter":2,"pos":1,"ts":"2026-11-10T18:35:12Z","tool_version":"bx 0.1.0 c5255f6","ms":16577,"cmds":16,"chars":1191,"ok":true,"detail":"16/16"}
-{"tool":"bx","task":"login","iter":3,"pos":1,"ts":"2026-11-10T18:35:32Z","tool_version":"bx 0.1.0 c5255f6","ms":2218,"cmds":1,"chars":185,"ok":true,"detail":""}
-{"tool":"bx","task":"search","iter":3,"pos":1,"ts":"2026-11-10T18:35:34Z","tool_version":"bx 0.1.0 c5255f6","ms":1569,"cmds":1,"chars":1630,"ok":true,"detail":"7/7 found"}
-{"tool":"bx","task":"read","iter":3,"pos":1,"ts":"2026-11-10T18:35:36Z","tool_version":"bx 0.1.0 c5255f6","ms":1083,"cmds":2,"chars":9999,"ok":true,"detail":"snapshot=6097 interactive=3902 floor=3048"}
-{"tool":"bx","task":"screenshot","iter":3,"pos":1,"ts":"2026-11-10T18:35:37Z","tool_version":"bx 0.1.0 c5255f6","ms":865,"cmds":1,"chars":136,"ok":true,"detail":""}
-{"tool":"bx","task":"console","iter":3,"pos":1,"ts":"2026-11-10T18:35:38Z","tool_version":"bx 0.1.0 c5255f6","ms":154,"cmds":1,"chars":29,"ok":true,"detail":""}
-{"tool":"bx","task":"mobile","iter":3,"pos":1,"ts":"2026-11-10T18:35:38Z","tool_version":"bx 0.1.0 c5255f6","ms":1261,"cmds":1,"chars":168,"ok":true,"detail":""}
-{"tool":"bx","task":"sweep","iter":3,"pos":1,"ts":"2026-11-10T18:35:39Z","tool_version":"bx 0.1.0 c5255f6","ms":16781,"cmds":16,"chars":1191,"ok":true,"detail":"16/16"}
-{"tool":"bx","task":"login","iter":4,"pos":1,"ts":"2026-11-10T18:35:59Z","tool_version":"bx 0.1.0 c5255f6","ms":1870,"cmds":1,"chars":185,"ok":true,"detail":""}
-{"tool":"bx","task":"search","iter":4,"pos":1,"ts":"2026-11-10T18:36:01Z","tool_version":"bx 0.1.0 c5255f6","ms":1607,"cmds":1,"chars":1630,"ok":true,"detail":"7/7 found"}
-{"tool":"bx","task":"read","iter":4,"pos":1,"ts":"2026-11-10T18:36:03Z","tool_version":"bx 0.1.0 c5255f6","ms":1215,"cmds":2,"chars":9999,"ok":true,"detail":"snapshot=6097 interactive=3902 floor=3048"}
-{"tool":"bx","task":"screenshot","iter":4,"pos":1,"ts":"2026-11-10T18:36:04Z","tool_version":"bx 0.1.0 c5255f6","ms":856,"cmds":1,"chars":136,"ok":true,"detail":""}
-{"tool":"bx","task":"console","iter":4,"pos":1,"ts":"2026-11-10T18:36:05Z","tool_version":"bx 0.1.0 c5255f6","ms":169,"cmds":1,"chars":29,"ok":true,"detail":""}
-{"tool":"bx","task":"mobile","iter":4,"pos":1,"ts":"2026-11-10T18:36:05Z","tool_version":"bx 0.1.0 c5255f6","ms":1465,"cmds":1,"chars":168,"ok":true,"detail":""}
-{"tool":"bx","task":"sweep","iter":4,"pos":1,"ts":"2026-11-10T18:36:07Z","tool_version":"bx 0.1.0 c5255f6","ms":16870,"cmds":16,"chars":1191,"ok":true,"detail":"16/16"}
-{"tool":"bx","task":"login","iter":5,"pos":1,"ts":"2026-11-10T18:36:27Z","tool_version":"bx 0.1.0 c5255f6","ms":2085,"cmds":1,"chars":185,"ok":true,"detail":""}
-{"tool":"bx","task":"search","iter":5,"pos":1,"ts":"2026-11-10T18:36:29Z","tool_version":"bx 0.1.0 c5255f6","ms":1560,"cmds":1,"chars":1630,"ok":true,"detail":"7/7 found"}
-{"tool":"bx","task":"read","iter":5,"pos":1,"ts":"2026-11-10T18:36:31Z","tool_version":"bx 0.1.0 c5255f6","ms":985,"cmds":2,"chars":9999,"ok":true,"detail":"snapshot=6097 interactive=3902 floor=3048"}
-{"tool":"bx","task":"screenshot","iter":5,"pos":1,"ts":"2026-11-10T18:36:32Z","tool_version":"bx 0.1.0 c5255f6","ms":823,"cmds":1,"chars":136,"ok":true,"detail":""}
-{"tool":"bx","task":"console","iter":5,"pos":1,"ts":"2026-11-10T18:36:33Z","tool_version":"bx 0.1.0 c5255f6","ms":156,"cmds":1,"chars":29,"ok":true,"detail":""}
-{"tool":"bx","task":"mobile","iter":5,"pos":1,"ts":"2026-11-10T18:36:33Z","tool_version":"bx 0.1.0 c5255f6","ms":1278,"cmds":1,"chars":168,"ok":true,"detail":""}
-{"tool":"bx","task":"sweep","iter":5,"pos":1,"ts":"2026-11-10T18:36:34Z","tool_version":"bx 0.1.0 c5255f6","ms":17603,"cmds":16,"chars":1191,"ok":true,"detail":"16/16"}
+{"tool":"bx","task":"login","iter":1,"pos":1,"ts":"2026-11-10T20:37:46Z","tool_version":"bx 0.2.0 05c7473","ms":4584,"cmds":1,"chars":185,"ok":true,"detail":""}
+{"tool":"bx","task":"search","iter":1,"pos":1,"ts":"2026-11-10T20:37:52Z","tool_version":"bx 0.2.0 05c7473","ms":5104,"cmds":1,"chars":1630,"ok":true,"detail":"7/7 found"}
+{"tool":"bx","task":"read","iter":1,"pos":1,"ts":"2026-11-10T20:37:58Z","tool_version":"bx 0.2.0 05c7473","ms":3377,"cmds":2,"chars":9999,"ok":true,"detail":"snapshot=6097 interactive=3902 floor=3048"}
+{"tool":"bx","task":"screenshot","iter":1,"pos":1,"ts":"2026-11-10T20:38:01Z","tool_version":"bx 0.2.0 05c7473","ms":1476,"cmds":1,"chars":136,"ok":true,"detail":""}
+{"tool":"bx","task":"console","iter":1,"pos":1,"ts":"2026-11-10T20:38:03Z","tool_version":"bx 0.2.0 05c7473","ms":171,"cmds":1,"chars":29,"ok":true,"detail":""}
+{"tool":"bx","task":"mobile","iter":1,"pos":1,"ts":"2026-11-10T20:38:03Z","tool_version":"bx 0.2.0 05c7473","ms":1740,"cmds":1,"chars":168,"ok":true,"detail":""}
+{"tool":"bx","task":"sweep","iter":1,"pos":1,"ts":"2026-11-10T20:38:05Z","tool_version":"bx 0.2.0 05c7473","ms":19850,"cmds":16,"chars":1191,"ok":true,"detail":"16/16"}
+{"tool":"bx","task":"login","iter":2,"pos":1,"ts":"2026-11-10T20:38:28Z","tool_version":"bx 0.2.0 05c7473","ms":2786,"cmds":1,"chars":185,"ok":true,"detail":""}
+{"tool":"bx","task":"search","iter":2,"pos":1,"ts":"2026-11-10T20:38:31Z","tool_version":"bx 0.2.0 05c7473","ms":2261,"cmds":1,"chars":1630,"ok":true,"detail":"7/7 found"}
+{"tool":"bx","task":"read","iter":2,"pos":1,"ts":"2026-11-10T20:38:33Z","tool_version":"bx 0.2.0 05c7473","ms":1442,"cmds":2,"chars":9999,"ok":true,"detail":"snapshot=6097 interactive=3902 floor=3048"}
+{"tool":"bx","task":"screenshot","iter":2,"pos":1,"ts":"2026-11-10T20:38:35Z","tool_version":"bx 0.2.0 05c7473","ms":1544,"cmds":1,"chars":136,"ok":true,"detail":""}
+{"tool":"bx","task":"console","iter":2,"pos":1,"ts":"2026-11-10T20:38:36Z","tool_version":"bx 0.2.0 05c7473","ms":215,"cmds":1,"chars":29,"ok":true,"detail":""}
+{"tool":"bx","task":"mobile","iter":2,"pos":1,"ts":"2026-11-10T20:38:37Z","tool_version":"bx 0.2.0 05c7473","ms":1923,"cmds":1,"chars":168,"ok":true,"detail":""}
+{"tool":"bx","task":"sweep","iter":2,"pos":1,"ts":"2026-11-10T20:38:39Z","tool_version":"bx 0.2.0 05c7473","ms":22025,"cmds":16,"chars":1191,"ok":true,"detail":"16/16"}
+{"tool":"bx","task":"login","iter":3,"pos":1,"ts":"2026-11-10T20:39:05Z","tool_version":"bx 0.2.0 05c7473","ms":3020,"cmds":1,"chars":185,"ok":true,"detail":""}
+{"tool":"bx","task":"search","iter":3,"pos":1,"ts":"2026-11-10T20:39:08Z","tool_version":"bx 0.2.0 05c7473","ms":2392,"cmds":1,"chars":1630,"ok":true,"detail":"7/7 found"}
+{"tool":"bx","task":"read","iter":3,"pos":1,"ts":"2026-11-10T20:39:10Z","tool_version":"bx 0.2.0 05c7473","ms":1455,"cmds":2,"chars":9999,"ok":true,"detail":"snapshot=6097 interactive=3902 floor=3048"}
+{"tool":"bx","task":"screenshot","iter":3,"pos":1,"ts":"2026-11-10T20:39:12Z","tool_version":"bx 0.2.0 05c7473","ms":1296,"cmds":1,"chars":136,"ok":true,"detail":""}
+{"tool":"bx","task":"console","iter":3,"pos":1,"ts":"2026-11-10T20:39:13Z","tool_version":"bx 0.2.0 05c7473","ms":190,"cmds":1,"chars":29,"ok":true,"detail":""}
+{"tool":"bx","task":"mobile","iter":3,"pos":1,"ts":"2026-11-10T20:39:13Z","tool_version":"bx 0.2.0 05c7473","ms":1796,"cmds":1,"chars":168,"ok":true,"detail":""}
+{"tool":"bx","task":"sweep","iter":3,"pos":1,"ts":"2026-11-10T20:39:15Z","tool_version":"bx 0.2.0 05c7473","ms":22452,"cmds":16,"chars":1191,"ok":true,"detail":"16/16"}
+{"tool":"bx","task":"login","iter":4,"pos":1,"ts":"2026-11-10T20:39:42Z","tool_version":"bx 0.2.0 05c7473","ms":2977,"cmds":1,"chars":185,"ok":true,"detail":""}
+{"tool":"bx","task":"search","iter":4,"pos":1,"ts":"2026-11-10T20:39:45Z","tool_version":"bx 0.2.0 05c7473","ms":2348,"cmds":1,"chars":1630,"ok":true,"detail":"7/7 found"}
+{"tool":"bx","task":"read","iter":4,"pos":1,"ts":"2026-11-10T20:39:47Z","tool_version":"bx 0.2.0 05c7473","ms":1319,"cmds":2,"chars":9999,"ok":true,"detail":"snapshot=6097 interactive=3902 floor=3048"}
+{"tool":"bx","task":"screenshot","iter":4,"pos":1,"ts":"2026-11-10T20:39:49Z","tool_version":"bx 0.2.0 05c7473","ms":1130,"cmds":1,"chars":136,"ok":true,"detail":""}
+{"tool":"bx","task":"console","iter":4,"pos":1,"ts":"2026-11-10T20:39:50Z","tool_version":"bx 0.2.0 05c7473","ms":170,"cmds":1,"chars":29,"ok":true,"detail":""}
+{"tool":"bx","task":"mobile","iter":4,"pos":1,"ts":"2026-11-10T20:39:50Z","tool_version":"bx 0.2.0 05c7473","ms":1813,"cmds":1,"chars":168,"ok":true,"detail":""}
+{"tool":"bx","task":"sweep","iter":4,"pos":1,"ts":"2026-11-10T20:39:52Z","tool_version":"bx 0.2.0 05c7473","ms":22527,"cmds":16,"chars":1191,"ok":true,"detail":"16/16"}
+{"tool":"bx","task":"login","iter":5,"pos":1,"ts":"2026-11-10T20:40:18Z","tool_version":"bx 0.2.0 05c7473","ms":3078,"cmds":1,"chars":185,"ok":true,"detail":""}
+{"tool":"bx","task":"search","iter":5,"pos":1,"ts":"2026-11-10T20:40:21Z","tool_version":"bx 0.2.0 05c7473","ms":2450,"cmds":1,"chars":1630,"ok":true,"detail":"7/7 found"}
+{"tool":"bx","task":"read","iter":5,"pos":1,"ts":"2026-11-10T20:40:24Z","tool_version":"bx 0.2.0 05c7473","ms":1413,"cmds":2,"chars":9999,"ok":true,"detail":"snapshot=6097 interactive=3902 floor=3048"}
+{"tool":"bx","task":"screenshot","iter":5,"pos":1,"ts":"2026-11-10T20:40:25Z","tool_version":"bx 0.2.0 05c7473","ms":1298,"cmds":1,"chars":136,"ok":true,"detail":""}
+{"tool":"bx","task":"console","iter":5,"pos":1,"ts":"2026-11-10T20:40:27Z","tool_version":"bx 0.2.0 05c7473","ms":294,"cmds":1,"chars":29,"ok":true,"detail":""}
+{"tool":"bx","task":"mobile","iter":5,"pos":1,"ts":"2026-11-10T20:40:27Z","tool_version":"bx 0.2.0 05c7473","ms":1990,"cmds":1,"chars":168,"ok":true,"detail":""}
+{"tool":"bx","task":"sweep","iter":5,"pos":1,"ts":"2026-11-10T20:40:29Z","tool_version":"bx 0.2.0 05c7473","ms":21966,"cmds":16,"chars":1191,"ok":true,"detail":"16/16"}

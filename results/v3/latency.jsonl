@@ -1,6 +1,6 @@
-{"tool":"bx","iter":1,"ts":"2026-11-10T18:36:54Z","tool_version":"bx 0.1.0 c5255f6","cold_kind":"process stopped","cold_ms":1078,"trivial_ms":162,"trivial_ok":true}
-{"tool":"bx","iter":2,"ts":"2026-11-10T18:36:56Z","tool_version":"bx 0.1.0 c5255f6","cold_kind":"process stopped","cold_ms":1001,"trivial_ms":129,"trivial_ok":true}
-{"tool":"bx","iter":3,"ts":"2026-11-10T18:36:58Z","tool_version":"bx 0.1.0 c5255f6","cold_kind":"process stopped","cold_ms":1095,"trivial_ms":163,"trivial_ok":true}
-{"tool":"bx","iter":4,"ts":"2026-11-10T18:36:59Z","tool_version":"bx 0.1.0 c5255f6","cold_kind":"process stopped","cold_ms":1036,"trivial_ms":133,"trivial_ok":true}
-{"tool":"bx","iter":5,"ts":"2026-11-10T18:37:01Z","tool_version":"bx 0.1.0 c5255f6","cold_kind":"process stopped","cold_ms":979,"trivial_ms":133,"trivial_ok":true}
-{"tool":"bx","ts":"2026-11-10T18:37:04Z","warm_calls":20,"warm_failed":0}
+{"tool":"bx","iter":1,"ts":"2026-11-10T20:35:24Z","tool_version":"bx 0.2.0 05c7473","cold_kind":"process stopped","cold_ms":1405,"trivial_ms":172,"trivial_ok":true}
+{"tool":"bx","iter":2,"ts":"2026-11-10T20:35:26Z","tool_version":"bx 0.2.0 05c7473","cold_kind":"process stopped","cold_ms":1399,"trivial_ms":321,"trivial_ok":true}
+{"tool":"bx","iter":3,"ts":"2026-11-10T20:35:29Z","tool_version":"bx 0.2.0 05c7473","cold_kind":"process stopped","cold_ms":1375,"trivial_ms":168,"trivial_ok":true}
+{"tool":"bx","iter":4,"ts":"2026-11-10T20:35:30Z","tool_version":"bx 0.2.0 05c7473","cold_kind":"process stopped","cold_ms":1213,"trivial_ms":143,"trivial_ok":true}
+{"tool":"bx","iter":5,"ts":"2026-11-10T20:35:32Z","tool_version":"bx 0.2.0 05c7473","cold_kind":"process stopped","cold_ms":1326,"trivial_ms":189,"trivial_ok":true}
+{"tool":"bx","ts":"2026-11-10T20:35:37Z","warm_calls":20,"warm_failed":0}
