@@ -1,21 +1,22 @@
 // Scores readings/ per table cell: each innerText line of <main> is split on tabs, cells of 2+ characters kept.
-//   node score-coverage.mjs [out-file]       default out: ../results/v2/coverage.jsonl
-// Reads every readings/<mode><slug>-r<k>.txt that has a matching readings/ground-truth<slug>-r<k>.txt.
+//   node score-coverage.mjs [out-file] [readings-dir]       defaults: ../results/v2/coverage.jsonl, readings
+// Reads every <readings-dir>/<mode><slug>-r<k>.txt that has a matching <readings-dir>/ground-truth<slug>-r<k>.txt.
 // `chars` is the raw character count of the tool output, not a token estimate.
 import fs from "node:fs";
 
 const OUT = process.argv[2] ?? "../results/v2/coverage.jsonl";
-const MODES = ["ab", "ab-i", "axi", "axi-full", "surf", "surf-text", "bh", "bh-text", "pw"];
+const READINGS = process.argv[3] ?? "readings";
+const MODES = ["ab", "ab-i", "axi", "axi-full", "surf", "surf-text", "bh", "bh-text", "pw", "bx"];
 const LABEL = { bh: "bh (custom snippet)", "bh-text": "bh innerText" };
 const norm = (s) => s.replace(/\\"/g, '"').replace(/\s+/g, " ").trim();
 
 const out = [];
-for (const gtFile of fs.readdirSync("readings").filter((f) => /^ground-truth.*-r\d+\.txt$/.test(f)).sort()) {
+for (const gtFile of fs.readdirSync(READINGS).filter((f) => /^ground-truth.*-r\d+\.txt$/.test(f)).sort()) {
   const [, slug, rep] = gtFile.match(/^ground-truth(.*)-r(\d+)\.txt$/);
-  const cells = [...new Set(fs.readFileSync(`readings/${gtFile}`, "utf8").split(/\n|\t/).map(norm).filter((x) => x.length >= 2))];
+  const cells = [...new Set(fs.readFileSync(`${READINGS}/${gtFile}`, "utf8").split(/\n|\t/).map(norm).filter((x) => x.length >= 2))];
   if (cells.length === 0) { console.error(`skip ${gtFile}: empty ground truth`); continue; }
   for (const mode of MODES) {
-    const f = `readings/${mode}${slug}-r${rep}.txt`;
+    const f = `${READINGS}/${mode}${slug}-r${rep}.txt`;
     if (!fs.existsSync(f)) continue;
     const o = norm(fs.readFileSync(f, "utf8"));
     const found = cells.filter((c) => o.includes(c)).length;

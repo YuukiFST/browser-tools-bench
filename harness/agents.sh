@@ -52,6 +52,8 @@ tool_setup() {
           MCP="$EMPTY"; ALLOWED=(Bash Read); BUILTIN=Bash,Read; DOCS=$(doc_chars agent-docs/bh-skill.md) ;;
     pw)   USAGE='the tools of the `playwright` MCP server (browser_*).'
           MCP="$PWCFG"; ALLOWED=(Read "mcp__playwright"); BUILTIN=Read; DOCS=0 ;;
+    bx)   USAGE='the `bx` CLI. Run it as `node "'"$BX_MJS"'" ...`; in every command, first export `export BX_CDP_URL='"$CDP_URL"' BX_SESSION=agent`. Before the first use, read `'"$DOCS_W"'\bx.md`.'
+          MCP="$EMPTY"; ALLOWED=(Bash Read); BUILTIN=Bash,Read; DOCS=$(doc_chars agent-docs/bx.md) ;;
     *) echo "unknown tool $1" >&2; exit 2 ;;
   esac
 }

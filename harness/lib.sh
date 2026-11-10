@@ -6,7 +6,12 @@ export BENCH_CDP_PORT="${BENCH_CDP_PORT:-9444}"
 CDP_PORT=$BENCH_CDP_PORT
 CDP_URL=http://127.0.0.1:$CDP_PORT
 PW_PORT=8931
-ALL_TOOLS="ab axi surf bh pw"
+ALL_TOOLS="ab axi surf bh pw bx"
+
+# bx has no daemon and no npm shim: node runs its one file (Windows paths, for node, git and the agent prompt)
+BX_DIR="${BX_DIR:-$(cygpath -w "$HOME/Desktop/bx")}"; BX_MJS="$BX_DIR\bx.mjs"
+export BX_CDP_URL=$CDP_URL BX_SESSION=bench
+BX() { node "$BX_MJS" "$@"; }
 
 # chrome-devtools-axi otherwise runs `npx -y chrome-devtools-mcp@latest` on every bridge start
 AXI_MCP_PKG="${AXI_MCP_PKG:-$(cygpath -w "${LOCALAPPDATA:-}")\\npm-cache\\_npx\\15c61037b1978c83\\node_modules\\chrome-devtools-mcp}"
@@ -23,6 +28,8 @@ stop_tool() {
     surf) for s in $(surf session.list 2>/dev/null | grep -oE '^[[:space:]]*[A-Za-z0-9._-]+' | tr -d ' '); do surf session.close "$s"; done; surf session.close bench ;;
     bh) for n in bench agent; do BU_NAME=$n browser-harness --reload; done ;;
     pw) powershell -NoProfile -Command "Get-CimInstance Win32_Process | Where-Object { \$_.Name -eq 'node.exe' -and \$_.CommandLine -like '*playwright*mcp*--cdp-endpoint*' } | ForEach-Object { Stop-Process -Id \$_.ProcessId -Force }"; rm -f pw-session.txt ;;
+    # no process to stop: removing the session state files drops the remembered tab and viewport
+    bx) rm -f "$(node -p "require('os').tmpdir()")"/bx-bench.json "$(node -p "require('os').tmpdir()")"/bx-agent.json ;;
     *) echo "stop_tool: unknown tool '$1'" >&2; return 2 ;;
   esac >/dev/null 2>&1
   return 0
@@ -57,6 +64,7 @@ trivial_call() {
     surf) surf js "return 1" ;;
     bh) browser-harness <<< "print(js('1'))" ;;
     pw) node pw.mjs browser_evaluate '{"function":"() => 1"}' ;;
+    bx) BX eval 1 ;;
   esac
 }
 
@@ -67,6 +75,7 @@ tool_version() {
     surf) surf --version ;;
     bh) browser-harness --version ;;
     pw) playwright-mcp --version ;;
+    bx) echo "bx $(BX --version) $(git -C "$BX_DIR" rev-parse --short HEAD)" ;;
     none) echo none ;;
   esac 2>&1 | head -1 | tr -d '\r"'
 }

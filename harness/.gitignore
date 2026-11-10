@@ -2,6 +2,7 @@
 creds.sh
 ground-truth/
 readings/
+readings-*/
 agents/
 found.txt
 h1.txt

@@ -21,6 +21,7 @@ open_login() {
     surf) surf session.ensure bench "$APP/login" ;;
     bh) browser-harness <<< "goto_url('$APP/login'); wait_for_load()" ;;
     pw) pw_server_start && node pw.mjs browser_navigate '{"url":"'$APP'/login"}' ;;
+    bx) BX open "$APP/login" ;;
   esac >/dev/null 2>&1
 }
 

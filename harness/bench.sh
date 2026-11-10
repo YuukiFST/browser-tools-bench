@@ -181,6 +181,22 @@ print([e for e in drain_events() if 'consoleAPICalled' in str(e.get('method','')
 bh_mobile() { rm -f shot.png; m BH "cdp('Emulation.setDeviceMetricsOverride', width=390, height=844, deviceScaleFactor=1, mobile=True); goto_url('$APP/guias'); wait_for_load(); $BH_W_H1; capture_screenshot(r'$(cygpath -w "$PWD/shot.png")'); cdp('Emulation.clearDeviceMetricsOverride')"; W=$(pngw shot.png); [ "$W" -eq 390 ] || [ "$W" -eq 780 ]; }
 bh_h1() { m BH "goto_url('$APP$1'); wait_for_load(); $BH_W_H1; print(js(\"document.querySelector('main h1').innerText\"))"; last | tail -1; }
 
+# ---------------------------------------------------------------- bx
+# bx chains steps with `+` in one call; the wait rules above run as eval steps inside the chain, as for the other tools.
+bx_login() {
+  m BX open "$APP/login" + fill "E-mail" "$BENCH_EMAIL" + fill "Senha" "$BENCH_PASS" + click "Entrar" + eval "($POLL_URL)()"
+  last | grep -q '/dashboard'
+}
+bx_search() {
+  m BX open "$APP/inscricoes" + fill "Buscar" "$QUERY" + click "Pesquisar" + wait "Cód. empresa" + table
+  last | grep -oE "$RE_INSC" | sort -u > found.txt
+}
+bx_read() { m BX open "$APP/dashboard" + eval "($POLL_H1)()" + text; READ_FULL=$LAST_CHARS; m BX snap; READ_INT=$LAST_CHARS; }
+bx_screenshot() { rm -f shot.png; m BX open "$APP/debitos" + eval "($POLL_H1)()" + shot "$(cygpath -w "$PWD/shot.png")"; [ "$(pngw shot.png)" -gt 0 ]; }
+bx_console() { MARK="BENCH-$RANDOM"; m BX eval "console.error('$MARK')" + console; last | grep -q "$MARK"; }
+bx_mobile() { rm -f shot.png; m BX viewport 390x844 + open "$APP/guias" + eval "($POLL_H1)()" + shot "$(cygpath -w "$PWD/shot.png")" + viewport 1366x768; W=$(pngw shot.png); [ "$W" -eq 390 ] || [ "$W" -eq 780 ]; }
+bx_h1() { m BX open "$APP$1" + eval "($POLL_H1)()" + text "main h1"; last | tail -1; }
+
 # ---------------------------------------------------------------- common tasks
 t_login() { node cdp.mjs logout >/dev/null; ${TOOL}_login; }
 t_search() { : > found.txt; ${TOOL}_search; DETAIL="$(grep -c . found.txt)/$SEARCH_TOTAL found"; diff -q <(cut -d'|' -f1 ground-truth/search.txt | sort) found.txt >/dev/null; }
