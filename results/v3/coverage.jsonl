@@ -1,0 +1,9 @@
+{"route":"/dashboard","rep":1,"mode":"bx","label":"bx","cells":361,"found":360,"coverage":99.7,"chars":6042}
+{"route":"/dashboard","rep":2,"mode":"bx","label":"bx","cells":361,"found":360,"coverage":99.7,"chars":6042}
+{"route":"/dashboard","rep":3,"mode":"bx","label":"bx","cells":361,"found":360,"coverage":99.7,"chars":6042}
+{"route":"/debitos","rep":1,"mode":"bx","label":"bx","cells":25,"found":25,"coverage":100,"chars":536}
+{"route":"/debitos","rep":2,"mode":"bx","label":"bx","cells":25,"found":25,"coverage":100,"chars":536}
+{"route":"/debitos","rep":3,"mode":"bx","label":"bx","cells":25,"found":25,"coverage":100,"chars":536}
+{"route":"/inscricoes","rep":1,"mode":"bx","label":"bx","cells":21,"found":21,"coverage":100,"chars":561}
+{"route":"/inscricoes","rep":2,"mode":"bx","label":"bx","cells":21,"found":21,"coverage":100,"chars":561}
+{"route":"/inscricoes","rep":3,"mode":"bx","label":"bx","cells":21,"found":21,"coverage":100,"chars":561}
