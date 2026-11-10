@@ -9,3 +9,6 @@ h1.txt
 pw-session.txt
 pw-out/
 pw-server.log
+agents-v2/
+shot.png
+.playwright-mcp/

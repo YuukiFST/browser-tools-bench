@@ -1,41 +1,42 @@
 # LinkedIn post draft
 
 Not published.
-It waits for the methodology review in `docs/review-prompt.md`.
 The post will go out in Portuguese; this is the English translation of the current draft.
-Every number in it must match `results/benchmark.html` or `docs/methodology.md`.
+Every number in it is printed by `harness/analyze-v2.mjs` (`results/v2/analysis.md`).
 
 ---
 
 I tested 5 tools that let an AI agent control the browser: surf-cli, agent-browser, playwright-mcp, browser-harness and chrome-devtools-axi. The target was the property tax (IPTU) web app I work on.
 
-All of them ran against the same isolated Chrome for Testing 157 and the same production build, so the measured difference comes from the tool.
+My first version of this benchmark ranked them with 2 agent runs per tool. A review showed that 2 runs could not separate the top 3, so I fixed the harness and ran it again. The ranking rule was written and committed before any paid run.
 
-I took two measurements.
+The setup: one dedicated Chrome, one production build, the model pinned to claude-sonnet-5-5, no user settings, hooks or skills, and every tool started cold before each run. The agent got one task: search a company, list its 7 property registrations with their units, and save a mobile screenshot.
 
-In the first, a script ran 7 tasks 5 times with each tool: login, search, read, screenshot, console, mobile viewport and a sweep of 16 routes. On each run it recorded time, number of calls and characters returned. The ground truth came from the database: a company's 7 property registrations, each with its unit, and the title of each route.
+The agent ran in 10 blocks, each block all 5 tools in random order. The two tools tied at the top got 20 more blocks, so they have 30 runs each and the others 10.
 
-In the second, a Claude Sonnet agent got the same task twice with each tool. The CLI itself reported the cost in dollars, the time, the turns and the tokens.
+The result, ranked on turns and on cost above a no-browser baseline:
 
-On the second day I reran one tool as a control. The environment was 45% slower (33.7 s against 49.0 s). I took that into account when reading the playwright-mcp numbers, which I measured that day.
+1. playwright-mcp, tied: US$ 0.073 per task and 12.8 turns (n=30)
+1. surf-cli, tied: US$ 0.084 per task and 6.8 turns (n=30)
+3. agent-browser: US$ 0.109 and 7.5 turns (n=10)
+4. chrome-devtools-axi: US$ 0.114 and 12.0 turns (n=10)
+5. browser-harness: US$ 0.145 and 17.5 turns (n=10)
 
-With the agent, all 5 tools got 14 of 14 right. The difference was in what it cost to get the same answer. surf-cli finished the task for US$ 0.171, in 42 s and 6.5 turns, processing 275k tokens. browser-harness spent US$ 0.267, 113 s, 20.5 turns and 853k tokens.
+playwright-mcp and surf-cli tie because they win on different metrics. Over 30 paired blocks, surf-cli took 6.0 fewer turns per task and cost US$ 0.011 more. Both differences are outside their 95% intervals, in opposite directions.
 
-The final order:
-1. surf-cli
-2. agent-browser (US$ 0.196, 50 s)
-3. playwright-mcp (US$ 0.217, 56 s)
-4. browser-harness
-5. chrome-devtools-axi (US$ 0.232, 83 s)
+Accuracy decided little. 4 tools got every run right. surf-cli got 3 of 30 runs wrong, always the same way: it read the table from page text where the cells run together and cut the unit name short.
 
-chrome-devtools-axi is cheaper than browser-harness but came last. It passed 33 of 35 battery checks, had 1 MCP timeout and 2 silent failures, where fillform and snapshot went wrong without an error. browser-harness had 1 silent failure: it typed into a background tab.
+The data changed my first ranking. playwright-mcp moved from third to a tie for first, and chrome-devtools-axi moved above browser-harness.
 
-Two numbers only showed up when measuring:
-1. playwright-mcp puts about 5.3k tokens of schema into the context before the first action.
-2. Reading the dashboard, surf-cli captured 97.5% of the text with 1,890 tokens, and playwright-mcp captured 98.3% with 7,312. browser-harness reached 43.5% and chrome-devtools-axi 53.5%.
+Three numbers only showed up when measuring:
+1. A one-turn prompt with no browser task costs US$ 0.012 in this setup, 8% to 16% of a run (n=3).
+2. In a scripted battery with the same wait rule for every tool, browser-harness read the dashboard before its data rendered in 5 of 5 runs.
+3. Reading the dashboard, surf-cli captured 97.5% of the visible text with 7,581 characters, and playwright-mcp 96.1% with 29,064 (n=3 each).
 
-surf-cli has two caveats. The extension has to be installed by hand, and the semantic.* commands send page text to third parties. I used none of them.
+Limits: one app, one task, one model, one machine, one day. Agent cost also depends on the prompt cache left by the previous run, which the random order spreads across tools but does not remove.
 
-I ran the benchmark with Claude Code.
+surf-cli needs its browser extension installed by hand, and its semantic.* commands send page text to third parties. I used none of them.
+
+I ran the benchmark with Claude Code. Harness, raw data and the ranking rule are in the repo.
 
 #AI #AIAgents #Benchmark #Playwright #ClaudeCode

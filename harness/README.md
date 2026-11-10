@@ -11,21 +11,22 @@ Tool codes used everywhere: `ab` agent-browser, `axi` chrome-devtools-axi, `surf
 
 - Git Bash on Windows (the scripts use `cygpath`, `powershell` and `MSYS_NO_PATHCONV=1`).
 - Node.js with global `fetch` and `WebSocket` (Node 22+).
-- A dedicated Chrome started with `--remote-debugging-port=9333`. Every tool and `cdp.mjs` talk to that port.
+- A dedicated Chrome started with `--remote-debugging-port=$BENCH_CDP_PORT` (default 9444; v1 used 9333) and the surf extension loaded. Every tool and `cdp.mjs` talk to that port. It must be the only Chrome on the machine with the surf extension, because surf reaches its extension through one machine-wide pipe.
 - The tools under test on `PATH`: `agent-browser`, `chrome-devtools-axi`, `surf`, `browser-harness`, `playwright-mcp`; `claude` for `agents.sh`.
-- For `pw` in `bench.sh`: a `playwright-mcp --port 8931 --cdp-endpoint http://127.0.0.1:9333` server already running (`latency.sh` starts its own).
+- `pw` in `bench.sh`, `latency.sh` and `coverage.sh` uses a `playwright-mcp` HTTP server on port 8931 that the scripts start themselves.
 
 ## Environment
 
 | Variable | Used by | Meaning |
 |---|---|---|
-| `BENCH_QUERY` | `bench.sh`, `agents.sh` (required) | search term typed into the app's search box |
+| `BENCH_QUERY` | `bench.sh`, `agents.sh` (required) | search term typed into the app's search box; can live in `creds.sh` |
 | `BENCH_APP` | `bench.sh`, `cdp.mjs` | app base URL, default `http://localhost:3100` |
 | `BENCH_EMAIL`, `BENCH_PASS` | `bench.sh` | login of a test account, read from `creds.sh` |
 | `PW_MCP_URL` | `pw.mjs` | playwright-mcp endpoint, default `http://localhost:8931/mcp` |
-| `START` | `agents.sh` | first run number, default `1` |
+| `RESULTS` | all scripts | output directory, default `../results/v2` |
+| `BENCH_CDP_PORT` | all scripts | CDP port of the dedicated Chrome, default `9444` |
+| `CAP_USD` | `agents.sh` | spend cap for all paid runs, default `25` |
 
-`latency.sh`, `coverage.sh` and the prompt in `agents.sh` use `http://localhost:3100` directly and ignore `BENCH_APP`.
 
 Credentials: `cp creds.example.sh creds.sh` and fill it in. `creds.sh` is git-ignored.
 
@@ -44,46 +45,54 @@ The registration regex in `bench.sh` (`NN.N.NN.NNN.NNNN.NNN`) is the app's inscr
 
 ## Scripts
 
-### `bench.sh <tool> <iterations> [tasks...]`
+All scripts source `lib.sh` (tool environment, `stop_tool`, `start_tool`, `trivial_call`, `tool_version`) and write to `$RESULTS`, default `../results/v2`.
+The v1 data in `results/` was produced by the earlier version of these scripts; `git log` has it.
 
-Scripted task battery. Tasks: `login search read screenshot console mobile sweep` (all by default).
-Resets the browser, restarts the tool daemon and does one unmeasured warm-up pass, then runs each task `iterations` times.
+### `agents.sh`
+
+```
+bash agents.sh baseline <runs>              one-turn prompt, no browser task, same flags -> baseline.jsonl
+bash agents.sh pilot [tools...]             one block, not ranked -> pilot.jsonl
+bash agents.sh <first> <last> [tools...]    blocks first..last, each a random permutation of the tools -> agents.jsonl
+```
+
+Runs `claude -p --model claude-sonnet-5-5 --setting-sources "" --disable-slash-commands --output-format stream-json --verbose` with each tool's docs copied in `agent-docs/`.
+Before each run it resets the browser to one active tab and stops every tool process.
+Raw transcripts go to `agents-v2/` (git-ignored, they hold client data); `score-agent.mjs` turns each one into a row with the answer check, cost, turns, per-turn usage, versions and timestamp.
+`CAP_USD` (default 25) stops before a block that would pass the cap.
+
+### `bench.sh <iterations> [tools...]`
+
+Scripted task battery: `login search read screenshot console mobile sweep` (`TASKS` env to pick).
+One discarded warm-up per tool (the read task 3 times, for the size floor), then every iteration runs every tool, in an order rotated by one per iteration.
 Every tool call goes through the `m` wrapper, which counts commands and characters returned.
+Writes `{"tool","task","iter","pos","ts","tool_version","ms","cmds","chars","ok","detail"}` per row to `battery.jsonl`.
 
-Writes one line per (task, iteration) to `battery.jsonl`:
-`{"tool","task","iter","ms","cmds","chars","ok","detail"}`.
-Also leaves `found.txt`, `h1.txt` and `shot.png` as scratch.
+### `latency.sh <repetitions> [tools...]`
 
-### `latency.sh <tool> <repetitions>`
+Cold start (tool process stopped, then the first navigation; for surf, a new session) and the trivial call, one browser round trip evaluating `1`, checked for its output.
+Writes rows to `latency.jsonl` and 20 warm trivial-call timings to `warm-<tool>.txt`.
 
-Cold start (daemon stopped, then first navigation) and one trivial call after it.
-Appends `{"tool","iter","cold_ms","trivial_ms"}` to `latency.jsonl`, then writes 20 warm trivial-call timings (ms, one per line) to `warm-<tool>.txt`.
+### `coverage.sh <reps> <route>...` and `score-coverage.mjs [out-file]`
 
-### `agents.sh <repetitions> [tools...]`
+`coverage.sh` saves, per repetition, the visible text of `<main>` from raw CDP and each tool's default reads (pw included) to `readings/`.
+`score-coverage.mjs` scores every reading per table cell and writes `coverage.jsonl` with raw character counts.
 
-Runs a real agent per tool with `claude -p --model sonnet` on the same search + mobile screenshot task.
-Writes `agents/<tool>-<n>.json` and `.err` (raw `claude` output), `agent-<tool>-<n>.png`, and appends to `agents.jsonl`:
-`{"tool","run","correct","total","extras","screenshot_px","cost_usd","turns","ms","input_tokens","output_tokens","cache_read_tokens","cache_creation_tokens","is_error","problems"}`.
+### `analyze.mjs [battery-file] [latency-dir]` and `analyze-v2.mjs [results-dir]`
 
-### `coverage.sh <route>...`
-
-For each route, saves the `<main>` visible text from raw CDP as `readings/ground-truth<slug>.txt` and each tool's default reads as `readings/<mode><slug>.txt` (slug is the route with `/` turned into `_`).
-Appends `{"route","mode","lines","found","coverage","chars"}` per mode to `coverage.jsonl`.
-
-### `score-coverage.mjs`
-
-Re-scores `readings/` per table cell (lines split on tabs) for `/dashboard`, `/debitos` and `/inscricoes`.
-Overwrites `coverage.jsonl` with `{"route","mode","cells","found","coverage","tokens"}` and prints a markdown table.
-It also expects `readings/pw<slug>.txt`, which `coverage.sh` does not produce.
-
-### `analyze.mjs [battery-file]`
-
-Prints markdown tables from `battery.jsonl` (or the given file), `latency.jsonl` and `warm-<tool>.txt`.
+`analyze.mjs` prints battery and latency tables; it reads the Portuguese task names of the v1 data too.
+`analyze-v2.mjs` prints the agent tables with bootstrap intervals, the paired differences, the failure table and the ranking of `docs/ranking-rule.md`, and writes `ranking.json`.
 
 ### `cdp.mjs reset | logout | ground-truth-h1 <routes...> | ground-truth-text <route>`
 
-Neutral controller over raw CDP on port 9333, used by the other scripts so no tool under test does setup work.
+Neutral controller over raw CDP on `BENCH_CDP_PORT`, used by the other scripts so no tool under test does setup work.
+`reset` leaves one about:blank tab and brings it to the front.
+Run it with `MSYS_NO_PATHCONV=1` from Git Bash, or routes like `/dashboard` are rewritten to Windows paths.
 
 ### `pw.mjs <tool> ['<json args>'] | --list`
 
 Minimal MCP Streamable HTTP client so playwright-mcp can be called from the shell like the CLIs. Keeps the session id in `pw-session.txt`.
+
+### `redact-results.mjs [results-dir]`
+
+Replaces client data in the free-text `problems` field of `agents.jsonl` and `pilot.jsonl` before they are published. Run it with `BENCH_QUERY` set, from `harness/`.

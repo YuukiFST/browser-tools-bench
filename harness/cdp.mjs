@@ -1,9 +1,9 @@
-// Neutral benchmark controller: speaks raw CDP to the dedicated Chrome (9333),
+// Neutral benchmark controller: speaks raw CDP to the dedicated Chrome (BENCH_CDP_PORT, default 9444),
 // without going through any of the measured tools.
-//   node cdp.mjs reset            closes every tab and leaves one about:blank
-//   node cdp.mjs logout           clears cookies and storage of localhost:3000
+//   node cdp.mjs reset            closes every tab and leaves one active about:blank
+//   node cdp.mjs logout           clears cookies and the storage of BENCH_APP
 //   node cdp.mjs ground-truth-h1  h1 of each authenticated route (must be logged in)
-const BASE = "http://127.0.0.1:9333";
+const BASE = `http://127.0.0.1:${process.env.BENCH_CDP_PORT ?? "9444"}`;
 const APP = process.env.BENCH_APP ?? "http://localhost:3100";
 
 async function connect(wsUrl) {
@@ -13,10 +13,14 @@ async function connect(wsUrl) {
   const pending = new Map();
   ws.onmessage = (m) => {
     const d = JSON.parse(m.data);
-    if (d.id && pending.has(d.id)) { pending.get(d.id)(d); pending.delete(d.id); }
+    if (d.id && pending.has(d.id)) { pending.get(d.id).ok(d); pending.delete(d.id); }
   };
-  const send = (method, params = {}, sessionId) => new Promise((ok) => {
-    id += 1; pending.set(id, ok);
+  ws.onclose = () => {
+    for (const { fail } of pending.values()) fail(new Error(`CDP connection to ${wsUrl} closed (did Chrome exit?)`));
+    pending.clear();
+  };
+  const send = (method, params = {}, sessionId) => new Promise((ok, fail) => {
+    id += 1; pending.set(id, { ok, fail });
     ws.send(JSON.stringify({ id, method, params, ...(sessionId ? { sessionId } : {}) }));
   });
   return { ws, send };
@@ -28,7 +32,10 @@ const pages = async () => (await (await fetch(`${BASE}/json/list`)).json()).filt
 async function reset() {
   const fresh = await (await fetch(`${BASE}/json/new?about:blank`, { method: "PUT" })).json();
   for (const p of await pages()) if (p.id !== fresh.id) await fetch(`${BASE}/json/close/${p.id}`);
-  console.log("reset: 1 about:blank tab");
+  // a background tab drops input events for some tools, so the one tab left is brought to the front
+  const activated = await fetch(`${BASE}/json/activate/${fresh.id}`);
+  if (!activated.ok) throw new Error(`reset: could not activate tab ${fresh.id}: HTTP ${activated.status}`);
+  console.log("reset: 1 active about:blank tab");
 }
 
 async function logout() {
