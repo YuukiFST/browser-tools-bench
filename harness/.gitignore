@@ -1,0 +1,11 @@
+# credentials and data from the user's own app: never published
+creds.sh
+ground-truth/
+readings/
+agents/
+found.txt
+h1.txt
+*.png
+pw-session.txt
+pw-out/
+pw-server.log

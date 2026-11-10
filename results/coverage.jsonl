@@ -1,0 +1,27 @@
+{"route":"_dashboard","mode":"ab","cells":361,"found":344,"coverage":95.3,"tokens":6816}
+{"route":"_dashboard","mode":"ab-i","cells":361,"found":296,"coverage":82,"tokens":4842}
+{"route":"_dashboard","mode":"axi","cells":361,"found":193,"coverage":53.5,"tokens":3647}
+{"route":"_dashboard","mode":"axi-full","cells":361,"found":304,"coverage":84.2,"tokens":5823}
+{"route":"_dashboard","mode":"surf","cells":361,"found":352,"coverage":97.5,"tokens":1890}
+{"route":"_dashboard","mode":"surf-text","cells":361,"found":352,"coverage":97.5,"tokens":1509}
+{"route":"_dashboard","mode":"bh","cells":361,"found":157,"coverage":43.5,"tokens":8695}
+{"route":"_dashboard","mode":"bh-text","cells":361,"found":352,"coverage":97.5,"tokens":1482}
+{"route":"_debitos","mode":"ab","cells":25,"found":25,"coverage":100,"tokens":1173}
+{"route":"_debitos","mode":"ab-i","cells":25,"found":20,"coverage":80,"tokens":614}
+{"route":"_debitos","mode":"axi","cells":25,"found":25,"coverage":100,"tokens":1527}
+{"route":"_debitos","mode":"axi-full","cells":25,"found":25,"coverage":100,"tokens":1527}
+{"route":"_debitos","mode":"surf","cells":25,"found":25,"coverage":100,"tokens":694}
+{"route":"_debitos","mode":"surf-text","cells":25,"found":25,"coverage":100,"tokens":161}
+{"route":"_debitos","mode":"bh","cells":25,"found":25,"coverage":100,"tokens":1002}
+{"route":"_debitos","mode":"bh-text","cells":25,"found":25,"coverage":100,"tokens":134}
+{"route":"_inscricoes","mode":"ab","cells":21,"found":21,"coverage":100,"tokens":924}
+{"route":"_inscricoes","mode":"ab-i","cells":21,"found":18,"coverage":85.7,"tokens":457}
+{"route":"_inscricoes","mode":"axi","cells":21,"found":21,"coverage":100,"tokens":1205}
+{"route":"_inscricoes","mode":"axi-full","cells":21,"found":21,"coverage":100,"tokens":1205}
+{"route":"_inscricoes","mode":"surf","cells":21,"found":21,"coverage":100,"tokens":604}
+{"route":"_inscricoes","mode":"surf-text","cells":21,"found":21,"coverage":100,"tokens":168}
+{"route":"_inscricoes","mode":"bh","cells":21,"found":21,"coverage":100,"tokens":798}
+{"route":"_inscricoes","mode":"bh-text","cells":21,"found":21,"coverage":100,"tokens":140}
+{"route":"_dashboard","mode":"pw","coverage":98.3,"tokens":7312,"source":"ad-hoc run 2026-11-10 08:xx, values copied from the session transcript; raw reading not kept"}
+{"route":"_debitos","mode":"pw","coverage":100,"tokens":1202,"source":"ad-hoc run 2026-11-10 08:xx, values copied from the session transcript; raw reading not kept"}
+{"route":"_inscricoes","mode":"pw","coverage":100,"tokens":1061,"source":"ad-hoc run 2026-11-10 08:xx, values copied from the session transcript; raw reading not kept"}
