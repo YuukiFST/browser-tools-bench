@@ -75,3 +75,32 @@ The pilot block is not part of the ranking data.
 
 Before the pilot, the rule allows no change to the metrics, the tie test, the failure definition or the thresholds above.
 A harness fix found in the pilot is allowed and is listed in the report.
+
+## Addendum 1: v4, the same rule with a weaker model
+
+Written and committed on 2026-11-10, before the v4 baseline, pilot and ranked runs.
+The user asked for it: a weak model shows how much of the accuracy comes from the tool.
+
+- **What runs:** 6 tools, the 5 of v2 plus `bx` 0.2.0 (tag `v0.2.0`, commit `b071bf0` of https://github.com/YuukiFST/bx), on the same task, with the same prompt shape, flags and blocks as v2.
+- **Model:** `claude-haiku-5-5` instead of `claude-sonnet-5-5`. Nothing else in section 5 changes; the Claude Code version is recorded on every row.
+- **Rule:** sections 1 to 4 apply as written, to the v4 rows only (`results/v4-haiku/agents.jsonl`), with the v4 baseline (`results/v4-haiku/baseline.jsonl`). `harness/analyze-v2.mjs results/v4-haiku` implements it; its only change is that `bx` is in its tool list, and its output on `results/v2` is identical before and after that change.
+- **Steps:** baseline, 3 runs; pilot, 1 block of 6 tools, not ranked; stage 4a, 10 blocks of 6 tools; stage 4b, only if rank 1 is tied after 4a, 20 more blocks of the tools tied at rank 1.
+- **Cap:** US$ 20 for v4 and v3 together, counting the runs listed under "Before this addendum".
+- **Data kept apart:** raw transcripts and screenshots go to `harness/agents-v4-haiku/` (`RAW` in `agents.sh`), so the v2 transcripts are not overwritten.
+
+Before this addendum, and not part of the ranking data:
+
+- 8 unranked Haiku runs of bx alone were made while bx was being changed (`results/v4-haiku/setup.jsonl`, US$ 0.025 in total): 1 with bx 0.1.0 and 7 with work in progress.
+  They found a bx defect (a click returned while the screen it opened still showed its loading skeleton), which bx 0.2.0 fixes, and they led to changes in the bx error messages and in `agent-docs/bx.md`.
+- So bx 0.2.0 was shaped with this task and this model in view; the 5 other tools and their docs are as in v2. The held-out task of `PLAN.md` in the bx repository is the control for that, and it is not written yet.
+- The benchmark author also wrote bx.
+
+## Addendum 2: v3, bx against the v2 rows
+
+Written and committed on 2026-11-10, before any v3 agent run.
+
+- Only bx 0.2.0 runs, with `claude-sonnet-5-5`; the 5 measured tools keep their v2 rows (`results/v2/agents.jsonl`) and are not rerun. This is the user's decision.
+- bx rows go to `results/v3/agents.jsonl`, with a new baseline in `results/v3/baseline.jsonl` taken in the same session: baseline 3 runs, pilot 1 run (not ranked), 30 ranked runs.
+- The v2 rule pairs tools per block, and bx shares no block with the others. For every pair that includes bx, the paired difference is replaced by the difference of means of two independent samples, with a percentile bootstrap that resamples each tool's runs separately (10,000 resamples, seed 20261110). The separation test, the failure tier and the 8-run minimum are unchanged. Pairs among the 5 old tools keep their v2 result.
+- Cost above baseline uses each data set's own baseline (v2 for the old tools, v3 for bx).
+- Limits, stated next to any v3 result: bx runs back to back in another session, so the prompt cache, the machine load and the API latency differ from the v2 day; nothing corrects time. If the Claude Code version differs from the v2 one (`2.1.317`), the report says so.

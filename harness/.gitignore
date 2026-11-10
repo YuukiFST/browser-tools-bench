@@ -11,5 +11,6 @@ pw-session.txt
 pw-out/
 pw-server.log
 agents-v2/
+agents-v*/
 shot.png
 .playwright-mcp/

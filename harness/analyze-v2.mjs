@@ -6,8 +6,8 @@ import path from "node:path";
 
 const DIR = process.argv[2] ?? "../results/v2";
 const load = (f) => { const p = path.join(DIR, f); return fs.existsSync(p) ? fs.readFileSync(p, "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l)) : []; };
-const TOOLS = ["ab", "axi", "surf", "bh", "pw"];
-const NAME = { ab: "agent-browser", axi: "chrome-devtools-axi", surf: "surf-cli", bh: "browser-harness", pw: "playwright-mcp" };
+const TOOLS = ["ab", "axi", "surf", "bh", "pw", "bx"];
+const NAME = { ab: "agent-browser", axi: "chrome-devtools-axi", surf: "surf-cli", bh: "browser-harness", pw: "playwright-mcp", bx: "bx" };
 const TASK_EN = { busca: "search", leitura: "read", print: "screenshot", varredura: "sweep" };
 const RESAMPLES = 10_000;
 const SEED = 20261110;

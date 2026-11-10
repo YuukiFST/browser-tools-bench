@@ -3,8 +3,10 @@
 #   bash agents.sh <first-block> <last-block> [tools...]   agent runs
 #   bash agents.sh baseline <runs>                          one-turn prompt, no browser task, same flags
 #   bash agents.sh pilot [tools...]                         one block (block 0) to $RESULTS/pilot.jsonl, not ranked
-# Env: RESULTS (default ../results/v2), CAP_USD (default 25), MODEL (default claude-sonnet-5-5).
-# Writes raw transcripts to agents-v2/ (git-ignored: they hold client data) and one row per run to $RESULTS/agents.jsonl.
+# Env: RESULTS (default ../results/v2), CAP_USD (default 25), MODEL (default claude-sonnet-5-5),
+#      RAW (default agents-v2): directory of the raw transcripts and, when it is not the default, of the screenshots too,
+#      so a later data set does not overwrite the transcripts and screenshots of v2.
+# Writes raw transcripts to $RAW/ (git-ignored: they hold client data) and one row per run to $RESULTS/agents.jsonl.
 set -u
 cd "$(dirname "$0")"
 . ./lib.sh
@@ -13,8 +15,10 @@ QUERY="${BENCH_QUERY:?set BENCH_QUERY}"
 RESULTS="${RESULTS:-../results/v2}"
 CAP_USD="${CAP_USD:-25}"
 MODEL="${MODEL:-claude-sonnet-5-5}"
+RAW="${RAW:-agents-v2}"
+PNG_PREFIX=""; [ "$RAW" = agents-v2 ] || PNG_PREFIX="$RAW/"
 RUN_TIMEOUT_S=900
-mkdir -p agents-v2 "$RESULTS"
+mkdir -p "$RAW" "$RESULTS"
 EMPTY='{"mcpServers":{}}'
 PWCFG='{"mcpServers":{"playwright":{"command":"playwright-mcp","args":["--cdp-endpoint","'$CDP_URL'"]}}}'
 DOCS_W=$(cygpath -w "$PWD/agent-docs")
@@ -63,7 +67,7 @@ mean_agent_cost() { node -e 'const fs=require("fs");const f=process.argv[1];cons
 
 # one claude run; $1 kind (agent|baseline) $2 tool $3 block $4 pos $5 prompt $6 png $7 out file
 run_one() {
-  local kind=$1 tool=$2 block=$3 pos=$4 prompt=$5 png=$6 out=$7 raw="agents-v2/$1-$3-$2.jsonl" ts t0 t1 rc
+  local kind=$1 tool=$2 block=$3 pos=$4 prompt=$5 png=$6 out=$7 raw="$RAW/$1-$3-$2.jsonl" ts t0 t1 rc
   node cdp.mjs reset >/dev/null; stop_all_tools; rm -f "$png"
   ts=$(iso_now); t0=$(date +%s%N)
   # --setting-sources "": no user/project/local settings, so no user hooks, plugins or permissions.
@@ -82,7 +86,7 @@ run_one() {
 if [ "$1" = baseline ]; then
   MCP="$EMPTY"; ALLOWED=(Bash Read); BUILTIN=Bash,Read; DOCS=0
   for n in $(seq 1 "$2"); do
-    run_one baseline none 0 "$n" "Reply with the single word OK. Do not use any tool." "baseline-$n.png" "$RESULTS/baseline.jsonl"
+    run_one baseline none 0 "$n" "Reply with the single word OK. Do not use any tool." "${PNG_PREFIX}baseline-$n.png" "$RESULTS/baseline.jsonl"
   done
   exit 0
 fi
@@ -101,7 +105,7 @@ for block in $(seq "$FIRST" "$LAST"); do
   pos=0
   for tool in $order; do
     pos=$((pos + 1)); tool_setup "$tool" "$block"
-    png="agent-$tool-$block.png"
+    png="${PNG_PREFIX}agent-$tool-$block.png"
     run_one "$KIND" "$tool" "$block" "$pos" "$(task_prompt "$USAGE" "$png")" "$png" "$OUT_FILE"
   done
 done
