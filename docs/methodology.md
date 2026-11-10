@@ -155,7 +155,50 @@ In axi run 1, the agent reported that `resize 390 844` returned 500x844, yet the
     - `latency.sh`, `coverage.sh` and the agent prompt ignore `BENCH_APP`.
     - Some comments and usage text are stale.
 
-## 13. What is not published and why
+## 13. Version 2 harness (2026-11-10)
+
+The v1 data above stays as it was published, in `results/`.
+The v2 harness writes to `results/v2/` and fixes the defects an independent review found (F1 to F14).
+The ranking rule of v2 was written before any paid run: `docs/ranking-rule.md`.
+
+### Failure definition
+
+A check failed, or the output was under 50% of the tool's own median.
+
+- **Agent run:** failed when `claude -p` returned no valid result, when the reply is not the requested JSON, when any of the 7 registrations or units differs from the ground truth, when there is an extra registration, or when the screenshot is not 390 or 780 px wide.
+- **Battery task:** failed when its check fails (login URL, exact search `diff`, PNG width, console marker, exact `h1` per route).
+  The read task also fails when its output has fewer than half the characters of the median of 3 warm-up reads by the same tool.
+  This catches a read of a page that had not rendered yet, which v1 scored as a success for bh (read iteration 2) and counted as a silent failure for axi.
+- **Latency:** a trivial call counts only if it printed the evaluated `1`; failed calls are counted, not timed.
+
+Failures come only from these checks, run on every row; v1 counted silent failures from what surfaced during development.
+
+### Same conditions for every tool
+
+- **Agent isolation:** `claude -p --model claude-sonnet-5-5 --setting-sources "" --disable-slash-commands --strict-mcp-config --tools <list>`.
+  `--setting-sources ""` loads no user, project or local settings, so no user hooks, plugins, permissions or skills reach the agent.
+  `--safe-mode` was tested and not used: it also drops the `--mcp-config` server, so playwright-mcp had no tools (`mcp_servers: []` in the init event).
+  The one user mod that still loads, `quiet-tools`, only changes the terminal display; its source says the model context is untouched.
+  Each row records the init event's MCP servers, tool count, skill count and plugin count.
+- **Docs:** each agent reads a copy of its tool's docs in `harness/agent-docs/`, not the live skill directory; the size of each copy, in characters, is on every row (`docs_chars`).
+  The chrome-devtools-axi copy is the skill file installed on this machine, which tells the reader to use browser-harness for browsing; it is copied as the agent saw it.
+- **Dedicated browser:** the v2 Chrome listens on port 9444, not 9333.
+  During setup, another agent session on the same machine opened a tab of an unrelated local site in the 9333 Chrome, and every `cdp.mjs reset` closed that session's tabs; a separate port keeps the two apart.
+  The battery stops every tool process before each tool's turn, so no tool keeps a session or a background tab for the next one.
+- **browser-harness tab:** when its daemon starts, browser-harness attaches to a new tab of its own in the background, not to the active tab that `reset` leaves (its skill: "attach ... without changing Chrome's visible tab").
+  On this app, typing into that hidden tab lost the values between calls, and the battery login failed twice in smoke tests.
+  The battery and coverage scripts therefore call `activate_tab(current_tab())` in their untimed setup, as v1 did, so every tool works in a visible tab there.
+  The agent runs do not: the agent gets browser-harness as shipped, and its skill says when to activate the tab.
+  This is a known difference between the two phases, kept on purpose: the agent phase measures the tool as an agent meets it.
+- **Cold start:** every tool process is stopped before each agent run, so the wall time of every tool includes its start-up (v1 timed playwright-mcp cold and the CLI daemons warm).
+- **Pinning:** the model id is pinned, chrome-devtools-axi runs a fixed local `chrome-devtools-mcp` 1.12.0 through `CHROME_DEVTOOLS_AXI_MCP_PATH` instead of `@latest`, and every row records an ISO timestamp, the Claude Code version and the tool version.
+- **Order:** agent runs go in blocks, each a random permutation of the 5 tools; the battery rotates the tool order by one per iteration.
+- **Waits in the battery:** one rule per task for every tool: after the login submit, poll until the URL contains `/dashboard`; after the search click, wait for the text "Cód. empresa"; after every other navigation, wait until `main h1` exists.
+- **Output size:** raw character counts, labeled characters. "Tokens" is used only for the `usage` fields that `claude` reports.
+- **Latency:** the trivial call is one browser round trip that evaluates `1`, for every tool. surf has no command that stops its native host (`surf --help-full`), so its cold start row is a new session on a running host, labeled "new session".
+- **Coverage:** 3 readings per route and tool, all kept; playwright-mcp is read by `coverage.sh` like the others; the browser-harness accessibility row is labeled "custom snippet", next to its `innerText` row.
+
+## 14. What is not published and why
 
 - Credentials (`creds.sh`), ground-truth files, `readings/`, screenshots, raw agent transcripts and logs. They contain client data: company names, property registrations and financial values.
 - In the published JSONL the search term is replaced with `<QUERY>`.
