@@ -1,0 +1,30 @@
+{"tool":"ab","iter":1,"ts":"2026-11-10T16:42:58Z","tool_version":"agent-browser 0.41.2","cold_kind":"process stopped","cold_ms":2502,"trivial_ms":214,"trivial_ok":true}
+{"tool":"ab","iter":2,"ts":"2026-11-10T16:43:00Z","tool_version":"agent-browser 0.41.2","cold_kind":"process stopped","cold_ms":1522,"trivial_ms":296,"trivial_ok":true}
+{"tool":"ab","iter":3,"ts":"2026-11-10T16:43:03Z","tool_version":"agent-browser 0.41.2","cold_kind":"process stopped","cold_ms":2072,"trivial_ms":222,"trivial_ok":true}
+{"tool":"ab","iter":4,"ts":"2026-11-10T16:43:05Z","tool_version":"agent-browser 0.41.2","cold_kind":"process stopped","cold_ms":1603,"trivial_ms":235,"trivial_ok":true}
+{"tool":"ab","iter":5,"ts":"2026-11-10T16:43:08Z","tool_version":"agent-browser 0.41.2","cold_kind":"process stopped","cold_ms":1577,"trivial_ms":235,"trivial_ok":true}
+{"tool":"ab","ts":"2026-11-10T16:43:13Z","warm_calls":20,"warm_failed":0}
+{"tool":"axi","iter":1,"ts":"2026-11-10T16:43:18Z","tool_version":"0.1.46 mcp=1.12.0","cold_kind":"process stopped","cold_ms":3661,"trivial_ms":503,"trivial_ok":true}
+{"tool":"axi","iter":2,"ts":"2026-11-10T16:43:23Z","tool_version":"0.1.46 mcp=1.12.0","cold_kind":"process stopped","cold_ms":3092,"trivial_ms":523,"trivial_ok":true}
+{"tool":"axi","iter":3,"ts":"2026-11-10T16:43:28Z","tool_version":"0.1.46 mcp=1.12.0","cold_kind":"process stopped","cold_ms":3738,"trivial_ms":600,"trivial_ok":true}
+{"tool":"axi","iter":4,"ts":"2026-11-10T16:43:33Z","tool_version":"0.1.46 mcp=1.12.0","cold_kind":"process stopped","cold_ms":3542,"trivial_ms":498,"trivial_ok":true}
+{"tool":"axi","iter":5,"ts":"2026-11-10T16:43:37Z","tool_version":"0.1.46 mcp=1.12.0","cold_kind":"process stopped","cold_ms":3115,"trivial_ms":595,"trivial_ok":true}
+{"tool":"axi","ts":"2026-11-10T16:43:48Z","warm_calls":20,"warm_failed":0}
+{"tool":"surf","iter":1,"ts":"2026-11-10T16:43:51Z","tool_version":"surf version 2.26.0","cold_kind":"new session","cold_ms":534,"trivial_ms":424,"trivial_ok":true}
+{"tool":"surf","iter":2,"ts":"2026-11-10T16:43:53Z","tool_version":"surf version 2.26.0","cold_kind":"new session","cold_ms":531,"trivial_ms":300,"trivial_ok":true}
+{"tool":"surf","iter":3,"ts":"2026-11-10T16:43:55Z","tool_version":"surf version 2.26.0","cold_kind":"new session","cold_ms":558,"trivial_ms":325,"trivial_ok":true}
+{"tool":"surf","iter":4,"ts":"2026-11-10T16:43:57Z","tool_version":"surf version 2.26.0","cold_kind":"new session","cold_ms":607,"trivial_ms":353,"trivial_ok":true}
+{"tool":"surf","iter":5,"ts":"2026-11-10T16:43:59Z","tool_version":"surf version 2.26.0","cold_kind":"new session","cold_ms":507,"trivial_ms":374,"trivial_ok":true}
+{"tool":"surf","ts":"2026-11-10T16:44:05Z","warm_calls":20,"warm_failed":0}
+{"tool":"bh","iter":1,"ts":"2026-11-10T16:44:08Z","tool_version":"0.1.13","cold_kind":"process stopped","cold_ms":1650,"trivial_ms":406,"trivial_ok":true}
+{"tool":"bh","iter":2,"ts":"2026-11-10T16:44:11Z","tool_version":"0.1.13","cold_kind":"process stopped","cold_ms":1717,"trivial_ms":392,"trivial_ok":true}
+{"tool":"bh","iter":3,"ts":"2026-11-10T16:44:14Z","tool_version":"0.1.13","cold_kind":"process stopped","cold_ms":1631,"trivial_ms":356,"trivial_ok":true}
+{"tool":"bh","iter":4,"ts":"2026-11-10T16:44:17Z","tool_version":"0.1.13","cold_kind":"process stopped","cold_ms":1674,"trivial_ms":391,"trivial_ok":true}
+{"tool":"bh","iter":5,"ts":"2026-11-10T16:44:20Z","tool_version":"0.1.13","cold_kind":"process stopped","cold_ms":1673,"trivial_ms":461,"trivial_ok":true}
+{"tool":"bh","ts":"2026-11-10T16:44:27Z","warm_calls":20,"warm_failed":0}
+{"tool":"pw","iter":1,"ts":"2026-11-10T16:44:31Z","tool_version":"Version 0.0.85","cold_kind":"process stopped","cold_ms":1250,"trivial_ms":1370,"trivial_ok":true}
+{"tool":"pw","iter":2,"ts":"2026-11-10T16:44:34Z","tool_version":"Version 0.0.85","cold_kind":"process stopped","cold_ms":1335,"trivial_ms":842,"trivial_ok":true}
+{"tool":"pw","iter":3,"ts":"2026-11-10T16:44:37Z","tool_version":"Version 0.0.85","cold_kind":"process stopped","cold_ms":1325,"trivial_ms":788,"trivial_ok":true}
+{"tool":"pw","iter":4,"ts":"2026-11-10T16:44:40Z","tool_version":"Version 0.0.85","cold_kind":"process stopped","cold_ms":1230,"trivial_ms":1358,"trivial_ok":true}
+{"tool":"pw","iter":5,"ts":"2026-11-10T16:44:43Z","tool_version":"Version 0.0.85","cold_kind":"process stopped","cold_ms":1256,"trivial_ms":1415,"trivial_ok":true}
+{"tool":"pw","ts":"2026-11-10T16:44:57Z","warm_calls":20,"warm_failed":0}

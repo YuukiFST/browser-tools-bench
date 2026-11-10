@@ -1,0 +1,175 @@
+{"tool":"ab","task":"login","iter":1,"pos":1,"ts":"2026-11-10T16:22:08Z","tool_version":"agent-browser 0.41.2","ms":2247,"cmds":6,"chars":297,"ok":true,"detail":""}
+{"tool":"ab","task":"search","iter":1,"pos":1,"ts":"2026-11-10T16:22:10Z","tool_version":"agent-browser 0.41.2","ms":2094,"cmds":6,"chars":13594,"ok":true,"detail":"7/7 found"}
+{"tool":"ab","task":"read","iter":1,"pos":1,"ts":"2026-11-10T16:22:12Z","tool_version":"agent-browser 0.41.2","ms":1438,"cmds":4,"chars":54042,"ok":true,"detail":"snapshot=33501 interactive=20489 floor=17016"}
+{"tool":"ab","task":"screenshot","iter":1,"pos":1,"ts":"2026-11-10T16:22:14Z","tool_version":"agent-browser 0.41.2","ms":1236,"cmds":3,"chars":141,"ok":true,"detail":""}
+{"tool":"ab","task":"console","iter":1,"pos":1,"ts":"2026-11-10T16:22:15Z","tool_version":"agent-browser 0.41.2","ms":725,"cmds":3,"chars":48,"ok":true,"detail":""}
+{"tool":"ab","task":"mobile","iter":1,"pos":1,"ts":"2026-11-10T16:22:16Z","tool_version":"agent-browser 0.41.2","ms":1587,"cmds":5,"chars":151,"ok":true,"detail":""}
+{"tool":"ab","task":"sweep","iter":1,"pos":1,"ts":"2026-11-10T16:22:17Z","tool_version":"agent-browser 0.41.2","ms":18342,"cmds":48,"chars":1152,"ok":true,"detail":"16/16"}
+{"tool":"axi","task":"login","iter":1,"pos":2,"ts":"2026-11-10T16:22:40Z","tool_version":"0.1.46 mcp=1.12.0","ms":6119,"cmds":4,"chars":18977,"ok":true,"detail":""}
+{"tool":"axi","task":"search","iter":1,"pos":2,"ts":"2026-11-10T16:22:46Z","tool_version":"0.1.46 mcp=1.12.0","ms":6207,"cmds":5,"chars":31481,"ok":true,"detail":"7/7 found"}
+{"tool":"axi","task":"read","iter":1,"pos":2,"ts":"2026-11-10T16:22:52Z","tool_version":"0.1.46 mcp=1.12.0","ms":3069,"cmds":3,"chars":33369,"ok":true,"detail":"snapshot=16607 interactive=16607 floor=8303"}
+{"tool":"axi","task":"screenshot","iter":1,"pos":2,"ts":"2026-11-10T16:22:55Z","tool_version":"0.1.46 mcp=1.12.0","ms":2556,"cmds":3,"chars":6810,"ok":true,"detail":""}
+{"tool":"axi","task":"console","iter":1,"pos":2,"ts":"2026-11-10T16:22:58Z","tool_version":"0.1.46 mcp=1.12.0","ms":916,"cmds":2,"chars":333,"ok":true,"detail":""}
+{"tool":"axi","task":"mobile","iter":1,"pos":2,"ts":"2026-11-10T16:22:59Z","tool_version":"0.1.46 mcp=1.12.0","ms":3910,"cmds":5,"chars":2075,"ok":true,"detail":""}
+{"tool":"axi","task":"sweep","iter":1,"pos":2,"ts":"2026-11-10T16:23:03Z","tool_version":"0.1.46 mcp=1.12.0","ms":39824,"cmds":32,"chars":149745,"ok":true,"detail":"16/16"}
+{"tool":"surf","task":"login","iter":1,"pos":3,"ts":"2026-11-10T16:23:46Z","tool_version":"surf version 2.26.0","ms":8337,"cmds":7,"chars":2993,"ok":true,"detail":""}
+{"tool":"surf","task":"search","iter":1,"pos":3,"ts":"2026-11-10T16:23:55Z","tool_version":"surf version 2.26.0","ms":6281,"cmds":7,"chars":9640,"ok":true,"detail":"7/7 found"}
+{"tool":"surf","task":"read","iter":1,"pos":3,"ts":"2026-11-10T16:24:01Z","tool_version":"surf version 2.26.0","ms":1858,"cmds":4,"chars":15400,"ok":true,"detail":"snapshot=7589 interactive=7589 floor=3795"}
+{"tool":"surf","task":"screenshot","iter":1,"pos":3,"ts":"2026-11-10T16:24:03Z","tool_version":"surf version 2.26.0","ms":1728,"cmds":3,"chars":430,"ok":true,"detail":""}
+{"tool":"surf","task":"console","iter":1,"pos":3,"ts":"2026-11-10T16:24:05Z","tool_version":"surf version 2.26.0","ms":879,"cmds":3,"chars":195,"ok":true,"detail":""}
+{"tool":"surf","task":"mobile","iter":1,"pos":3,"ts":"2026-11-10T16:24:06Z","tool_version":"surf version 2.26.0","ms":2292,"cmds":5,"chars":582,"ok":true,"detail":""}
+{"tool":"surf","task":"sweep","iter":1,"pos":3,"ts":"2026-11-10T16:24:08Z","tool_version":"surf version 2.26.0","ms":25544,"cmds":48,"chars":4719,"ok":true,"detail":"16/16"}
+{"tool":"bh","task":"login","iter":1,"pos":4,"ts":"2026-11-10T16:24:38Z","tool_version":"0.1.13","ms":3216,"cmds":3,"chars":31,"ok":true,"detail":""}
+{"tool":"bh","task":"search","iter":1,"pos":4,"ts":"2026-11-10T16:24:41Z","tool_version":"0.1.13","ms":18096,"cmds":3,"chars":11121,"ok":true,"detail":"7/7 found"}
+{"tool":"bh","task":"read","iter":1,"pos":4,"ts":"2026-11-10T16:24:59Z","tool_version":"0.1.13","ms":599,"cmds":1,"chars":2122,"ok":false,"detail":"snapshot=2122 interactive=2122 floor=18630"}
+{"tool":"bh","task":"screenshot","iter":1,"pos":4,"ts":"2026-11-10T16:25:00Z","tool_version":"0.1.13","ms":1058,"cmds":1,"chars":0,"ok":true,"detail":""}
+{"tool":"bh","task":"console","iter":1,"pos":4,"ts":"2026-11-10T16:25:02Z","tool_version":"0.1.13","ms":754,"cmds":1,"chars":350,"ok":true,"detail":""}
+{"tool":"bh","task":"mobile","iter":1,"pos":4,"ts":"2026-11-10T16:25:02Z","tool_version":"0.1.13","ms":1166,"cmds":1,"chars":0,"ok":true,"detail":""}
+{"tool":"bh","task":"sweep","iter":1,"pos":4,"ts":"2026-11-10T16:25:04Z","tool_version":"0.1.13","ms":16035,"cmds":16,"chars":223,"ok":true,"detail":"16/16"}
+{"tool":"pw","task":"login","iter":1,"pos":5,"ts":"2026-11-10T16:25:24Z","tool_version":"Version 0.0.85","ms":2998,"cmds":5,"chars":1660,"ok":true,"detail":""}
+{"tool":"pw","task":"search","iter":1,"pos":5,"ts":"2026-11-10T16:25:27Z","tool_version":"Version 0.0.85","ms":7839,"cmds":6,"chars":23238,"ok":true,"detail":"7/7 found"}
+{"tool":"pw","task":"read","iter":1,"pos":5,"ts":"2026-11-10T16:25:35Z","tool_version":"Version 0.0.85","ms":1570,"cmds":3,"chars":47616,"ok":true,"detail":"snapshot=47152 interactive=47152 floor=23989"}
+{"tool":"pw","task":"screenshot","iter":1,"pos":5,"ts":"2026-11-10T16:25:36Z","tool_version":"Version 0.0.85","ms":1444,"cmds":3,"chars":672,"ok":true,"detail":""}
+{"tool":"pw","task":"console","iter":1,"pos":5,"ts":"2026-11-10T16:25:38Z","tool_version":"Version 0.0.85","ms":824,"cmds":2,"chars":383,"ok":true,"detail":""}
+{"tool":"pw","task":"mobile","iter":1,"pos":5,"ts":"2026-11-10T16:25:39Z","tool_version":"Version 0.0.85","ms":1750,"cmds":5,"chars":849,"ok":true,"detail":""}
+{"tool":"pw","task":"sweep","iter":1,"pos":5,"ts":"2026-11-10T16:25:41Z","tool_version":"Version 0.0.85","ms":29030,"cmds":32,"chars":8162,"ok":true,"detail":"16/16"}
+{"tool":"axi","task":"login","iter":2,"pos":1,"ts":"2026-11-10T16:26:14Z","tool_version":"0.1.46 mcp=1.12.0","ms":6563,"cmds":4,"chars":18963,"ok":true,"detail":""}
+{"tool":"axi","task":"search","iter":2,"pos":1,"ts":"2026-11-10T16:26:20Z","tool_version":"0.1.46 mcp=1.12.0","ms":6114,"cmds":5,"chars":31481,"ok":true,"detail":"7/7 found"}
+{"tool":"axi","task":"read","iter":2,"pos":1,"ts":"2026-11-10T16:26:27Z","tool_version":"0.1.46 mcp=1.12.0","ms":3603,"cmds":3,"chars":33369,"ok":true,"detail":"snapshot=16607 interactive=16607 floor=8303"}
+{"tool":"axi","task":"screenshot","iter":2,"pos":1,"ts":"2026-11-10T16:26:30Z","tool_version":"0.1.46 mcp=1.12.0","ms":2452,"cmds":3,"chars":6810,"ok":true,"detail":""}
+{"tool":"axi","task":"console","iter":2,"pos":1,"ts":"2026-11-10T16:26:33Z","tool_version":"0.1.46 mcp=1.12.0","ms":802,"cmds":2,"chars":332,"ok":true,"detail":""}
+{"tool":"axi","task":"mobile","iter":2,"pos":1,"ts":"2026-11-10T16:26:34Z","tool_version":"0.1.46 mcp=1.12.0","ms":3942,"cmds":5,"chars":2075,"ok":true,"detail":""}
+{"tool":"axi","task":"sweep","iter":2,"pos":1,"ts":"2026-11-10T16:26:38Z","tool_version":"0.1.46 mcp=1.12.0","ms":40168,"cmds":32,"chars":149751,"ok":true,"detail":"16/16"}
+{"tool":"surf","task":"login","iter":2,"pos":2,"ts":"2026-11-10T16:27:21Z","tool_version":"surf version 2.26.0","ms":8059,"cmds":7,"chars":2992,"ok":true,"detail":""}
+{"tool":"surf","task":"search","iter":2,"pos":2,"ts":"2026-11-10T16:27:30Z","tool_version":"surf version 2.26.0","ms":6403,"cmds":7,"chars":9640,"ok":true,"detail":"7/7 found"}
+{"tool":"surf","task":"read","iter":2,"pos":2,"ts":"2026-11-10T16:27:36Z","tool_version":"surf version 2.26.0","ms":1964,"cmds":4,"chars":15399,"ok":true,"detail":"snapshot=7589 interactive=7589 floor=3795"}
+{"tool":"surf","task":"screenshot","iter":2,"pos":2,"ts":"2026-11-10T16:27:38Z","tool_version":"surf version 2.26.0","ms":1778,"cmds":3,"chars":430,"ok":true,"detail":""}
+{"tool":"surf","task":"console","iter":2,"pos":2,"ts":"2026-11-10T16:27:40Z","tool_version":"surf version 2.26.0","ms":834,"cmds":3,"chars":195,"ok":true,"detail":""}
+{"tool":"surf","task":"mobile","iter":2,"pos":2,"ts":"2026-11-10T16:27:41Z","tool_version":"surf version 2.26.0","ms":2385,"cmds":5,"chars":582,"ok":true,"detail":""}
+{"tool":"surf","task":"sweep","iter":2,"pos":2,"ts":"2026-11-10T16:27:43Z","tool_version":"surf version 2.26.0","ms":25203,"cmds":48,"chars":4719,"ok":true,"detail":"16/16"}
+{"tool":"bh","task":"login","iter":2,"pos":3,"ts":"2026-11-10T16:28:13Z","tool_version":"0.1.13","ms":3507,"cmds":3,"chars":31,"ok":true,"detail":""}
+{"tool":"bh","task":"search","iter":2,"pos":3,"ts":"2026-11-10T16:28:16Z","tool_version":"0.1.13","ms":18332,"cmds":3,"chars":11121,"ok":true,"detail":"7/7 found"}
+{"tool":"bh","task":"read","iter":2,"pos":3,"ts":"2026-11-10T16:28:35Z","tool_version":"0.1.13","ms":612,"cmds":1,"chars":2122,"ok":false,"detail":"snapshot=2122 interactive=2122 floor=18630"}
+{"tool":"bh","task":"screenshot","iter":2,"pos":3,"ts":"2026-11-10T16:28:36Z","tool_version":"0.1.13","ms":947,"cmds":1,"chars":0,"ok":true,"detail":""}
+{"tool":"bh","task":"console","iter":2,"pos":3,"ts":"2026-11-10T16:28:37Z","tool_version":"0.1.13","ms":736,"cmds":1,"chars":350,"ok":true,"detail":""}
+{"tool":"bh","task":"mobile","iter":2,"pos":3,"ts":"2026-11-10T16:28:38Z","tool_version":"0.1.13","ms":1174,"cmds":1,"chars":0,"ok":true,"detail":""}
+{"tool":"bh","task":"sweep","iter":2,"pos":3,"ts":"2026-11-10T16:28:39Z","tool_version":"0.1.13","ms":15414,"cmds":16,"chars":223,"ok":true,"detail":"16/16"}
+{"tool":"pw","task":"login","iter":2,"pos":4,"ts":"2026-11-10T16:28:58Z","tool_version":"Version 0.0.85","ms":3120,"cmds":5,"chars":1660,"ok":true,"detail":""}
+{"tool":"pw","task":"search","iter":2,"pos":4,"ts":"2026-11-10T16:29:02Z","tool_version":"Version 0.0.85","ms":7768,"cmds":6,"chars":23238,"ok":true,"detail":"7/7 found"}
+{"tool":"pw","task":"read","iter":2,"pos":4,"ts":"2026-11-10T16:29:10Z","tool_version":"Version 0.0.85","ms":1440,"cmds":3,"chars":47616,"ok":true,"detail":"snapshot=47152 interactive=47152 floor=23989"}
+{"tool":"pw","task":"screenshot","iter":2,"pos":4,"ts":"2026-11-10T16:29:11Z","tool_version":"Version 0.0.85","ms":1532,"cmds":3,"chars":672,"ok":true,"detail":""}
+{"tool":"pw","task":"console","iter":2,"pos":4,"ts":"2026-11-10T16:29:13Z","tool_version":"Version 0.0.85","ms":852,"cmds":2,"chars":383,"ok":true,"detail":""}
+{"tool":"pw","task":"mobile","iter":2,"pos":4,"ts":"2026-11-10T16:29:14Z","tool_version":"Version 0.0.85","ms":1814,"cmds":5,"chars":849,"ok":true,"detail":""}
+{"tool":"pw","task":"sweep","iter":2,"pos":4,"ts":"2026-11-10T16:29:15Z","tool_version":"Version 0.0.85","ms":24250,"cmds":32,"chars":8162,"ok":true,"detail":"16/16"}
+{"tool":"ab","task":"login","iter":2,"pos":5,"ts":"2026-11-10T16:29:44Z","tool_version":"agent-browser 0.41.2","ms":2117,"cmds":6,"chars":297,"ok":true,"detail":""}
+{"tool":"ab","task":"search","iter":2,"pos":5,"ts":"2026-11-10T16:29:46Z","tool_version":"agent-browser 0.41.2","ms":2273,"cmds":6,"chars":13594,"ok":true,"detail":"7/7 found"}
+{"tool":"ab","task":"read","iter":2,"pos":5,"ts":"2026-11-10T16:29:48Z","tool_version":"agent-browser 0.41.2","ms":1389,"cmds":4,"chars":54042,"ok":true,"detail":"snapshot=33501 interactive=20489 floor=17016"}
+{"tool":"ab","task":"screenshot","iter":2,"pos":5,"ts":"2026-11-10T16:29:50Z","tool_version":"agent-browser 0.41.2","ms":1088,"cmds":3,"chars":141,"ok":true,"detail":""}
+{"tool":"ab","task":"console","iter":2,"pos":5,"ts":"2026-11-10T16:29:51Z","tool_version":"agent-browser 0.41.2","ms":733,"cmds":3,"chars":49,"ok":true,"detail":""}
+{"tool":"ab","task":"mobile","iter":2,"pos":5,"ts":"2026-11-10T16:29:52Z","tool_version":"agent-browser 0.41.2","ms":1797,"cmds":5,"chars":151,"ok":true,"detail":""}
+{"tool":"ab","task":"sweep","iter":2,"pos":5,"ts":"2026-11-10T16:29:54Z","tool_version":"agent-browser 0.41.2","ms":17985,"cmds":48,"chars":1152,"ok":true,"detail":"16/16"}
+{"tool":"surf","task":"login","iter":3,"pos":1,"ts":"2026-11-10T16:30:15Z","tool_version":"surf version 2.26.0","ms":7290,"cmds":7,"chars":2992,"ok":true,"detail":""}
+{"tool":"surf","task":"search","iter":3,"pos":1,"ts":"2026-11-10T16:30:23Z","tool_version":"surf version 2.26.0","ms":6432,"cmds":7,"chars":9640,"ok":true,"detail":"7/7 found"}
+{"tool":"surf","task":"read","iter":3,"pos":1,"ts":"2026-11-10T16:30:29Z","tool_version":"surf version 2.26.0","ms":1818,"cmds":4,"chars":15399,"ok":true,"detail":"snapshot=7589 interactive=7589 floor=3795"}
+{"tool":"surf","task":"screenshot","iter":3,"pos":1,"ts":"2026-11-10T16:30:31Z","tool_version":"surf version 2.26.0","ms":1719,"cmds":3,"chars":431,"ok":true,"detail":""}
+{"tool":"surf","task":"console","iter":3,"pos":1,"ts":"2026-11-10T16:30:33Z","tool_version":"surf version 2.26.0","ms":819,"cmds":3,"chars":195,"ok":true,"detail":""}
+{"tool":"surf","task":"mobile","iter":3,"pos":1,"ts":"2026-11-10T16:30:34Z","tool_version":"surf version 2.26.0","ms":2314,"cmds":5,"chars":583,"ok":true,"detail":""}
+{"tool":"surf","task":"sweep","iter":3,"pos":1,"ts":"2026-11-10T16:30:36Z","tool_version":"surf version 2.26.0","ms":25438,"cmds":48,"chars":4719,"ok":true,"detail":"16/16"}
+{"tool":"bh","task":"login","iter":3,"pos":2,"ts":"2026-11-10T16:31:06Z","tool_version":"0.1.13","ms":3029,"cmds":3,"chars":31,"ok":true,"detail":""}
+{"tool":"bh","task":"search","iter":3,"pos":2,"ts":"2026-11-10T16:31:09Z","tool_version":"0.1.13","ms":18358,"cmds":3,"chars":11121,"ok":true,"detail":"7/7 found"}
+{"tool":"bh","task":"read","iter":3,"pos":2,"ts":"2026-11-10T16:31:27Z","tool_version":"0.1.13","ms":987,"cmds":1,"chars":2122,"ok":false,"detail":"snapshot=2122 interactive=2122 floor=18630"}
+{"tool":"bh","task":"screenshot","iter":3,"pos":2,"ts":"2026-11-10T16:31:29Z","tool_version":"0.1.13","ms":1031,"cmds":1,"chars":0,"ok":true,"detail":""}
+{"tool":"bh","task":"console","iter":3,"pos":2,"ts":"2026-11-10T16:31:30Z","tool_version":"0.1.13","ms":769,"cmds":1,"chars":350,"ok":true,"detail":""}
+{"tool":"bh","task":"mobile","iter":3,"pos":2,"ts":"2026-11-10T16:31:31Z","tool_version":"0.1.13","ms":1171,"cmds":1,"chars":0,"ok":true,"detail":""}
+{"tool":"bh","task":"sweep","iter":3,"pos":2,"ts":"2026-11-10T16:31:32Z","tool_version":"0.1.13","ms":15462,"cmds":16,"chars":223,"ok":true,"detail":"16/16"}
+{"tool":"pw","task":"login","iter":3,"pos":3,"ts":"2026-11-10T16:31:51Z","tool_version":"Version 0.0.85","ms":7974,"cmds":5,"chars":1660,"ok":true,"detail":""}
+{"tool":"pw","task":"search","iter":3,"pos":3,"ts":"2026-11-10T16:31:59Z","tool_version":"Version 0.0.85","ms":4063,"cmds":6,"chars":22323,"ok":true,"detail":"7/7 found"}
+{"tool":"pw","task":"read","iter":3,"pos":3,"ts":"2026-11-10T16:32:04Z","tool_version":"Version 0.0.85","ms":19214,"cmds":3,"chars":4341,"ok":false,"detail":"snapshot=3946 interactive=3946 floor=23989"}
+{"tool":"pw","task":"screenshot","iter":3,"pos":3,"ts":"2026-11-10T16:32:23Z","tool_version":"Version 0.0.85","ms":7925,"cmds":3,"chars":672,"ok":true,"detail":""}
+{"tool":"pw","task":"console","iter":3,"pos":3,"ts":"2026-11-10T16:32:31Z","tool_version":"Version 0.0.85","ms":807,"cmds":2,"chars":383,"ok":true,"detail":""}
+{"tool":"pw","task":"mobile","iter":3,"pos":3,"ts":"2026-11-10T16:32:32Z","tool_version":"Version 0.0.85","ms":1804,"cmds":5,"chars":849,"ok":true,"detail":""}
+{"tool":"pw","task":"sweep","iter":3,"pos":3,"ts":"2026-11-10T16:32:34Z","tool_version":"Version 0.0.85","ms":28922,"cmds":32,"chars":8162,"ok":true,"detail":"16/16"}
+{"tool":"ab","task":"login","iter":3,"pos":4,"ts":"2026-11-10T16:33:07Z","tool_version":"agent-browser 0.41.2","ms":2161,"cmds":6,"chars":297,"ok":true,"detail":""}
+{"tool":"ab","task":"search","iter":3,"pos":4,"ts":"2026-11-10T16:33:09Z","tool_version":"agent-browser 0.41.2","ms":2044,"cmds":6,"chars":13594,"ok":true,"detail":"7/7 found"}
+{"tool":"ab","task":"read","iter":3,"pos":4,"ts":"2026-11-10T16:33:11Z","tool_version":"agent-browser 0.41.2","ms":1357,"cmds":4,"chars":54042,"ok":true,"detail":"snapshot=33501 interactive=20489 floor=17016"}
+{"tool":"ab","task":"screenshot","iter":3,"pos":4,"ts":"2026-11-10T16:33:13Z","tool_version":"agent-browser 0.41.2","ms":1075,"cmds":3,"chars":141,"ok":true,"detail":""}
+{"tool":"ab","task":"console","iter":3,"pos":4,"ts":"2026-11-10T16:33:14Z","tool_version":"agent-browser 0.41.2","ms":660,"cmds":3,"chars":48,"ok":true,"detail":""}
+{"tool":"ab","task":"mobile","iter":3,"pos":4,"ts":"2026-11-10T16:33:15Z","tool_version":"agent-browser 0.41.2","ms":1569,"cmds":5,"chars":151,"ok":true,"detail":""}
+{"tool":"ab","task":"sweep","iter":3,"pos":4,"ts":"2026-11-10T16:33:16Z","tool_version":"agent-browser 0.41.2","ms":17064,"cmds":48,"chars":1152,"ok":true,"detail":"16/16"}
+{"tool":"axi","task":"login","iter":3,"pos":5,"ts":"2026-11-10T16:33:37Z","tool_version":"0.1.46 mcp=1.12.0","ms":6169,"cmds":4,"chars":18963,"ok":true,"detail":""}
+{"tool":"axi","task":"search","iter":3,"pos":5,"ts":"2026-11-10T16:33:43Z","tool_version":"0.1.46 mcp=1.12.0","ms":5984,"cmds":5,"chars":31481,"ok":true,"detail":"7/7 found"}
+{"tool":"axi","task":"read","iter":3,"pos":5,"ts":"2026-11-10T16:33:50Z","tool_version":"0.1.46 mcp=1.12.0","ms":3058,"cmds":3,"chars":33369,"ok":true,"detail":"snapshot=16607 interactive=16607 floor=8303"}
+{"tool":"axi","task":"screenshot","iter":3,"pos":5,"ts":"2026-11-10T16:33:53Z","tool_version":"0.1.46 mcp=1.12.0","ms":2403,"cmds":3,"chars":6810,"ok":true,"detail":""}
+{"tool":"axi","task":"console","iter":3,"pos":5,"ts":"2026-11-10T16:33:55Z","tool_version":"0.1.46 mcp=1.12.0","ms":825,"cmds":2,"chars":333,"ok":true,"detail":""}
+{"tool":"axi","task":"mobile","iter":3,"pos":5,"ts":"2026-11-10T16:33:56Z","tool_version":"0.1.46 mcp=1.12.0","ms":3953,"cmds":5,"chars":2075,"ok":true,"detail":""}
+{"tool":"axi","task":"sweep","iter":3,"pos":5,"ts":"2026-11-10T16:34:00Z","tool_version":"0.1.46 mcp=1.12.0","ms":40901,"cmds":32,"chars":149922,"ok":true,"detail":"16/16"}
+{"tool":"bh","task":"login","iter":4,"pos":1,"ts":"2026-11-10T16:34:45Z","tool_version":"0.1.13","ms":3210,"cmds":3,"chars":31,"ok":true,"detail":""}
+{"tool":"bh","task":"search","iter":4,"pos":1,"ts":"2026-11-10T16:34:49Z","tool_version":"0.1.13","ms":18449,"cmds":3,"chars":11121,"ok":true,"detail":"7/7 found"}
+{"tool":"bh","task":"read","iter":4,"pos":1,"ts":"2026-11-10T16:35:07Z","tool_version":"0.1.13","ms":942,"cmds":1,"chars":2119,"ok":false,"detail":"snapshot=2119 interactive=2119 floor=18630"}
+{"tool":"bh","task":"screenshot","iter":4,"pos":1,"ts":"2026-11-10T16:35:08Z","tool_version":"0.1.13","ms":1015,"cmds":1,"chars":0,"ok":true,"detail":""}
+{"tool":"bh","task":"console","iter":4,"pos":1,"ts":"2026-11-10T16:35:09Z","tool_version":"0.1.13","ms":762,"cmds":1,"chars":349,"ok":true,"detail":""}
+{"tool":"bh","task":"mobile","iter":4,"pos":1,"ts":"2026-11-10T16:35:10Z","tool_version":"0.1.13","ms":1128,"cmds":1,"chars":0,"ok":true,"detail":""}
+{"tool":"bh","task":"sweep","iter":4,"pos":1,"ts":"2026-11-10T16:35:11Z","tool_version":"0.1.13","ms":15443,"cmds":16,"chars":223,"ok":true,"detail":"16/16"}
+{"tool":"pw","task":"login","iter":4,"pos":2,"ts":"2026-11-10T16:35:31Z","tool_version":"Version 0.0.85","ms":3159,"cmds":5,"chars":1660,"ok":true,"detail":""}
+{"tool":"pw","task":"search","iter":4,"pos":2,"ts":"2026-11-10T16:35:34Z","tool_version":"Version 0.0.85","ms":7782,"cmds":6,"chars":23238,"ok":true,"detail":"7/7 found"}
+{"tool":"pw","task":"read","iter":4,"pos":2,"ts":"2026-11-10T16:35:42Z","tool_version":"Version 0.0.85","ms":1471,"cmds":3,"chars":47616,"ok":true,"detail":"snapshot=47152 interactive=47152 floor=23989"}
+{"tool":"pw","task":"screenshot","iter":4,"pos":2,"ts":"2026-11-10T16:35:43Z","tool_version":"Version 0.0.85","ms":1509,"cmds":3,"chars":672,"ok":true,"detail":""}
+{"tool":"pw","task":"console","iter":4,"pos":2,"ts":"2026-11-10T16:35:45Z","tool_version":"Version 0.0.85","ms":824,"cmds":2,"chars":383,"ok":true,"detail":""}
+{"tool":"pw","task":"mobile","iter":4,"pos":2,"ts":"2026-11-10T16:35:46Z","tool_version":"Version 0.0.85","ms":1822,"cmds":5,"chars":849,"ok":true,"detail":""}
+{"tool":"pw","task":"sweep","iter":4,"pos":2,"ts":"2026-11-10T16:35:48Z","tool_version":"Version 0.0.85","ms":34637,"cmds":32,"chars":8162,"ok":true,"detail":"16/16"}
+{"tool":"ab","task":"login","iter":4,"pos":3,"ts":"2026-11-10T16:36:28Z","tool_version":"agent-browser 0.41.2","ms":2288,"cmds":6,"chars":297,"ok":true,"detail":""}
+{"tool":"ab","task":"search","iter":4,"pos":3,"ts":"2026-11-10T16:36:30Z","tool_version":"agent-browser 0.41.2","ms":2181,"cmds":6,"chars":13594,"ok":true,"detail":"7/7 found"}
+{"tool":"ab","task":"read","iter":4,"pos":3,"ts":"2026-11-10T16:36:32Z","tool_version":"agent-browser 0.41.2","ms":1577,"cmds":4,"chars":54042,"ok":true,"detail":"snapshot=33501 interactive=20489 floor=17016"}
+{"tool":"ab","task":"screenshot","iter":4,"pos":3,"ts":"2026-11-10T16:36:34Z","tool_version":"agent-browser 0.41.2","ms":1116,"cmds":3,"chars":141,"ok":true,"detail":""}
+{"tool":"ab","task":"console","iter":4,"pos":3,"ts":"2026-11-10T16:36:35Z","tool_version":"agent-browser 0.41.2","ms":682,"cmds":3,"chars":49,"ok":true,"detail":""}
+{"tool":"ab","task":"mobile","iter":4,"pos":3,"ts":"2026-11-10T16:36:36Z","tool_version":"agent-browser 0.41.2","ms":1684,"cmds":5,"chars":151,"ok":true,"detail":""}
+{"tool":"ab","task":"sweep","iter":4,"pos":3,"ts":"2026-11-10T16:36:38Z","tool_version":"agent-browser 0.41.2","ms":18054,"cmds":48,"chars":1152,"ok":true,"detail":"16/16"}
+{"tool":"axi","task":"login","iter":4,"pos":4,"ts":"2026-11-10T16:37:00Z","tool_version":"0.1.46 mcp=1.12.0","ms":6666,"cmds":4,"chars":18963,"ok":true,"detail":""}
+{"tool":"axi","task":"search","iter":4,"pos":4,"ts":"2026-11-10T16:37:07Z","tool_version":"0.1.46 mcp=1.12.0","ms":6020,"cmds":5,"chars":31481,"ok":true,"detail":"7/7 found"}
+{"tool":"axi","task":"read","iter":4,"pos":4,"ts":"2026-11-10T16:37:13Z","tool_version":"0.1.46 mcp=1.12.0","ms":3608,"cmds":3,"chars":33369,"ok":true,"detail":"snapshot=16607 interactive=16607 floor=8303"}
+{"tool":"axi","task":"screenshot","iter":4,"pos":4,"ts":"2026-11-10T16:37:17Z","tool_version":"0.1.46 mcp=1.12.0","ms":2377,"cmds":3,"chars":6810,"ok":true,"detail":""}
+{"tool":"axi","task":"console","iter":4,"pos":4,"ts":"2026-11-10T16:37:19Z","tool_version":"0.1.46 mcp=1.12.0","ms":943,"cmds":2,"chars":333,"ok":true,"detail":""}
+{"tool":"axi","task":"mobile","iter":4,"pos":4,"ts":"2026-11-10T16:37:20Z","tool_version":"0.1.46 mcp=1.12.0","ms":3724,"cmds":5,"chars":2075,"ok":true,"detail":""}
+{"tool":"axi","task":"sweep","iter":4,"pos":4,"ts":"2026-11-10T16:37:24Z","tool_version":"0.1.46 mcp=1.12.0","ms":40503,"cmds":32,"chars":149697,"ok":true,"detail":"16/16"}
+{"tool":"surf","task":"login","iter":4,"pos":5,"ts":"2026-11-10T16:38:08Z","tool_version":"surf version 2.26.0","ms":7815,"cmds":7,"chars":2992,"ok":true,"detail":""}
+{"tool":"surf","task":"search","iter":4,"pos":5,"ts":"2026-11-10T16:38:16Z","tool_version":"surf version 2.26.0","ms":6257,"cmds":7,"chars":9640,"ok":true,"detail":"7/7 found"}
+{"tool":"surf","task":"read","iter":4,"pos":5,"ts":"2026-11-10T16:38:22Z","tool_version":"surf version 2.26.0","ms":1805,"cmds":4,"chars":15399,"ok":true,"detail":"snapshot=7589 interactive=7589 floor=3795"}
+{"tool":"surf","task":"screenshot","iter":4,"pos":5,"ts":"2026-11-10T16:38:24Z","tool_version":"surf version 2.26.0","ms":1743,"cmds":3,"chars":431,"ok":true,"detail":""}
+{"tool":"surf","task":"console","iter":4,"pos":5,"ts":"2026-11-10T16:38:26Z","tool_version":"surf version 2.26.0","ms":799,"cmds":3,"chars":195,"ok":true,"detail":""}
+{"tool":"surf","task":"mobile","iter":4,"pos":5,"ts":"2026-11-10T16:38:27Z","tool_version":"surf version 2.26.0","ms":2316,"cmds":5,"chars":582,"ok":true,"detail":""}
+{"tool":"surf","task":"sweep","iter":4,"pos":5,"ts":"2026-11-10T16:38:29Z","tool_version":"surf version 2.26.0","ms":25218,"cmds":48,"chars":4718,"ok":true,"detail":"16/16"}
+{"tool":"pw","task":"login","iter":5,"pos":1,"ts":"2026-11-10T16:38:58Z","tool_version":"Version 0.0.85","ms":3182,"cmds":5,"chars":1660,"ok":true,"detail":""}
+{"tool":"pw","task":"search","iter":5,"pos":1,"ts":"2026-11-10T16:39:02Z","tool_version":"Version 0.0.85","ms":7779,"cmds":6,"chars":23238,"ok":true,"detail":"7/7 found"}
+{"tool":"pw","task":"read","iter":5,"pos":1,"ts":"2026-11-10T16:39:10Z","tool_version":"Version 0.0.85","ms":1557,"cmds":3,"chars":47615,"ok":true,"detail":"snapshot=47151 interactive=47151 floor=23989"}
+{"tool":"pw","task":"screenshot","iter":5,"pos":1,"ts":"2026-11-10T16:39:11Z","tool_version":"Version 0.0.85","ms":1524,"cmds":3,"chars":672,"ok":true,"detail":""}
+{"tool":"pw","task":"console","iter":5,"pos":1,"ts":"2026-11-10T16:39:13Z","tool_version":"Version 0.0.85","ms":825,"cmds":2,"chars":381,"ok":true,"detail":""}
+{"tool":"pw","task":"mobile","iter":5,"pos":1,"ts":"2026-11-10T16:39:14Z","tool_version":"Version 0.0.85","ms":1772,"cmds":5,"chars":849,"ok":true,"detail":""}
+{"tool":"pw","task":"sweep","iter":5,"pos":1,"ts":"2026-11-10T16:39:16Z","tool_version":"Version 0.0.85","ms":23736,"cmds":32,"chars":8162,"ok":true,"detail":"16/16"}
+{"tool":"ab","task":"login","iter":5,"pos":2,"ts":"2026-11-10T16:39:44Z","tool_version":"agent-browser 0.41.2","ms":2097,"cmds":6,"chars":297,"ok":true,"detail":""}
+{"tool":"ab","task":"search","iter":5,"pos":2,"ts":"2026-11-10T16:39:46Z","tool_version":"agent-browser 0.41.2","ms":2091,"cmds":6,"chars":13594,"ok":true,"detail":"7/7 found"}
+{"tool":"ab","task":"read","iter":5,"pos":2,"ts":"2026-11-10T16:39:48Z","tool_version":"agent-browser 0.41.2","ms":1458,"cmds":4,"chars":54042,"ok":true,"detail":"snapshot=33501 interactive=20489 floor=17016"}
+{"tool":"ab","task":"screenshot","iter":5,"pos":2,"ts":"2026-11-10T16:39:50Z","tool_version":"agent-browser 0.41.2","ms":1071,"cmds":3,"chars":141,"ok":true,"detail":""}
+{"tool":"ab","task":"console","iter":5,"pos":2,"ts":"2026-11-10T16:39:51Z","tool_version":"agent-browser 0.41.2","ms":695,"cmds":3,"chars":49,"ok":true,"detail":""}
+{"tool":"ab","task":"mobile","iter":5,"pos":2,"ts":"2026-11-10T16:39:52Z","tool_version":"agent-browser 0.41.2","ms":1786,"cmds":5,"chars":151,"ok":true,"detail":""}
+{"tool":"ab","task":"sweep","iter":5,"pos":2,"ts":"2026-11-10T16:39:53Z","tool_version":"agent-browser 0.41.2","ms":17942,"cmds":48,"chars":1152,"ok":true,"detail":"16/16"}
+{"tool":"axi","task":"login","iter":5,"pos":3,"ts":"2026-11-10T16:40:15Z","tool_version":"0.1.46 mcp=1.12.0","ms":6361,"cmds":4,"chars":18963,"ok":true,"detail":""}
+{"tool":"axi","task":"search","iter":5,"pos":3,"ts":"2026-11-10T16:40:22Z","tool_version":"0.1.46 mcp=1.12.0","ms":6057,"cmds":5,"chars":31481,"ok":true,"detail":"7/7 found"}
+{"tool":"axi","task":"read","iter":5,"pos":3,"ts":"2026-11-10T16:40:28Z","tool_version":"0.1.46 mcp=1.12.0","ms":3157,"cmds":3,"chars":33369,"ok":true,"detail":"snapshot=16607 interactive=16607 floor=8303"}
+{"tool":"axi","task":"screenshot","iter":5,"pos":3,"ts":"2026-11-10T16:40:31Z","tool_version":"0.1.46 mcp=1.12.0","ms":2399,"cmds":3,"chars":6810,"ok":true,"detail":""}
+{"tool":"axi","task":"console","iter":5,"pos":3,"ts":"2026-11-10T16:40:34Z","tool_version":"0.1.46 mcp=1.12.0","ms":795,"cmds":2,"chars":333,"ok":true,"detail":""}
+{"tool":"axi","task":"mobile","iter":5,"pos":3,"ts":"2026-11-10T16:40:34Z","tool_version":"0.1.46 mcp=1.12.0","ms":3780,"cmds":5,"chars":2075,"ok":true,"detail":""}
+{"tool":"axi","task":"sweep","iter":5,"pos":3,"ts":"2026-11-10T16:40:38Z","tool_version":"0.1.46 mcp=1.12.0","ms":39644,"cmds":32,"chars":149697,"ok":true,"detail":"16/16"}
+{"tool":"surf","task":"login","iter":5,"pos":4,"ts":"2026-11-10T16:41:22Z","tool_version":"surf version 2.26.0","ms":7993,"cmds":7,"chars":2992,"ok":true,"detail":""}
+{"tool":"surf","task":"search","iter":5,"pos":4,"ts":"2026-11-10T16:41:30Z","tool_version":"surf version 2.26.0","ms":6243,"cmds":7,"chars":9640,"ok":true,"detail":"7/7 found"}
+{"tool":"surf","task":"read","iter":5,"pos":4,"ts":"2026-11-10T16:41:36Z","tool_version":"surf version 2.26.0","ms":1843,"cmds":4,"chars":15399,"ok":true,"detail":"snapshot=7589 interactive=7589 floor=3795"}
+{"tool":"surf","task":"screenshot","iter":5,"pos":4,"ts":"2026-11-10T16:41:38Z","tool_version":"surf version 2.26.0","ms":1791,"cmds":3,"chars":431,"ok":true,"detail":""}
+{"tool":"surf","task":"console","iter":5,"pos":4,"ts":"2026-11-10T16:41:40Z","tool_version":"surf version 2.26.0","ms":785,"cmds":3,"chars":195,"ok":true,"detail":""}
+{"tool":"surf","task":"mobile","iter":5,"pos":4,"ts":"2026-11-10T16:41:41Z","tool_version":"surf version 2.26.0","ms":2438,"cmds":5,"chars":582,"ok":true,"detail":""}
+{"tool":"surf","task":"sweep","iter":5,"pos":4,"ts":"2026-11-10T16:41:43Z","tool_version":"surf version 2.26.0","ms":25608,"cmds":48,"chars":4719,"ok":true,"detail":"16/16"}
+{"tool":"bh","task":"login","iter":5,"pos":5,"ts":"2026-11-10T16:42:13Z","tool_version":"0.1.13","ms":2958,"cmds":3,"chars":31,"ok":true,"detail":""}
+{"tool":"bh","task":"search","iter":5,"pos":5,"ts":"2026-11-10T16:42:16Z","tool_version":"0.1.13","ms":18627,"cmds":3,"chars":11093,"ok":true,"detail":"7/7 found"}
+{"tool":"bh","task":"read","iter":5,"pos":5,"ts":"2026-11-10T16:42:35Z","tool_version":"0.1.13","ms":756,"cmds":1,"chars":2122,"ok":false,"detail":"snapshot=2122 interactive=2122 floor=18630"}
+{"tool":"bh","task":"screenshot","iter":5,"pos":5,"ts":"2026-11-10T16:42:36Z","tool_version":"0.1.13","ms":1071,"cmds":1,"chars":0,"ok":true,"detail":""}
+{"tool":"bh","task":"console","iter":5,"pos":5,"ts":"2026-11-10T16:42:37Z","tool_version":"0.1.13","ms":771,"cmds":1,"chars":350,"ok":true,"detail":""}
+{"tool":"bh","task":"mobile","iter":5,"pos":5,"ts":"2026-11-10T16:42:38Z","tool_version":"0.1.13","ms":1164,"cmds":1,"chars":0,"ok":true,"detail":""}
+{"tool":"bh","task":"sweep","iter":5,"pos":5,"ts":"2026-11-10T16:42:39Z","tool_version":"0.1.13","ms":15173,"cmds":16,"chars":223,"ok":true,"detail":"16/16"}

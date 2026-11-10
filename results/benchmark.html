@@ -47,7 +47,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  col.rotulo { width: 27%; }
+  col.rotulo { width: 22%; }
   thead th { font-weight: 600; font-size: 1.08em; padding-top: 0.6em; padding-bottom: 0.6em; }
   thead th small { margin-left: 0.4em; font-weight: 400; font-size: 0.75em; color: var(--cinza); }
   td.rotulo b { font-weight: 600; }
@@ -63,156 +63,140 @@
 </head>
 <body>
 <h1>Browser tools for AI agents</h1>
-<p class="sub">Columns from best to worst · bold = best value · ↓ lower is better · ↑ higher is better</p>
+<p class="sub">Columns in rank order, =1st is a tie · bold = best value · ↓ lower is better · ↑ higher is better · ranked on the two primary rows · mean [95% interval] · battery, latency and reads are not ranked</p>
 
 <table>
   <colgroup><col class="rotulo"><col><col><col><col><col></colgroup>
   <thead>
     <tr>
       <th></th>
-      <th class="venc">surf-cli<small>1st</small></th>
-      <th>agent-browser<small>2nd</small></th>
-      <th>playwright-mcp<small>3rd</small></th>
-      <th>browser-harness<small>4th</small></th>
-      <th>chrome-devtools-axi<small>5th</small></th>
+      <th class="venc">playwright-mcp<small>=1st</small></th>
+      <th class="venc">surf-cli<small>=1st</small></th>
+      <th>agent-browser<small>3rd</small></th>
+      <th>chrome-devtools-axi<small>4th</small></th>
+      <th>browser-harness<small>5th</small></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="rotulo"><b>Success ↑</b><span>battery, 7 tasks × 5</span></td>
+      <td class="rotulo"><b>Agent turns ↓</b><span>primary</span></td>
+      <td class="venc">12.8 [12.6, 13.0]</td>
+      <td class="venc melhor">6.8 [6.6, 7.0]</td>
+      <td>7.5 [7.0, 8.1]</td>
+      <td>12.0 [11.5, 12.6]</td>
+      <td>17.5 [15.5, 19.7]</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Cost over baseline ↓</b><span>US$, primary</span></td>
+      <td class="venc melhor">0.061 [0.058, 0.064]</td>
+      <td class="venc">0.072 [0.071, 0.074]</td>
+      <td>0.098 [0.081, 0.113]</td>
+      <td>0.103 [0.101, 0.105]</td>
+      <td>0.134 [0.121, 0.148]</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Agent cost ↓</b><span>US$ per task, total</span></td>
+      <td class="venc melhor">0.073</td>
+      <td class="venc">0.084</td>
+      <td>0.109</td>
+      <td>0.114</td>
+      <td>0.145</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Agent time ↓</b><span>s, secondary, not ranked</span></td>
+      <td class="venc">30.5</td>
+      <td class="venc melhor">27.1</td>
+      <td>28.4</td>
+      <td>52.2</td>
+      <td>64.8</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Agent runs failed ↓</b><span>wrong answer</span></td>
+      <td class="venc melhor">0 / 30</td>
+      <td class="venc">3 / 30<i>unit cut short</i></td>
+      <td class="melhor">0 / 10</td>
+      <td class="melhor">0 / 10</td>
+      <td class="melhor">0 / 10</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Agent tokens ↓</b><span>input + cache, mean</span></td>
+      <td class="venc">156,081</td>
+      <td class="venc melhor">96,349</td>
+      <td>138,964</td>
+      <td>161,143</td>
+      <td>286,369</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Battery checks passed ↑</b><span>7 tasks × 5</span></td>
+      <td class="venc">34/35<i>1 short read</i></td>
       <td class="venc melhor">35/35</td>
       <td class="melhor">35/35</td>
       <td class="melhor">35/35</td>
-      <td class="melhor">35/35</td>
-      <td>33/35</td>
+      <td>30/35<i>5 short reads</i></td>
     </tr>
     <tr>
-      <td class="rotulo"><b>Agent accuracy ↑</b><span>2 runs × 7</span></td>
-      <td class="venc melhor">14/14</td>
-      <td class="melhor">14/14</td>
-      <td class="melhor">14/14</td>
-      <td class="melhor">14/14</td>
-      <td class="melhor">14/14</td>
-    </tr>
-    <tr>
-      <td class="rotulo"><b>Silent failures ↓</b><span>wrong with no error</span></td>
-      <td class="venc melhor">0</td>
-      <td class="melhor">0</td>
-      <td class="melhor">0</td>
-      <td>1<i>background tab</i></td>
-      <td>2<i>fillform, snapshot</i></td>
-    </tr>
-    <tr>
-      <td class="rotulo"><b>Timeouts ↓</b><span>hangs</span></td>
-      <td class="venc melhor">0</td>
-      <td class="melhor">0</td>
-      <td class="melhor">0</td>
-      <td class="melhor">0</td>
-      <td>1<i>MCP -32001</i></td>
-    </tr>
-    <tr>
-      <td class="rotulo"><b>Agent cost ↓</b><span>US$ per task, Sonnet</span></td>
-      <td class="venc melhor">0.171</td>
-      <td>0.196</td>
-      <td>0.217</td>
-      <td>0.267</td>
-      <td>0.232</td>
-    </tr>
-    <tr>
-      <td class="rotulo"><b>Agent time ↓</b><span>full task</span></td>
-      <td class="venc melhor">42 s</td>
-      <td>50 s</td>
-      <td>56 s</td>
-      <td>113 s</td>
-      <td>83 s</td>
-    </tr>
-    <tr>
-      <td class="rotulo"><b>Agent turns ↓</b><span>model round trips</span></td>
-      <td class="venc melhor">6.5</td>
-      <td>8</td>
-      <td>13</td>
-      <td>20.5</td>
-      <td>13.5</td>
-    </tr>
-    <tr>
-      <td class="rotulo"><b>Agent tokens ↓</b><span>processed, incl. cache</span></td>
-      <td class="venc melhor">275k</td>
-      <td>335k</td>
-      <td>470k</td>
-      <td>853k</td>
-      <td>541k</td>
-    </tr>
-    <tr>
-      <td class="rotulo"><b>Battery tokens ↓</b><span>estimated, chars/4</span></td>
-      <td class="venc melhor">9,092</td>
-      <td>17,873</td>
-      <td>20,954</td>
-      <td>12,786</td>
-      <td>58,260</td>
-    </tr>
-    <tr>
-      <td class="rotulo"><b>Sweep tokens ↓</b><span>16 routes</span></td>
-      <td class="venc">1,207</td>
-      <td>308</td>
-      <td>2,021</td>
-      <td class="melhor">59</td>
-      <td>34,589</td>
-    </tr>
-    <tr>
-      <td class="rotulo"><b>Battery time ↓</b><span>7 tasks</span></td>
-      <td class="venc">63.3 s</td>
-      <td>33.7 s</td>
-      <td>49.8 s<i>≈ 34 s *</i></td>
-      <td class="melhor">29.5 s</td>
-      <td>96.4 s</td>
-    </tr>
-    <tr>
-      <td class="rotulo"><b>Simple command ↓</b><span>median / p90</span></td>
-      <td class="venc">272 / 324 ms</td>
-      <td class="melhor">233 / 263 ms</td>
-      <td>783 / 988 ms<i>**</i></td>
-      <td>354 / 725 ms</td>
-      <td>573 / 858 ms</td>
-    </tr>
-    <tr>
-      <td class="rotulo"><b>Cold start ↓</b><span>to first page</span></td>
-      <td class="venc melhor">0.8 s</td>
-      <td>2.3 s</td>
-      <td>7.4 s</td>
-      <td>2.2 s</td>
-      <td>6.3 s</td>
+      <td class="rotulo"><b>Battery time ↓</b><span>s, sum of task medians</span></td>
+      <td class="venc">45.6</td>
+      <td class="venc">46.4</td>
+      <td class="melhor">27.1</td>
+      <td>62.9</td>
+      <td>40.7</td>
     </tr>
     <tr>
       <td class="rotulo"><b>Battery calls ↓</b><span>tool calls</span></td>
-      <td class="venc">78</td>
-      <td>76</td>
-      <td>55</td>
+      <td class="venc">56</td>
+      <td class="venc">77</td>
+      <td>75</td>
+      <td>54</td>
       <td class="melhor">26</td>
-      <td>53</td>
     </tr>
     <tr>
-      <td class="rotulo"><b>Text captured ↑</b><span>dashboard</span></td>
-      <td class="venc">97.5%</td>
+      <td class="rotulo"><b>Battery output ↓</b><span>characters returned</span></td>
+      <td class="venc">82,580</td>
+      <td class="venc">33,958</td>
+      <td>69,426</td>
+      <td>242,776</td>
+      <td class="melhor">13,847</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Simple command ↓</b><span>warm, median</span></td>
+      <td class="venc">671 ms</td>
+      <td class="venc">267.5 ms</td>
+      <td class="melhor">239 ms</td>
+      <td>528 ms</td>
+      <td>363.5 ms</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Cold start ↓</b><span>to first page, median</span></td>
+      <td class="venc">1,256 ms</td>
+      <td class="venc melhor">534 ms<i>new session</i></td>
+      <td>1,603 ms</td>
+      <td>3,542 ms</td>
+      <td>1,673 ms</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Text captured ↑</b><span>dashboard, default read</span></td>
+      <td class="venc">96.1%</td>
+      <td class="venc melhor">97.5%</td>
       <td>95.3%</td>
-      <td class="melhor">98.3%</td>
-      <td>43.5%</td>
       <td>53.5%</td>
+      <td>43.5%<i>custom snippet</i></td>
     </tr>
     <tr>
-      <td class="rotulo"><b>Read tokens ↓</b><span>dashboard</span></td>
-      <td class="venc melhor">1,890</td>
-      <td>6,816</td>
-      <td>7,312</td>
-      <td>8,695</td>
-      <td>3,647</td>
+      <td class="rotulo"><b>Read size ↓</b><span>dashboard, characters</span></td>
+      <td class="venc">29,064</td>
+      <td class="venc melhor">7,581</td>
+      <td>27,529</td>
+      <td>14,589</td>
+      <td>35,688</td>
     </tr>
   </tbody>
 </table>
 
 <p class="rodape">
-  Internal Next.js app (municipal property tax) · shared Chrome for Testing 157 · 2026-11-09 and 10 · battery: 5 rounds, DB ground truth · agent: <code>claude -p</code> Sonnet, 2 runs, real cost. Method and limits: <code>docs/methodology.md</code>.<br>
-  * playwright-mcp measured on 11-10, when the agent-browser control rose from 33.7 to 49.0 s; ** includes ~150 ms of the HTTP client used from the shell.<br>
-  playwright-mcp puts ~5.3k schema tokens in context · surf-cli needs a manual extension and <code>semantic.*</code> sends text to third parties · chrome-devtools-axi downloads <code>chrome-devtools-mcp@latest</code>.
+  Internal Next.js app (municipal property tax) · one dedicated Chrome for Testing 157 · all v2 data from 2026-11-10 · agent: <code>claude -p</code> pinned to <code>claude-sonnet-5-5</code>, Claude Code 2.1.317, no user settings, hooks or skills, 10 blocks of all 5 tools in random order plus 20 more blocks of the two tools tied at rank 1, real cost.<br>
+  Ranking rule written before the paid runs (<code>docs/ranking-rule.md</code>): two tools tie unless the 95% bootstrap interval of their paired per-block difference excludes zero on a primary metric without pointing the other way. playwright-mcp is cheaper and surf-cli takes fewer turns, so they tie.<br>
+  Baseline (one-turn prompt, no browser task): US$ 0.012, 8% to 16% of a run. Numbers: <code>results/v2/analysis.md</code>, printed by <code>harness/analyze-v2.mjs</code>. v1 report: <code>results/benchmark-v1.html</code>. Method and limits: <code>docs/methodology.md</code>.
 </p>
 </body>
 </html>

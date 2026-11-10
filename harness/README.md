@@ -92,3 +92,7 @@ Run it with `MSYS_NO_PATHCONV=1` from Git Bash, or routes like `/dashboard` are 
 ### `pw.mjs <tool> ['<json args>'] | --list`
 
 Minimal MCP Streamable HTTP client so playwright-mcp can be called from the shell like the CLIs. Keeps the session id in `pw-session.txt`.
+
+### `redact-results.mjs [results-dir]`
+
+Replaces client data in the free-text `problems` field of `agents.jsonl` and `pilot.jsonl` before they are published. Run it with `BENCH_QUERY` set, from `harness/`.

@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Browser automation benchmark for AI agents</title>
+<style>
+  :root {
+    --fundo: #f8f7f3;
+    --tinta: #141413;
+    --cinza: #6b6a65;
+    --linha: #1f1e1d;
+    --verde: #bcd3cb;
+    --verde-borda: #5f9a87;
+    --bege: #e6e4dd;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    padding: 2vh 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--fundo);
+    color: var(--tinta);
+    font-family: "Styrene B", "Inter", "Segoe UI", system-ui, sans-serif;
+    font-size: clamp(11px, 1.5vh, 15px);
+  }
+  h1 {
+    margin: 0;
+    font-family: "Tiempos Headline", Georgia, "Times New Roman", serif;
+    font-weight: 500;
+    font-size: 2.3em;
+    letter-spacing: -0.02em;
+  }
+  .sub { margin: 0.3em 0 1em; color: var(--cinza); }
+  table { width: min(1180px, 100%); border-collapse: collapse; table-layout: fixed; }
+  th, td {
+    border: 1px solid var(--linha);
+    padding: 0.42em 0.8em;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  col.rotulo { width: 27%; }
+  thead th { font-weight: 600; font-size: 1.08em; padding-top: 0.6em; padding-bottom: 0.6em; }
+  thead th small { margin-left: 0.4em; font-weight: 400; font-size: 0.75em; color: var(--cinza); }
+  td.rotulo b { font-weight: 600; }
+  td.rotulo span { margin-left: 0.4em; color: var(--cinza); font-size: 0.88em; }
+  td i { margin-left: 0.35em; font-style: normal; font-weight: 400; color: var(--cinza); font-size: 0.82em; }
+  .melhor { font-weight: 700; background: var(--bege); }
+  .venc { border-left: 3px solid var(--verde-borda); border-right: 3px solid var(--verde-borda); }
+  thead .venc { border-top: 3px solid var(--verde-borda); }
+  tbody tr:last-child .venc { border-bottom: 3px solid var(--verde-borda); }
+  .venc.melhor { background: var(--verde); }
+  .rodape { margin: 0.9em 0 0; max-width: 1180px; text-align: center; color: var(--cinza); font-size: 0.85em; line-height: 1.5; }
+</style>
+</head>
+<body>
+<h1>Browser tools for AI agents</h1>
+<p class="sub">Columns from best to worst · bold = best value · ↓ lower is better · ↑ higher is better</p>
+
+<table>
+  <colgroup><col class="rotulo"><col><col><col><col><col></colgroup>
+  <thead>
+    <tr>
+      <th></th>
+      <th class="venc">surf-cli<small>1st</small></th>
+      <th>agent-browser<small>2nd</small></th>
+      <th>playwright-mcp<small>3rd</small></th>
+      <th>browser-harness<small>4th</small></th>
+      <th>chrome-devtools-axi<small>5th</small></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="rotulo"><b>Success ↑</b><span>battery, 7 tasks × 5</span></td>
+      <td class="venc melhor">35/35</td>
+      <td class="melhor">35/35</td>
+      <td class="melhor">35/35</td>
+      <td class="melhor">35/35</td>
+      <td>33/35</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Agent accuracy ↑</b><span>2 runs × 7</span></td>
+      <td class="venc melhor">14/14</td>
+      <td class="melhor">14/14</td>
+      <td class="melhor">14/14</td>
+      <td class="melhor">14/14</td>
+      <td class="melhor">14/14</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Silent failures ↓</b><span>wrong with no error</span></td>
+      <td class="venc melhor">0</td>
+      <td class="melhor">0</td>
+      <td class="melhor">0</td>
+      <td>1<i>background tab</i></td>
+      <td>2<i>fillform, snapshot</i></td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Timeouts ↓</b><span>hangs</span></td>
+      <td class="venc melhor">0</td>
+      <td class="melhor">0</td>
+      <td class="melhor">0</td>
+      <td class="melhor">0</td>
+      <td>1<i>MCP -32001</i></td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Agent cost ↓</b><span>US$ per task, Sonnet</span></td>
+      <td class="venc melhor">0.171</td>
+      <td>0.196</td>
+      <td>0.217</td>
+      <td>0.267</td>
+      <td>0.232</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Agent time ↓</b><span>full task</span></td>
+      <td class="venc melhor">42 s</td>
+      <td>50 s</td>
+      <td>56 s</td>
+      <td>113 s</td>
+      <td>83 s</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Agent turns ↓</b><span>model round trips</span></td>
+      <td class="venc melhor">6.5</td>
+      <td>8</td>
+      <td>13</td>
+      <td>20.5</td>
+      <td>13.5</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Agent tokens ↓</b><span>processed, incl. cache</span></td>
+      <td class="venc melhor">275k</td>
+      <td>335k</td>
+      <td>470k</td>
+      <td>853k</td>
+      <td>541k</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Battery tokens ↓</b><span>estimated, chars/4</span></td>
+      <td class="venc melhor">9,092</td>
+      <td>17,873</td>
+      <td>20,954</td>
+      <td>12,786</td>
+      <td>58,260</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Sweep tokens ↓</b><span>16 routes</span></td>
+      <td class="venc">1,207</td>
+      <td>308</td>
+      <td>2,021</td>
+      <td class="melhor">59</td>
+      <td>34,589</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Battery time ↓</b><span>7 tasks</span></td>
+      <td class="venc">63.3 s</td>
+      <td>33.7 s</td>
+      <td>49.8 s<i>≈ 34 s *</i></td>
+      <td class="melhor">29.5 s</td>
+      <td>96.4 s</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Simple command ↓</b><span>median / p90</span></td>
+      <td class="venc">272 / 324 ms</td>
+      <td class="melhor">233 / 263 ms</td>
+      <td>783 / 988 ms<i>**</i></td>
+      <td>354 / 725 ms</td>
+      <td>573 / 858 ms</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Cold start ↓</b><span>to first page</span></td>
+      <td class="venc melhor">0.8 s</td>
+      <td>2.3 s</td>
+      <td>7.4 s</td>
+      <td>2.2 s</td>
+      <td>6.3 s</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Battery calls ↓</b><span>tool calls</span></td>
+      <td class="venc">78</td>
+      <td>76</td>
+      <td>55</td>
+      <td class="melhor">26</td>
+      <td>53</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Text captured ↑</b><span>dashboard</span></td>
+      <td class="venc">97.5%</td>
+      <td>95.3%</td>
+      <td class="melhor">98.3%</td>
+      <td>43.5%</td>
+      <td>53.5%</td>
+    </tr>
+    <tr>
+      <td class="rotulo"><b>Read tokens ↓</b><span>dashboard</span></td>
+      <td class="venc melhor">1,890</td>
+      <td>6,816</td>
+      <td>7,312</td>
+      <td>8,695</td>
+      <td>3,647</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="rodape">
+  Internal Next.js app (municipal property tax) · shared Chrome for Testing 157 · 2026-11-09 and 10 · battery: 5 rounds, DB ground truth · agent: <code>claude -p</code> Sonnet, 2 runs, real cost. Method and limits: <code>docs/methodology.md</code>.<br>
+  * playwright-mcp measured on 11-10, when the agent-browser control rose from 33.7 to 49.0 s; ** includes ~150 ms of the HTTP client used from the shell.<br>
+  playwright-mcp puts ~5.3k schema tokens in context · surf-cli needs a manual extension and <code>semantic.*</code> sends text to third parties · chrome-devtools-axi downloads <code>chrome-devtools-mcp@latest</code>.
+</p>
+</body>
+</html>

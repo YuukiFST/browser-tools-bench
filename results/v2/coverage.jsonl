@@ -1,0 +1,81 @@
+{"route":"/dashboard","rep":1,"mode":"ab","label":"ab","cells":361,"found":344,"coverage":95.3,"chars":27265}
+{"route":"/dashboard","rep":1,"mode":"ab-i","label":"ab-i","cells":361,"found":296,"coverage":82,"chars":19367}
+{"route":"/dashboard","rep":1,"mode":"axi","label":"axi","cells":361,"found":198,"coverage":54.8,"chars":14516}
+{"route":"/dashboard","rep":1,"mode":"axi-full","label":"axi-full","cells":361,"found":304,"coverage":84.2,"chars":22628}
+{"route":"/dashboard","rep":1,"mode":"surf","label":"surf","cells":361,"found":352,"coverage":97.5,"chars":7556}
+{"route":"/dashboard","rep":1,"mode":"surf-text","label":"surf-text","cells":361,"found":352,"coverage":97.5,"chars":6033}
+{"route":"/dashboard","rep":1,"mode":"bh","label":"bh (custom snippet)","cells":361,"found":157,"coverage":43.5,"chars":35688}
+{"route":"/dashboard","rep":1,"mode":"bh-text","label":"bh innerText","cells":361,"found":352,"coverage":97.5,"chars":5926}
+{"route":"/dashboard","rep":1,"mode":"pw","label":"pw","cells":361,"found":347,"coverage":96.1,"chars":27436}
+{"route":"/dashboard","rep":2,"mode":"ab","label":"ab","cells":361,"found":344,"coverage":95.3,"chars":27529}
+{"route":"/dashboard","rep":2,"mode":"ab-i","label":"ab-i","cells":361,"found":296,"coverage":82,"chars":19631}
+{"route":"/dashboard","rep":2,"mode":"axi","label":"axi","cells":361,"found":193,"coverage":53.5,"chars":14589}
+{"route":"/dashboard","rep":2,"mode":"axi-full","label":"axi-full","cells":361,"found":304,"coverage":84.2,"chars":23291}
+{"route":"/dashboard","rep":2,"mode":"surf","label":"surf","cells":361,"found":352,"coverage":97.5,"chars":7581}
+{"route":"/dashboard","rep":2,"mode":"surf-text","label":"surf-text","cells":361,"found":352,"coverage":97.5,"chars":6033}
+{"route":"/dashboard","rep":2,"mode":"bh","label":"bh (custom snippet)","cells":361,"found":157,"coverage":43.5,"chars":35688}
+{"route":"/dashboard","rep":2,"mode":"bh-text","label":"bh innerText","cells":361,"found":352,"coverage":97.5,"chars":5926}
+{"route":"/dashboard","rep":2,"mode":"pw","label":"pw","cells":361,"found":347,"coverage":96.1,"chars":29064}
+{"route":"/dashboard","rep":3,"mode":"ab","label":"ab","cells":361,"found":344,"coverage":95.3,"chars":27904}
+{"route":"/dashboard","rep":3,"mode":"ab-i","label":"ab-i","cells":361,"found":296,"coverage":82,"chars":20006}
+{"route":"/dashboard","rep":3,"mode":"axi","label":"axi","cells":361,"found":193,"coverage":53.5,"chars":14589}
+{"route":"/dashboard","rep":3,"mode":"axi-full","label":"axi-full","cells":361,"found":304,"coverage":84.2,"chars":23291}
+{"route":"/dashboard","rep":3,"mode":"surf","label":"surf","cells":361,"found":352,"coverage":97.5,"chars":7588}
+{"route":"/dashboard","rep":3,"mode":"surf-text","label":"surf-text","cells":361,"found":352,"coverage":97.5,"chars":6033}
+{"route":"/dashboard","rep":3,"mode":"bh","label":"bh (custom snippet)","cells":361,"found":157,"coverage":43.5,"chars":36234}
+{"route":"/dashboard","rep":3,"mode":"bh-text","label":"bh innerText","cells":361,"found":352,"coverage":97.5,"chars":5926}
+{"route":"/dashboard","rep":3,"mode":"pw","label":"pw","cells":361,"found":347,"coverage":96.1,"chars":29064}
+{"route":"/debitos","rep":1,"mode":"ab","label":"ab","cells":25,"found":25,"coverage":100,"chars":4693}
+{"route":"/debitos","rep":1,"mode":"ab-i","label":"ab-i","cells":25,"found":20,"coverage":80,"chars":2454}
+{"route":"/debitos","rep":1,"mode":"axi","label":"axi","cells":25,"found":25,"coverage":100,"chars":6003}
+{"route":"/debitos","rep":1,"mode":"axi-full","label":"axi-full","cells":25,"found":25,"coverage":100,"chars":6003}
+{"route":"/debitos","rep":1,"mode":"surf","label":"surf","cells":25,"found":25,"coverage":100,"chars":2773}
+{"route":"/debitos","rep":1,"mode":"surf-text","label":"surf-text","cells":25,"found":25,"coverage":100,"chars":641}
+{"route":"/debitos","rep":1,"mode":"bh","label":"bh (custom snippet)","cells":25,"found":25,"coverage":100,"chars":4009}
+{"route":"/debitos","rep":1,"mode":"bh-text","label":"bh innerText","cells":25,"found":25,"coverage":100,"chars":536}
+{"route":"/debitos","rep":1,"mode":"pw","label":"pw","cells":25,"found":25,"coverage":100,"chars":5035}
+{"route":"/debitos","rep":2,"mode":"ab","label":"ab","cells":25,"found":25,"coverage":100,"chars":4746}
+{"route":"/debitos","rep":2,"mode":"ab-i","label":"ab-i","cells":25,"found":20,"coverage":80,"chars":2507}
+{"route":"/debitos","rep":2,"mode":"axi","label":"axi","cells":25,"found":25,"coverage":100,"chars":6108}
+{"route":"/debitos","rep":2,"mode":"axi-full","label":"axi-full","cells":25,"found":25,"coverage":100,"chars":6108}
+{"route":"/debitos","rep":2,"mode":"surf","label":"surf","cells":25,"found":25,"coverage":100,"chars":2811}
+{"route":"/debitos","rep":2,"mode":"surf-text","label":"surf-text","cells":25,"found":25,"coverage":100,"chars":641}
+{"route":"/debitos","rep":2,"mode":"bh","label":"bh (custom snippet)","cells":25,"found":25,"coverage":100,"chars":4009}
+{"route":"/debitos","rep":2,"mode":"bh-text","label":"bh innerText","cells":25,"found":25,"coverage":100,"chars":536}
+{"route":"/debitos","rep":2,"mode":"pw","label":"pw","cells":25,"found":25,"coverage":100,"chars":5035}
+{"route":"/debitos","rep":3,"mode":"ab","label":"ab","cells":25,"found":25,"coverage":100,"chars":4746}
+{"route":"/debitos","rep":3,"mode":"ab-i","label":"ab-i","cells":25,"found":20,"coverage":80,"chars":2507}
+{"route":"/debitos","rep":3,"mode":"axi","label":"axi","cells":25,"found":25,"coverage":100,"chars":6108}
+{"route":"/debitos","rep":3,"mode":"axi-full","label":"axi-full","cells":25,"found":25,"coverage":100,"chars":6108}
+{"route":"/debitos","rep":3,"mode":"surf","label":"surf","cells":25,"found":25,"coverage":100,"chars":2811}
+{"route":"/debitos","rep":3,"mode":"surf-text","label":"surf-text","cells":25,"found":25,"coverage":100,"chars":641}
+{"route":"/debitos","rep":3,"mode":"bh","label":"bh (custom snippet)","cells":25,"found":25,"coverage":100,"chars":4144}
+{"route":"/debitos","rep":3,"mode":"bh-text","label":"bh innerText","cells":25,"found":25,"coverage":100,"chars":536}
+{"route":"/debitos","rep":3,"mode":"pw","label":"pw","cells":25,"found":25,"coverage":100,"chars":5035}
+{"route":"/inscricoes","rep":1,"mode":"ab","label":"ab","cells":21,"found":21,"coverage":100,"chars":3695}
+{"route":"/inscricoes","rep":1,"mode":"ab-i","label":"ab-i","cells":21,"found":18,"coverage":85.7,"chars":1828}
+{"route":"/inscricoes","rep":1,"mode":"axi","label":"axi","cells":21,"found":21,"coverage":100,"chars":4739}
+{"route":"/inscricoes","rep":1,"mode":"axi-full","label":"axi-full","cells":21,"found":21,"coverage":100,"chars":4739}
+{"route":"/inscricoes","rep":1,"mode":"surf","label":"surf","cells":21,"found":21,"coverage":100,"chars":2413}
+{"route":"/inscricoes","rep":1,"mode":"surf-text","label":"surf-text","cells":21,"found":21,"coverage":100,"chars":669}
+{"route":"/inscricoes","rep":1,"mode":"bh","label":"bh (custom snippet)","cells":21,"found":21,"coverage":100,"chars":3193}
+{"route":"/inscricoes","rep":1,"mode":"bh-text","label":"bh innerText","cells":21,"found":21,"coverage":100,"chars":561}
+{"route":"/inscricoes","rep":1,"mode":"pw","label":"pw","cells":21,"found":21,"coverage":100,"chars":4486}
+{"route":"/inscricoes","rep":2,"mode":"ab","label":"ab","cells":21,"found":21,"coverage":100,"chars":3735}
+{"route":"/inscricoes","rep":2,"mode":"ab-i","label":"ab-i","cells":21,"found":18,"coverage":85.7,"chars":1868}
+{"route":"/inscricoes","rep":2,"mode":"axi","label":"axi","cells":21,"found":21,"coverage":100,"chars":4818}
+{"route":"/inscricoes","rep":2,"mode":"axi-full","label":"axi-full","cells":21,"found":21,"coverage":100,"chars":4818}
+{"route":"/inscricoes","rep":2,"mode":"surf","label":"surf","cells":21,"found":21,"coverage":100,"chars":2444}
+{"route":"/inscricoes","rep":2,"mode":"surf-text","label":"surf-text","cells":21,"found":21,"coverage":100,"chars":669}
+{"route":"/inscricoes","rep":2,"mode":"bh","label":"bh (custom snippet)","cells":21,"found":21,"coverage":100,"chars":3193}
+{"route":"/inscricoes","rep":2,"mode":"bh-text","label":"bh innerText","cells":21,"found":21,"coverage":100,"chars":561}
+{"route":"/inscricoes","rep":2,"mode":"pw","label":"pw","cells":21,"found":21,"coverage":100,"chars":4486}
+{"route":"/inscricoes","rep":3,"mode":"ab","label":"ab","cells":21,"found":21,"coverage":100,"chars":3735}
+{"route":"/inscricoes","rep":3,"mode":"ab-i","label":"ab-i","cells":21,"found":18,"coverage":85.7,"chars":1868}
+{"route":"/inscricoes","rep":3,"mode":"axi","label":"axi","cells":21,"found":21,"coverage":100,"chars":4818}
+{"route":"/inscricoes","rep":3,"mode":"axi-full","label":"axi-full","cells":21,"found":21,"coverage":100,"chars":4818}
+{"route":"/inscricoes","rep":3,"mode":"surf","label":"surf","cells":21,"found":21,"coverage":100,"chars":2444}
+{"route":"/inscricoes","rep":3,"mode":"surf-text","label":"surf-text","cells":21,"found":21,"coverage":100,"chars":669}
+{"route":"/inscricoes","rep":3,"mode":"bh","label":"bh (custom snippet)","cells":21,"found":21,"coverage":100,"chars":3298}
+{"route":"/inscricoes","rep":3,"mode":"bh-text","label":"bh innerText","cells":21,"found":21,"coverage":100,"chars":561}
+{"route":"/inscricoes","rep":3,"mode":"pw","label":"pw","cells":21,"found":21,"coverage":100,"chars":4486}

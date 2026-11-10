@@ -91,7 +91,9 @@ for (const t of TOOLS) {
   fail[t] = { failed: rs.filter((r) => !r.ok).length, runs: rs.length };
   p(`| ${NAME[t]} | ${fail[t].failed} / ${rs.length} | ${rs.filter((r) => r.parse_error !== null).length} | ${bs.filter((r) => !r.ok).length} / ${bs.length} |`);
 }
+for (const r of agents.filter((x) => !x.ok)) p(`- failed agent run: ${NAME[r.tool]} block ${r.block}, ${r.correct}/${r.total} correct, ${r.extras} extra, screenshot ${r.screenshot_px} px${r.parse_error ? `, ${r.parse_error}` : ""}`);
 const failedBattery = battery.filter((r) => !r.ok);
+for (const r of failedBattery) p(`- failed battery check: ${NAME[r.tool]} ${r.task} iteration ${r.iter}, ${fmt(r.ms / 1000, 1)} s, ${r.detail}`);
 if (failedBattery.length) {
   p("\nBattery failures by task:");
   for (const t of TOOLS) {
@@ -103,6 +105,10 @@ if (failedBattery.length) {
 // ---------------------------------------------------------------- ranking rule (docs/ranking-rule.md)
 const ranked = TOOLS.filter((t) => stats[t]);
 // step 1: failure tiers. A tool's tier is the number of other tools with significantly fewer failed agent runs.
+for (const t of ranked) for (const u of ranked) {
+  if (t === u || fail[t].failed <= fail[u].failed) continue;
+  p(`- Fisher one-sided, ${NAME[t]} ${fail[t].failed}/${fail[t].runs} against ${NAME[u]} ${fail[u].failed}/${fail[u].runs}: p = ${fmt(fisherGreater(fail[t].failed, fail[t].runs, fail[u].failed, fail[u].runs), 3)}`);
+}
 const tier = Object.fromEntries(ranked.map((t) => [t, ranked.filter((u) => u !== t && fisherGreater(fail[t].failed, fail[t].runs, fail[u].failed, fail[u].runs) < FISHER_ALPHA).length]));
 // step 2: within a tier, order by mean cost above baseline, then mean turns
 const order = [...ranked].sort((a, b) => tier[a] - tier[b] || stats[a].cost_above_baseline.mean - stats[b].cost_above_baseline.mean || stats[a].turns.mean - stats[b].turns.mean);
@@ -137,8 +143,45 @@ for (const t of order) p(`| ${rank[t]} | ${NAME[t]} | ${tier[t]} |`);
 const rankOneTied = order.filter((t) => rank[t] === 1);
 p(`\nRank 1 is ${rankOneTied.length > 1 ? `tied: ${rankOneTied.map((t) => NAME[t]).join(", ")}` : `held alone by ${NAME[rankOneTied[0]] ?? "-"}`}.`);
 
+// ---------------------------------------------------------------- context for the published text
+p("\n## Agent run detail (means over valid runs)");
+p("| tool | input+cache tokens | output tokens | cache write tokens | baseline share of cost | cost range per run, US$ | docs read, characters |\n|---|---|---|---|---|---|---|");
+for (const t of order) {
+  const rs = measured.filter((r) => r.tool === t);
+  const tokIn = mean(rs.map((r) => r.input_tokens + r.cache_read_tokens + r.cache_creation_tokens));
+  p(`| ${NAME[t]} | ${Math.round(tokIn).toLocaleString("en-US")} | ${Math.round(mean(rs.map((r) => r.output_tokens))).toLocaleString("en-US")} | ${Math.round(mean(rs.map((r) => r.cache_creation_tokens))).toLocaleString("en-US")} | ${fmt(baseCost / stats[t].cost.mean * 100, 0)}% | ${usd(Math.min(...rs.map((r) => r.cost_usd)))} to ${usd(Math.max(...rs.map((r) => r.cost_usd)))} | ${rs[0].docs_chars.toLocaleString("en-US")} |`);
+}
+const median = (xs) => { const s = [...xs].sort((a, b) => a - b); const n = s.length; return n ? (n % 2 ? s[(n - 1) / 2] : (s[n / 2 - 1] + s[n / 2]) / 2) : NaN; };
+if (battery.length) {
+  const TASKS = ["login", "search", "read", "screenshot", "console", "mobile", "sweep"];
+  const tot = (t, f) => TASKS.reduce((s, k) => s + median(battery.filter((r) => r.tool === t && r.task === k).map((r) => r[f])), 0);
+  p("\n## Scripted battery (sum of the 7 task medians; not ranked)");
+  p("| tool | time, s | calls | characters returned | checks passed |\n|---|---|---|---|---|");
+  for (const t of TOOLS) { const bs = battery.filter((r) => r.tool === t); if (bs.length) p(`| ${NAME[t]} | ${fmt(tot(t, "ms") / 1000, 1)} | ${tot(t, "cmds")} | ${tot(t, "chars").toLocaleString("en-US")} | ${bs.filter((r) => r.ok).length}/${bs.length} |`); }
+  const reads = (t) => battery.filter((r) => r.tool === t && r.task === "read").map((r) => +(/snapshot=(\d+)/.exec(r.detail)?.[1] ?? NaN));
+  p(`read size range, characters: ${TOOLS.filter((t) => reads(t).length).map((t) => `${NAME[t]} ${Math.min(...reads(t)).toLocaleString("en-US")} to ${Math.max(...reads(t)).toLocaleString("en-US")}`).join("; ")}`);
+}
+const latency = load("latency.jsonl");
+if (latency.length) {
+  const warm = (t) => { const f = path.join(DIR, `warm-${t}.txt`); return fs.existsSync(f) ? fs.readFileSync(f, "utf8").split("\n").filter(Boolean).map(Number) : []; };
+  p("\n## Latency (ms, median; not ranked)");
+  p("| tool | cold start | warm trivial call | trivial calls failed |\n|---|---|---|---|");
+  for (const t of TOOLS) {
+    const cold = latency.filter((l) => l.tool === t && Number.isFinite(l.cold_ms)), w = latency.filter((l) => l.tool === t && Number.isFinite(l.warm_failed));
+    if (!cold.length) continue;
+    p(`| ${NAME[t]} | ${median(cold.map((l) => l.cold_ms))}${cold[0].cold_kind === "new session" ? " (new session)" : ""} | ${median(warm(t))} | ${w.reduce((s, l) => s + l.warm_failed, 0) + cold.filter((l) => !l.trivial_ok).length} / ${w.reduce((s, l) => s + l.warm_calls, 0) + cold.length} |`);
+  }
+}
+const coverage = load("coverage.jsonl");
+if (coverage.length) {
+  const routes = [...new Set(coverage.map((x) => x.route))], modes = [...new Set(coverage.map((x) => x.label))];
+  p("\n## Read coverage (median over repetitions: % of <main> cells found, characters; not ranked)");
+  p(`| read | ${routes.join(" | ")} |\n|---|${routes.map(() => "---").join("|")}|`);
+  for (const m of modes) p(`| ${m} | ${routes.map((r) => { const xs = coverage.filter((x) => x.label === m && x.route === r); return xs.length ? `${median(xs.map((x) => x.coverage))}% (${median(xs.map((x) => x.chars)).toLocaleString("en-US")}, n=${xs.length}, range ${Math.min(...xs.map((x) => x.coverage))} to ${Math.max(...xs.map((x) => x.coverage))}%)` : "-"; }).join(" | ")} |`);
+}
+
 // ---------------------------------------------------------------- spend
-const spent = [...agents, ...baseline, ...setup, ...pilot].reduce((s, r) => s + (r.cost_usd ?? 0), 0);
+const spent =[...agents, ...baseline, ...setup, ...pilot].reduce((s, r) => s + (r.cost_usd ?? 0), 0);
 p(`\n## Spend\nagent runs US$ ${usd(agents.reduce((s, r) => s + r.cost_usd, 0))}, baseline US$ ${usd(baseline.reduce((s, r) => s + r.cost_usd, 0))}, setup checks US$ ${usd(setup.reduce((s, r) => s + r.cost_usd, 0))}, pilot US$ ${usd(pilot.reduce((s, r) => s + r.cost_usd, 0))}, total US$ ${usd(spent)}`);
 const models = [...new Set(agents.flatMap((r) => r.models_used))], versions = [...new Set(agents.map((r) => r.claude_version))];
 const days = [...new Set(agents.map((r) => r.ts.slice(0, 10)))];
