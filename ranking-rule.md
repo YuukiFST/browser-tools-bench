@@ -26,7 +26,7 @@ A run with no valid result (no `result` event) has unknown cost and turns: it co
 
 ## 3. Failures
 
-The failure definition is the one in `docs/methodology.md` ("Failure definition").
+The failure definition is the one in `methodology.md` ("Failure definition").
 For an agent run: the run failed when the reply is not valid, when any of the 7 registrations or units differs from the ground truth, when there is an extra registration, or when the screenshot is not 390 or 780 px wide.
 
 Failures are reported in their own table, as failed runs over total runs, per tool.

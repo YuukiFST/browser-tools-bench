@@ -1,4 +1,4 @@
-// Analysis of the v2 data and the ranking rule of docs/ranking-rule.md, applied as written.
+// Analysis of the v2 data and the ranking rule of ranking-rule.md, applied as written.
 //   node analyze-v2.mjs [results-dir]       default ../results/v2
 // Prints markdown and writes <results-dir>/ranking.json. Every number in the published files comes from here.
 import fs from "node:fs";
@@ -82,7 +82,7 @@ TOOLS.forEach((t, k) => {
 });
 
 // ---------------------------------------------------------------- failures
-p("\n## Failures (definition: docs/methodology.md, 'Failure definition')");
+p("\n## Failures (definition: methodology.md, 'Failure definition')");
 p("| tool | agent runs failed / runs | of which no valid reply | battery checks failed / checks |\n|---|---|---|---|");
 const fail = {};
 for (const t of TOOLS) {
@@ -102,7 +102,7 @@ if (failedBattery.length) {
   }
 }
 
-// ---------------------------------------------------------------- ranking rule (docs/ranking-rule.md)
+// ---------------------------------------------------------------- ranking rule (ranking-rule.md)
 const ranked = TOOLS.filter((t) => stats[t]);
 // step 1: failure tiers. A tool's tier is the number of other tools with significantly fewer failed agent runs.
 for (const t of ranked) for (const u of ranked) {
@@ -137,7 +137,7 @@ p("\n## Paired per-block differences, adjacent tools (next minus this; mean [boo
 p("| pair | blocks | turns | cost above baseline, US$ | time, s (secondary) | result |\n|---|---|---|---|---|---|");
 for (const x of pairs) p(`| ${NAME[x.b]} minus ${NAME[x.a]} | ${x.turns.n} | ${ci(x.turns, 1)} | ${ci(x.cost, 3)} | ${ci(x.time, 1)} | ${x.separated ? `separated (${x.reason})` : x.reason} |`);
 
-p("\n## Ranking (docs/ranking-rule.md)");
+p("\n## Ranking (ranking-rule.md)");
 p("| rank | tool | failure tier |\n|---|---|---|");
 for (const t of order) p(`| ${rank[t]} | ${NAME[t]} | ${tier[t]} |`);
 const rankOneTied = order.filter((t) => rank[t] === 1);

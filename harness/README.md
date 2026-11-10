@@ -81,7 +81,7 @@ Writes rows to `latency.jsonl` and 20 warm trivial-call timings to `warm-<tool>.
 ### `analyze.mjs [battery-file] [latency-dir]` and `analyze-v2.mjs [results-dir]`
 
 `analyze.mjs` prints battery and latency tables; it reads the Portuguese task names of the v1 data too.
-`analyze-v2.mjs` prints the agent tables with bootstrap intervals, the paired differences, the failure table and the ranking of `docs/ranking-rule.md`, and writes `ranking.json`.
+`analyze-v2.mjs` prints the agent tables with bootstrap intervals, the paired differences, the failure table and the ranking of `ranking-rule.md`, and writes `ranking.json`.
 
 ### `cdp.mjs reset | logout | ground-truth-h1 <routes...> | ground-truth-text <route>`
 

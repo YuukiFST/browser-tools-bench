@@ -195,8 +195,8 @@
 
 <p class="rodape">
   Internal Next.js app (municipal property tax) · one dedicated Chrome for Testing 157 · all v2 data from 2026-11-10 · agent: <code>claude -p</code> pinned to <code>claude-sonnet-5-5</code>, Claude Code 2.1.317, no user settings, hooks or skills, 10 blocks of all 5 tools in random order plus 20 more blocks of the two tools tied at rank 1, real cost.<br>
-  Ranking rule written before the paid runs (<code>docs/ranking-rule.md</code>): two tools tie unless the 95% bootstrap interval of their paired per-block difference excludes zero on a primary metric without pointing the other way. playwright-mcp is cheaper and surf-cli takes fewer turns, so they tie.<br>
-  Baseline (one-turn prompt, no browser task): US$ 0.012, 8% to 16% of a run. Numbers: <code>results/v2/analysis.md</code>, printed by <code>harness/analyze-v2.mjs</code>. v1 report: <code>results/benchmark-v1.html</code>. Method and limits: <code>docs/methodology.md</code>.
+  Ranking rule written before the paid runs (<code>ranking-rule.md</code>): two tools tie unless the 95% bootstrap interval of their paired per-block difference excludes zero on a primary metric without pointing the other way. playwright-mcp is cheaper and surf-cli takes fewer turns, so they tie.<br>
+  Baseline (one-turn prompt, no browser task): US$ 0.012, 8% to 16% of a run. Numbers: <code>results/v2/analysis.md</code>, printed by <code>harness/analyze-v2.mjs</code>. v1 report: <code>results/benchmark-v1.html</code>. Method and limits: <code>methodology.md</code>.
 </p>
 </body>
 </html>

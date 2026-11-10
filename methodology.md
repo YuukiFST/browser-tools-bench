@@ -10,7 +10,7 @@ The current report and every published number come from v2.
 ## 1. Goal
 
 Pick the browser tool for AI coding agents on one real app, measuring speed, tokens, cost, accuracy and failures.
-The result feeds `results/benchmark.html` and a public LinkedIn post (`docs/linkedin-post.md`).
+The result feeds `results/benchmark.html` and a public LinkedIn post, whose draft is kept outside this repository.
 
 ## 2. Tools and versions
 
@@ -126,7 +126,7 @@ In axi run 1, the agent reported that `resize 390 844` returned 500x844, yet the
 - axi: `fillform` in a background tab returned success without filling; a snapshot was taken without waiting for the `h1`. 1 MCP `-32001` timeout.
 - bh: typed into a background tab with no error.
 
-## 11. Ranking (v1, superseded by `docs/ranking-rule.md`)
+## 11. Ranking (v1, superseded by `ranking-rule.md`)
 
 - The order did not follow a formula written before measuring.
 - The first version put agent-browser first.
@@ -163,7 +163,7 @@ In axi run 1, the agent reported that `resize 390 844` returned 500x844, yet the
 
 The v1 data above stays as it was published, in `results/`.
 The v2 harness writes to `results/v2/` and fixes the defects an independent review found (F1 to F14).
-The ranking rule of v2 was written before any paid run: `docs/ranking-rule.md`.
+The ranking rule of v2 was written before any paid run: `ranking-rule.md`.
 
 ### Failure definition
 
@@ -221,7 +221,7 @@ All on 2026-11-10, one Chrome, one session of the harness, Claude Code 2.1.317, 
 | total | | 9.032 of the US$ 25 cap |
 
 Then, the same day: the battery (5 iterations, 35 checks per tool), latency (5 repetitions and 20 warm calls per tool) and coverage (3 repetitions of 3 routes).
-The rule of `docs/ranking-rule.md` was applied as written; its output is in `results/v2/analysis.md` and `results/v2/ranking.json`.
+The rule of `ranking-rule.md` was applied as written; its output is in `results/v2/analysis.md` and `results/v2/ranking.json`.
 
 ### What the data shows
 
