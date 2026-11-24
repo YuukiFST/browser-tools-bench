@@ -1,0 +1,521 @@
+{
+ "suites": {
+  "rounds": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "ranking": [
+   {
+    "name": "flashwright",
+    "rounds": 6,
+    "times": [
+     7.848,
+     7.203,
+     7.458,
+     7.29,
+     7.197,
+     7.404
+    ],
+    "median": 7.3469999999999995,
+    "p95": 7.7505,
+    "timeInterval": [
+     7.2,
+     7.6530000000000005
+    ],
+    "successRate": 1,
+    "executed": 144,
+    "passed": 144,
+    "failures": {},
+    "flaky": 0,
+    "falseNegatives": 0,
+    "probes": 5,
+    "detected": 5,
+    "falsePositives": [],
+    "inconclusive": [],
+    "tokensPass": 78,
+    "tokensFail": 462,
+    "costs": [
+     0.00108,
+     0.00108,
+     0.00108,
+     0.00108,
+     0.00108,
+     0.00108
+    ],
+    "position": 1,
+    "contest": true,
+    "tiedOnPrimary": false,
+    "tied": false
+   },
+   {
+    "name": "bun",
+    "rounds": 6,
+    "times": [
+     10.51,
+     10.667,
+     10.665,
+     10.635,
+     11.104,
+     10.496
+    ],
+    "median": 10.649999999999999,
+    "p95": 10.99475,
+    "timeInterval": [
+     10.503,
+     10.8855
+    ],
+    "successRate": 1,
+    "executed": 144,
+    "passed": 144,
+    "failures": {},
+    "flaky": 0,
+    "falseNegatives": 0,
+    "probes": 5,
+    "detected": 5,
+    "falsePositives": [],
+    "inconclusive": [],
+    "tokensPass": 40,
+    "tokensFail": 236,
+    "costs": [
+     0.000552,
+     0.000552,
+     0.000552,
+     0.000552,
+     0.000552,
+     0.000552
+    ],
+    "position": 2,
+    "contest": true,
+    "tiedOnPrimary": false,
+    "tied": false
+   },
+   {
+    "name": "playwright",
+    "rounds": 6,
+    "times": [
+     11.997,
+     11.664,
+     11.256,
+     11.335,
+     11.422,
+     12.511
+    ],
+    "median": 11.543,
+    "p95": 12.3825,
+    "timeInterval": [
+     11.2955,
+     12.254
+    ],
+    "successRate": 1,
+    "executed": 144,
+    "passed": 144,
+    "failures": {},
+    "flaky": 0,
+    "falseNegatives": 0,
+    "probes": 5,
+    "detected": 5,
+    "falsePositives": [],
+    "inconclusive": [],
+    "tokensPass": 77.83333333333333,
+    "tokensFail": 428.4,
+    "costs": [
+     0.0010128,
+     0.0010128,
+     0.0010128,
+     0.0010107999999999998,
+     0.0010128,
+     0.0010128
+    ],
+    "position": 3,
+    "contest": true,
+    "tiedOnPrimary": false,
+    "tied": false
+   },
+   {
+    "name": "selenium",
+    "rounds": 6,
+    "times": [
+     14.048,
+     15.325,
+     13.886,
+     13.956,
+     13.922,
+     13.885
+    ],
+    "median": 13.939,
+    "p95": 15.005749999999999,
+    "timeInterval": [
+     13.8855,
+     14.686499999999999
+    ],
+    "successRate": 1,
+    "executed": 144,
+    "passed": 144,
+    "failures": {},
+    "flaky": 0,
+    "falseNegatives": 0,
+    "probes": 5,
+    "detected": 5,
+    "falsePositives": [],
+    "inconclusive": [],
+    "tokensPass": 13,
+    "tokensFail": 128.8,
+    "costs": [
+     0.0002836,
+     0.0002836,
+     0.0002836,
+     0.0002836,
+     0.0002836,
+     0.0002836
+    ],
+    "position": 4,
+    "contest": true,
+    "tiedOnPrimary": true,
+    "tied": false
+   },
+   {
+    "name": "puppeteer",
+    "rounds": 6,
+    "times": [
+     14.062,
+     13.889,
+     13.849,
+     13.978,
+     14.029,
+     13.793
+    ],
+    "median": 13.933499999999999,
+    "p95": 14.053749999999999,
+    "timeInterval": [
+     13.821,
+     14.0455
+    ],
+    "successRate": 1,
+    "executed": 144,
+    "passed": 144,
+    "failures": {},
+    "flaky": 0,
+    "falseNegatives": 0,
+    "probes": 5,
+    "detected": 5,
+    "falsePositives": [],
+    "inconclusive": [],
+    "tokensPass": 110,
+    "tokensFail": 459.8,
+    "costs": [
+     0.0011396,
+     0.0011396,
+     0.0011396,
+     0.0011396,
+     0.0011396,
+     0.0011396
+    ],
+    "position": 5,
+    "contest": true,
+    "tiedOnPrimary": true,
+    "tied": false
+   },
+   {
+    "name": "nightwatch",
+    "rounds": 6,
+    "times": [
+     18.605,
+     18.632,
+     18.625,
+     18.756,
+     18.509,
+     18.698
+    ],
+    "median": 18.628500000000003,
+    "p95": 18.741500000000002,
+    "timeInterval": [
+     18.557000000000002,
+     18.727
+    ],
+    "successRate": 1,
+    "executed": 144,
+    "passed": 144,
+    "failures": {},
+    "flaky": 0,
+    "falseNegatives": 0,
+    "probes": 5,
+    "detected": 5,
+    "falsePositives": [],
+    "inconclusive": [],
+    "tokensPass": 645,
+    "tokensFail": 838.2,
+    "costs": [
+     0.0029664,
+     0.0029664,
+     0.0029784,
+     0.0029624,
+     0.0029624,
+     0.0029624
+    ],
+    "position": 6,
+    "contest": true,
+    "tiedOnPrimary": false,
+    "tied": false
+   },
+   {
+    "name": "webdriverio",
+    "rounds": 6,
+    "times": [
+     27.686,
+     27.287,
+     27.435,
+     27.4,
+     28.153,
+     27.653
+    ],
+    "median": 27.543999999999997,
+    "p95": 28.03625,
+    "timeInterval": [
+     27.3435,
+     27.9195
+    ],
+    "successRate": 1,
+    "executed": 144,
+    "passed": 144,
+    "failures": {},
+    "flaky": 0,
+    "falseNegatives": 0,
+    "probes": 5,
+    "detected": 5,
+    "falsePositives": [],
+    "inconclusive": [],
+    "tokensPass": 741,
+    "tokensFail": 259.6,
+    "costs": [
+     0.0020012,
+     0.0020012,
+     0.0020012,
+     0.0020012,
+     0.0020012,
+     0.0020012
+    ],
+    "position": 7,
+    "contest": true,
+    "tiedOnPrimary": false,
+    "tied": false
+   },
+   {
+    "name": "cypress",
+    "rounds": 6,
+    "times": [
+     39.085,
+     38.268,
+     38.476,
+     38.098,
+     38.812,
+     38.123
+    ],
+    "median": 38.372,
+    "p95": 39.01675,
+    "timeInterval": [
+     38.1105,
+     38.948499999999996
+    ],
+    "successRate": 1,
+    "executed": 144,
+    "passed": 144,
+    "failures": {},
+    "flaky": 0,
+    "falseNegatives": 0,
+    "probes": 5,
+    "detected": 5,
+    "falsePositives": [],
+    "inconclusive": [],
+    "tokensPass": 1625,
+    "tokensFail": 502.8,
+    "costs": [
+     0.0042556,
+     0.0042556,
+     0.0042556,
+     0.0042556,
+     0.0042556,
+     0.0042556
+    ],
+    "position": 8,
+    "contest": true,
+    "tiedOnPrimary": false,
+    "tied": false
+   }
+  ]
+ },
+ "drivers": {
+  "rounds": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "ranking": [
+   {
+    "name": "bx:quiet",
+    "version": "bx 0.3.0",
+    "rounds": 6,
+    "roundTimes": [
+     6.857,
+     6.859,
+     7.037,
+     7.087,
+     7.027,
+     6.996
+    ],
+    "median": 7.0115,
+    "p95": 7.0745,
+    "scenarioMedian": 0.287,
+    "scenarioP95": 0.36469999999999997,
+    "timeInterval": [
+     6.809833333333337,
+     7.152508333333335
+    ],
+    "cost": 0.039386,
+    "costInterval": [
+     0.036200908333333344,
+     0.04267200833333333
+    ],
+    "successRate": 1,
+    "executed": 144,
+    "passed": 144,
+    "failures": {},
+    "failed": [],
+    "flaky": 0,
+    "falseNegatives": 0,
+    "auditMismatch": 0,
+    "auditMissing": 0,
+    "probes": 5,
+    "detected": 5,
+    "falsePositives": [],
+    "inconclusive": [],
+    "calls": 1,
+    "docsTokens": 425,
+    "setupTokens": 0,
+    "commandTokens": 3788,
+    "outputTokens": 328,
+    "position": 1,
+    "contest": true,
+    "tiedOnPrimary": false,
+    "tied": false
+   },
+   {
+    "name": "bx",
+    "version": "bx 0.3.0",
+    "rounds": 6,
+    "roundTimes": [
+     7.111,
+     6.987,
+     6.937,
+     6.868,
+     6.972,
+     6.978
+    ],
+    "median": 6.975,
+    "p95": 7.08,
+    "scenarioMedian": 0.2865,
+    "scenarioP95": 0.35485,
+    "timeInterval": [
+     6.80249583333333,
+     7.163500000000001
+    ],
+    "cost": 0.042536000000000004,
+    "costInterval": [
+     0.03925793333333334,
+     0.045941808333333355
+    ],
+    "successRate": 1,
+    "executed": 144,
+    "passed": 144,
+    "failures": {},
+    "failed": [],
+    "flaky": 0,
+    "falseNegatives": 0,
+    "auditMismatch": 0,
+    "auditMissing": 0,
+    "probes": 5,
+    "detected": 5,
+    "falsePositives": [],
+    "inconclusive": [],
+    "calls": 1,
+    "docsTokens": 425,
+    "setupTokens": 0,
+    "commandTokens": 3820,
+    "outputTokens": 1743,
+    "position": 2,
+    "contest": true,
+    "tiedOnPrimary": false,
+    "tied": false
+   },
+   {
+    "name": "agent-browser",
+    "version": "agent-browser 0.41.2",
+    "rounds": 6,
+    "roundTimes": [
+     7.4,
+     7.217,
+     7.155,
+     7.175,
+     7.452,
+     7.278
+    ],
+    "median": 7.2475,
+    "p95": 7.439,
+    "scenarioMedian": 0.2655,
+    "scenarioP95": 0.36539999999999995,
+    "timeInterval": [
+     6.583816666666662,
+     8.100220833333331
+    ],
+    "cost": 0.06278200000000002,
+    "costInterval": [
+     0.059000916666666674,
+     0.06667370000000003
+    ],
+    "successRate": 0.9861111111111112,
+    "executed": 144,
+    "passed": 142,
+    "failures": {
+     "assertion": 2
+    },
+    "failed": [
+     {
+      "round": 5,
+      "scenario": "filtering-todos/should-filter-active-todos",
+      "failure": "assertion",
+      "detail": "visible: expected false, got true"
+     },
+     {
+      "round": 6,
+      "scenario": "filtering-todos/should-filter-active-todos",
+      "failure": "assertion",
+      "detail": "visible: expected false, got true"
+     }
+    ],
+    "flaky": 1,
+    "falseNegatives": 2,
+    "auditMismatch": 0,
+    "auditMissing": 0,
+    "probes": 5,
+    "detected": 5,
+    "falsePositives": [],
+    "inconclusive": [],
+    "calls": 1,
+    "docsTokens": 4094,
+    "setupTokens": 0,
+    "commandTokens": 5190,
+    "outputTokens": 1347,
+    "position": 3,
+    "contest": true,
+    "tiedOnPrimary": false,
+    "tied": false
+   }
+  ]
+ }
+}

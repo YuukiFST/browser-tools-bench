@@ -4,6 +4,9 @@ Medido em 2026-11-24, sem nenhuma chamada a LLM.
 Regra de ranking: `harness/e2e/RANKING-RULE.md`, commitada em `c6a618d`, antes das rodadas ranqueadas.
 Para refazer: `node harness/e2e/run-all.mjs`.
 
+> Este relatório descreve a primeira execução, com bx 0.2.0.
+> O bx 0.3.0 foi medido depois, ao lado do agent-browser, em `bx-0.3.0/tables.md`; a tabela B atual está no `README.md` e as posições combinadas em `bx-0.3.0/combined.md`.
+
 ## Recomendação
 
 **A (suíte commitada, CI): Flashwright.**
