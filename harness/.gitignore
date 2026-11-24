@@ -2,6 +2,7 @@
 creds.sh
 ground-truth/
 readings/
+readings-*/
 agents/
 found.txt
 h1.txt
@@ -10,5 +11,7 @@ pw-session.txt
 pw-out/
 pw-server.log
 agents-v2/
+agents-v*/
 shot.png
 .playwright-mcp/
+v5/private/

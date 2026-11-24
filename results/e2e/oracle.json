@@ -1,0 +1,522 @@
+{
+ "checks": [
+  {
+   "build": "healthy",
+   "declared": [],
+   "observed": [],
+   "ok": true
+  },
+  {
+   "build": "counter-ignores-completed",
+   "declared": [
+    "completing-todos/should-complete-multiple-todos",
+    "completing-todos/should-complete-single-todo",
+    "completing-todos/should-toggle-all-todos-complete",
+    "completing-todos/should-toggle-all-todos-incomplete",
+    "deleting-todos/should-clear-all-completed-todos",
+    "filtering-todos/should-filter-active-todos"
+   ],
+   "observed": [
+    "completing-todos/should-complete-multiple-todos",
+    "completing-todos/should-complete-single-todo",
+    "completing-todos/should-toggle-all-todos-complete",
+    "completing-todos/should-toggle-all-todos-incomplete",
+    "deleting-todos/should-clear-all-completed-todos",
+    "filtering-todos/should-filter-active-todos"
+   ],
+   "ok": true
+  },
+  {
+   "build": "escape-saves-edit",
+   "declared": [
+    "editing-todos/should-cancel-edit-on-escape"
+   ],
+   "observed": [
+    "editing-todos/should-cancel-edit-on-escape"
+   ],
+   "ok": true
+  },
+  {
+   "build": "active-filter-shows-all",
+   "declared": [
+    "filtering-todos/should-filter-active-todos"
+   ],
+   "observed": [
+    "filtering-todos/should-filter-active-todos"
+   ],
+   "ok": true
+  },
+  {
+   "build": "accepts-empty-todo",
+   "declared": [
+    "adding-todos/should-not-add-empty-todo",
+    "todo-creation/prevent-empty-todo",
+    "todo-creation/prevent-whitespace-todo"
+   ],
+   "observed": [
+    "adding-todos/should-not-add-empty-todo",
+    "todo-creation/prevent-empty-todo",
+    "todo-creation/prevent-whitespace-todo"
+   ],
+   "ok": true
+  },
+  {
+   "build": "delete-removes-first",
+   "declared": [
+    "deleting-todos/should-delete-specific-todo-from-multiple"
+   ],
+   "observed": [
+    "deleting-todos/should-delete-specific-todo-from-multiple"
+   ],
+   "ok": true
+  }
+ ],
+ "finalStates": {
+  "adding-todos/should-add-multiple-todos": {
+   "items": [
+    {
+     "title": "Buy milk",
+     "done": false,
+     "editing": false
+    },
+    {
+     "title": "Walk the dog",
+     "done": false,
+     "editing": false
+    },
+    {
+     "title": "Finish report",
+     "done": false,
+     "editing": false
+    }
+   ],
+   "counter": "3 items left",
+   "hash": "#/"
+  },
+  "adding-todos/should-add-single-todo": {
+   "items": [
+    {
+     "title": "Buy groceries",
+     "done": false,
+     "editing": false
+    }
+   ],
+   "counter": "1 item left",
+   "hash": "#/"
+  },
+  "adding-todos/should-not-add-empty-todo": {
+   "items": [],
+   "counter": null,
+   "hash": "#/"
+  },
+  "adding-todos/should-trim-whitespace-from-new-todo": {
+   "items": [
+    {
+     "title": "Todo with spaces",
+     "done": false,
+     "editing": false
+    }
+   ],
+   "counter": "1 item left",
+   "hash": "#/"
+  },
+  "completing-todos/should-complete-multiple-todos": {
+   "items": [
+    {
+     "title": "Buy milk",
+     "done": true,
+     "editing": false
+    },
+    {
+     "title": "Walk dog",
+     "done": false,
+     "editing": false
+    },
+    {
+     "title": "Finish report",
+     "done": true,
+     "editing": false
+    }
+   ],
+   "counter": "1 item left",
+   "hash": "#/"
+  },
+  "completing-todos/should-complete-single-todo": {
+   "items": [
+    {
+     "title": "Buy groceries",
+     "done": true,
+     "editing": false
+    }
+   ],
+   "counter": "0 items left",
+   "hash": "#/"
+  },
+  "completing-todos/should-toggle-all-todos-complete": {
+   "items": [
+    {
+     "title": "Task 1",
+     "done": true,
+     "editing": false
+    },
+    {
+     "title": "Task 2",
+     "done": true,
+     "editing": false
+    },
+    {
+     "title": "Task 3",
+     "done": true,
+     "editing": false
+    }
+   ],
+   "counter": "0 items left",
+   "hash": "#/"
+  },
+  "completing-todos/should-toggle-all-todos-incomplete": {
+   "items": [
+    {
+     "title": "First todo",
+     "done": false,
+     "editing": false
+    },
+    {
+     "title": "Second todo",
+     "done": false,
+     "editing": false
+    },
+    {
+     "title": "Third todo",
+     "done": false,
+     "editing": false
+    }
+   ],
+   "counter": "3 items left",
+   "hash": "#/"
+  },
+  "completing-todos/should-uncomplete-completed-todo": {
+   "items": [
+    {
+     "title": "Buy groceries",
+     "done": false,
+     "editing": false
+    }
+   ],
+   "counter": "1 item left",
+   "hash": "#/"
+  },
+  "deleting-todos/should-clear-all-completed-todos": {
+   "items": [
+    {
+     "title": "Task 2",
+     "done": false,
+     "editing": false
+    }
+   ],
+   "counter": "1 item left",
+   "hash": "#/"
+  },
+  "deleting-todos/should-delete-single-todo": {
+   "items": [],
+   "counter": null,
+   "hash": "#/"
+  },
+  "deleting-todos/should-delete-specific-todo-from-multiple": {
+   "items": [
+    {
+     "title": "Task 1",
+     "done": false,
+     "editing": false
+    },
+    {
+     "title": "Task 3",
+     "done": false,
+     "editing": false
+    }
+   ],
+   "counter": "2 items left",
+   "hash": "#/"
+  },
+  "editing-todos/should-cancel-edit-on-escape": {
+   "items": [
+    {
+     "title": "Original text",
+     "done": false,
+     "editing": false
+    }
+   ],
+   "counter": "1 item left",
+   "hash": "#/"
+  },
+  "editing-todos/should-delete-todo-when-edited-to-empty": {
+   "items": [],
+   "counter": null,
+   "hash": "#/"
+  },
+  "editing-todos/should-edit-todo-by-double-clicking": {
+   "items": [
+    {
+     "title": "Buy organic milk",
+     "done": false,
+     "editing": false
+    }
+   ],
+   "counter": "1 item left",
+   "hash": "#/"
+  },
+  "editing-todos/should-save-edit-on-blur": {
+   "items": [
+    {
+     "title": "Schedule dentist appointment",
+     "done": false,
+     "editing": false
+    }
+   ],
+   "counter": "1 item left",
+   "hash": "#/"
+  },
+  "editing-todos/should-trim-whitespace-when-editing": {
+   "items": [
+    {
+     "title": "Edited task",
+     "done": false,
+     "editing": false
+    }
+   ],
+   "counter": "1 item left",
+   "hash": "#/"
+  },
+  "filtering-todos/should-filter-active-todos": {
+   "items": [
+    {
+     "title": "Active 1",
+     "done": false,
+     "editing": false
+    },
+    {
+     "title": "Active 2",
+     "done": false,
+     "editing": false
+    }
+   ],
+   "counter": "2 items left",
+   "hash": "#/active"
+  },
+  "seed": {
+   "items": [],
+   "counter": null,
+   "hash": "#/"
+  },
+  "todo-creation/add-multiple-todos": {
+   "items": [
+    {
+     "title": "Buy groceries",
+     "done": false,
+     "editing": false
+    },
+    {
+     "title": "Walk the dog",
+     "done": false,
+     "editing": false
+    },
+    {
+     "title": "Read a book",
+     "done": false,
+     "editing": false
+    }
+   ],
+   "counter": "3 items left",
+   "hash": "#/"
+  },
+  "todo-creation/add-single-todo": {
+   "items": [
+    {
+     "title": "Buy groceries",
+     "done": false,
+     "editing": false
+    }
+   ],
+   "counter": "1 item left",
+   "hash": "#/"
+  },
+  "todo-creation/add-todo-special-chars": {
+   "items": [
+    {
+     "title": "Buy @groceries & supplies (urgent!)",
+     "done": false,
+     "editing": false
+    }
+   ],
+   "counter": "1 item left",
+   "hash": "#/"
+  },
+  "todo-creation/prevent-empty-todo": {
+   "items": [],
+   "counter": null,
+   "hash": "#/"
+  },
+  "todo-creation/prevent-whitespace-todo": {
+   "items": [],
+   "counter": null,
+   "hash": "#/"
+  }
+ },
+ "matrix": {
+  "healthy": {
+   "adding-todos/should-add-multiple-todos": "pass",
+   "adding-todos/should-add-single-todo": "pass",
+   "adding-todos/should-not-add-empty-todo": "pass",
+   "adding-todos/should-trim-whitespace-from-new-todo": "pass",
+   "completing-todos/should-complete-multiple-todos": "pass",
+   "completing-todos/should-complete-single-todo": "pass",
+   "completing-todos/should-toggle-all-todos-complete": "pass",
+   "completing-todos/should-toggle-all-todos-incomplete": "pass",
+   "completing-todos/should-uncomplete-completed-todo": "pass",
+   "deleting-todos/should-clear-all-completed-todos": "pass",
+   "deleting-todos/should-delete-single-todo": "pass",
+   "deleting-todos/should-delete-specific-todo-from-multiple": "pass",
+   "editing-todos/should-cancel-edit-on-escape": "pass",
+   "editing-todos/should-delete-todo-when-edited-to-empty": "pass",
+   "editing-todos/should-edit-todo-by-double-clicking": "pass",
+   "editing-todos/should-save-edit-on-blur": "pass",
+   "editing-todos/should-trim-whitespace-when-editing": "pass",
+   "filtering-todos/should-filter-active-todos": "pass",
+   "seed": "pass",
+   "todo-creation/add-multiple-todos": "pass",
+   "todo-creation/add-single-todo": "pass",
+   "todo-creation/add-todo-special-chars": "pass",
+   "todo-creation/prevent-empty-todo": "pass",
+   "todo-creation/prevent-whitespace-todo": "pass"
+  },
+  "counter-ignores-completed": {
+   "adding-todos/should-add-multiple-todos": "pass",
+   "adding-todos/should-add-single-todo": "pass",
+   "adding-todos/should-not-add-empty-todo": "pass",
+   "adding-todos/should-trim-whitespace-from-new-todo": "pass",
+   "completing-todos/should-complete-multiple-todos": "counter : expected \"2 items left\", got \"3 items left\"",
+   "completing-todos/should-complete-single-todo": "counter : expected \"0 items left\", got \"1 item left\"",
+   "completing-todos/should-toggle-all-todos-complete": "counter : expected \"0 items left\", got \"3 items left\"",
+   "completing-todos/should-toggle-all-todos-incomplete": "counter : expected \"0 items left\", got \"3 items left\"",
+   "completing-todos/should-uncomplete-completed-todo": "pass",
+   "deleting-todos/should-clear-all-completed-todos": "counter : expected \"1 item left\", got \"3 items left\"",
+   "deleting-todos/should-delete-single-todo": "pass",
+   "deleting-todos/should-delete-specific-todo-from-multiple": "pass",
+   "editing-todos/should-cancel-edit-on-escape": "pass",
+   "editing-todos/should-delete-todo-when-edited-to-empty": "pass",
+   "editing-todos/should-edit-todo-by-double-clicking": "pass",
+   "editing-todos/should-save-edit-on-blur": "pass",
+   "editing-todos/should-trim-whitespace-when-editing": "pass",
+   "filtering-todos/should-filter-active-todos": "counter : expected \"2 items left\", got \"3 items left\"",
+   "seed": "pass",
+   "todo-creation/add-multiple-todos": "pass",
+   "todo-creation/add-single-todo": "pass",
+   "todo-creation/add-todo-special-chars": "pass",
+   "todo-creation/prevent-empty-todo": "pass",
+   "todo-creation/prevent-whitespace-todo": "pass"
+  },
+  "escape-saves-edit": {
+   "adding-todos/should-add-multiple-todos": "pass",
+   "adding-todos/should-add-single-todo": "pass",
+   "adding-todos/should-not-add-empty-todo": "pass",
+   "adding-todos/should-trim-whitespace-from-new-todo": "pass",
+   "completing-todos/should-complete-multiple-todos": "pass",
+   "completing-todos/should-complete-single-todo": "pass",
+   "completing-todos/should-toggle-all-todos-complete": "pass",
+   "completing-todos/should-toggle-all-todos-incomplete": "pass",
+   "completing-todos/should-uncomplete-completed-todo": "pass",
+   "deleting-todos/should-clear-all-completed-todos": "pass",
+   "deleting-todos/should-delete-single-todo": "pass",
+   "deleting-todos/should-delete-specific-todo-from-multiple": "pass",
+   "editing-todos/should-cancel-edit-on-escape": "visible .todo-list li label: expected true, got false",
+   "editing-todos/should-delete-todo-when-edited-to-empty": "pass",
+   "editing-todos/should-edit-todo-by-double-clicking": "pass",
+   "editing-todos/should-save-edit-on-blur": "pass",
+   "editing-todos/should-trim-whitespace-when-editing": "pass",
+   "filtering-todos/should-filter-active-todos": "pass",
+   "seed": "pass",
+   "todo-creation/add-multiple-todos": "pass",
+   "todo-creation/add-single-todo": "pass",
+   "todo-creation/add-todo-special-chars": "pass",
+   "todo-creation/prevent-empty-todo": "pass",
+   "todo-creation/prevent-whitespace-todo": "pass"
+  },
+  "active-filter-shows-all": {
+   "adding-todos/should-add-multiple-todos": "pass",
+   "adding-todos/should-add-single-todo": "pass",
+   "adding-todos/should-not-add-empty-todo": "pass",
+   "adding-todos/should-trim-whitespace-from-new-todo": "pass",
+   "completing-todos/should-complete-multiple-todos": "pass",
+   "completing-todos/should-complete-single-todo": "pass",
+   "completing-todos/should-toggle-all-todos-complete": "pass",
+   "completing-todos/should-toggle-all-todos-incomplete": "pass",
+   "completing-todos/should-uncomplete-completed-todo": "pass",
+   "deleting-todos/should-clear-all-completed-todos": "pass",
+   "deleting-todos/should-delete-single-todo": "pass",
+   "deleting-todos/should-delete-specific-todo-from-multiple": "pass",
+   "editing-todos/should-cancel-edit-on-escape": "pass",
+   "editing-todos/should-delete-todo-when-edited-to-empty": "pass",
+   "editing-todos/should-edit-todo-by-double-clicking": "pass",
+   "editing-todos/should-save-edit-on-blur": "pass",
+   "editing-todos/should-trim-whitespace-when-editing": "pass",
+   "filtering-todos/should-filter-active-todos": "visible .todo-list li label: expected false, got true",
+   "seed": "pass",
+   "todo-creation/add-multiple-todos": "pass",
+   "todo-creation/add-single-todo": "pass",
+   "todo-creation/add-todo-special-chars": "pass",
+   "todo-creation/prevent-empty-todo": "pass",
+   "todo-creation/prevent-whitespace-todo": "pass"
+  },
+  "accepts-empty-todo": {
+   "adding-todos/should-add-multiple-todos": "pass",
+   "adding-todos/should-add-single-todo": "pass",
+   "adding-todos/should-not-add-empty-todo": "visible .todo-list: expected false, got true",
+   "adding-todos/should-trim-whitespace-from-new-todo": "pass",
+   "completing-todos/should-complete-multiple-todos": "pass",
+   "completing-todos/should-complete-single-todo": "pass",
+   "completing-todos/should-toggle-all-todos-complete": "pass",
+   "completing-todos/should-toggle-all-todos-incomplete": "pass",
+   "completing-todos/should-uncomplete-completed-todo": "pass",
+   "deleting-todos/should-clear-all-completed-todos": "pass",
+   "deleting-todos/should-delete-single-todo": "pass",
+   "deleting-todos/should-delete-specific-todo-from-multiple": "pass",
+   "editing-todos/should-cancel-edit-on-escape": "pass",
+   "editing-todos/should-delete-todo-when-edited-to-empty": "pass",
+   "editing-todos/should-edit-todo-by-double-clicking": "pass",
+   "editing-todos/should-save-edit-on-blur": "pass",
+   "editing-todos/should-trim-whitespace-when-editing": "pass",
+   "filtering-todos/should-filter-active-todos": "pass",
+   "seed": "pass",
+   "todo-creation/add-multiple-todos": "pass",
+   "todo-creation/add-single-todo": "pass",
+   "todo-creation/add-todo-special-chars": "pass",
+   "todo-creation/prevent-empty-todo": "count : expected 0, got 1",
+   "todo-creation/prevent-whitespace-todo": "count : expected 0, got 1"
+  },
+  "delete-removes-first": {
+   "adding-todos/should-add-multiple-todos": "pass",
+   "adding-todos/should-add-single-todo": "pass",
+   "adding-todos/should-not-add-empty-todo": "pass",
+   "adding-todos/should-trim-whitespace-from-new-todo": "pass",
+   "completing-todos/should-complete-multiple-todos": "pass",
+   "completing-todos/should-complete-single-todo": "pass",
+   "completing-todos/should-toggle-all-todos-complete": "pass",
+   "completing-todos/should-toggle-all-todos-incomplete": "pass",
+   "completing-todos/should-uncomplete-completed-todo": "pass",
+   "deleting-todos/should-clear-all-completed-todos": "pass",
+   "deleting-todos/should-delete-single-todo": "pass",
+   "deleting-todos/should-delete-specific-todo-from-multiple": "visible .todo-list li label: expected true, got false",
+   "editing-todos/should-cancel-edit-on-escape": "pass",
+   "editing-todos/should-delete-todo-when-edited-to-empty": "pass",
+   "editing-todos/should-edit-todo-by-double-clicking": "pass",
+   "editing-todos/should-save-edit-on-blur": "pass",
+   "editing-todos/should-trim-whitespace-when-editing": "pass",
+   "filtering-todos/should-filter-active-todos": "pass",
+   "seed": "pass",
+   "todo-creation/add-multiple-todos": "pass",
+   "todo-creation/add-single-todo": "pass",
+   "todo-creation/add-todo-special-chars": "pass",
+   "todo-creation/prevent-empty-todo": "pass",
+   "todo-creation/prevent-whitespace-todo": "pass"
+  }
+ }
+}
