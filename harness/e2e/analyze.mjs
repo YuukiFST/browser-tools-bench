@@ -2,9 +2,10 @@
 //   node analyze.mjs     reads results/e2e, writes analysis.json and tables.md there
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { suiteTools, results } from './paths.mjs';
+import { suiteTools, results as defaultResults } from './paths.mjs';
 import { usdPerMillion } from './tokens.mjs';
 
+const results = process.env.OUT ?? defaultResults;
 const RESAMPLES = 10_000;
 const readRows = file => existsSync(join(results, file)) ? readFileSync(join(results, file), 'utf8').trim().split('\n').map(line => JSON.parse(line)) : [];
 const exclusions = existsSync(join(results, 'exclusions.json')) ? JSON.parse(readFileSync(join(results, 'exclusions.json'), 'utf8')) : [];

@@ -37,6 +37,8 @@ The v1 ranking (surf-cli, agent-browser, playwright-mcp, browser-harness, chrome
 | `ranking-rule.md` | the v2 ranking rule, committed before the paid runs |
 | `results/` | report (`benchmark.html`), v1 report and data as JSONL |
 | `results/v2/` | v2 data as JSONL, `analysis.md` and `ranking.json` |
+| `results/e2e/` | e2e suites and driving tools, no LLM: `report.md`, data as JSONL |
+| `harness/e2e/` | the e2e benchmark; `node harness/e2e/run-all.mjs` reruns it |
 | `harness/` | scripts that produced the data, and how to rerun them |
 
 Client data (credentials, ground truth, screenshots, page dumps, logs) is not published; `methodology.md` §14 lists what was left out.

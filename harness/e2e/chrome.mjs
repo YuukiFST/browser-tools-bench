@@ -1,6 +1,6 @@
 // Starts and stops one Chrome, with a fresh profile unless one is given.
 import { spawn } from 'node:child_process';
-import { existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { connectBrowser } from './cdp.mjs';
@@ -21,7 +21,12 @@ export async function startChrome({ extension, headless = true, profile } = {}) 
   while (!port) {
     if (Date.now() > deadline) throw new Error('Chrome did not open its debugging port');
     await new Promise(resolve => setTimeout(resolve, 50));
-    if (existsSync(portFile)) port = Number(readFileSync(portFile, 'utf8').split('\n')[0]) || undefined;
+    // Chrome holds the file locked while it writes it
+    try {
+      port = Number(readFileSync(portFile, 'utf8').split('\n')[0]) || undefined;
+    } catch (error) {
+      if (error.code !== 'ENOENT' && error.code !== 'EBUSY') throw error;
+    }
   }
   const stop = async () => {
     const closed = new Promise(resolve => child.once('close', resolve));
