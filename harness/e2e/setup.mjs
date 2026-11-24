@@ -3,7 +3,7 @@
 import { execFileSync, spawnSync } from 'node:child_process';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { deps, pinned, vendor, suiteTools } from './paths.mjs';
+import { bunPath, deps, pinned, vendor, suiteTools } from './paths.mjs';
 
 const run = (command, args, options = {}) => {
   const result = spawnSync(command, args, { stdio: 'inherit', ...options });
@@ -55,7 +55,9 @@ writeFileSync(join(deps, 'package.json'), `${JSON.stringify({
   },
 }, null, 2)}\n`);
 npm(['install', '--ignore-scripts', '--no-audit', '--no-fund'], deps);
-run(process.execPath, ['node_modules/bun/install.js'], { cwd: deps });
+// bun's installer moves its platform package into bin/, so it only works once
+if (spawnSync(bunPath, ['--version'], { encoding: 'utf8' }).stdout?.trim() !== '1.4.4')
+  run(process.execPath, ['node_modules/bun/install.js'], { cwd: deps });
 
 // browse's extension is built from the pinned source: the isolated profile loads it unpacked
 const browse = join(vendor, 'browse');
