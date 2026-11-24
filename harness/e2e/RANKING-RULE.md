@@ -46,3 +46,12 @@ Written and committed before the ranked runs.
 - `surf go` hung once per round in every smoke round, with and without the state audit; it stays in the ranking.
 - A and B caps: 20 and 40 minutes.
 - browse enters B only if its extension was paired with the isolated profile before the run.
+
+## Update run for bx 0.3.0 (written before its rounds)
+
+- Only bx changed, so this run measures `bx` (the driver of the first run), `bx:quiet` and `agent-browser`, the one other tool with a comparable time: 6 rounds, cap of 40 minutes, the same runner, scenarios, defect builds, prices and analysis.
+- `bx:quiet` is the second idiom of bx: the same steps and assertions, with `-q` (actions that succeed print nothing) and the `dblclick` step, which the first driver replaced by a page expression.
+- "Complete round" applies per run: the 8 tools not measured again keep the rows of the first run.
+- Times compare only inside one run. Costs compare across runs, because they come from tokens of fixed scripts.
+- Positions come from `analyze.mjs` over rounds 1 to 3, with the first-run rows of the 8 tools and the update-run rows of the other three. The speed tie-break applies only between rows of one run.
+- bx was changed with these 24 scenarios in view, by the author of this benchmark. Runs made while it was being changed are discarded.
