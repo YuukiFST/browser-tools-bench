@@ -54,7 +54,9 @@ const heredoc = (command, body) => `${command} <<'EOF'\n${body}\nEOF`;
 const arrayLines = text => text.split('\n').filter(line => line.startsWith('[')).map(line => JSON.parse(line));
 const cdpUrl = port => `http://127.0.0.1:${port}`;
 
-export const bx = ({ port, session }) => {
+export const bxQuiet = options => bx({ ...options, quiet: true });
+
+export const bx = ({ port, session, quiet = false }) => {
   const script = join(vendor, 'bx/bx.mjs');
   const env = { ...process.env, BX_CDP_URL: cdpUrl(port), BX_SESSION: session };
   const targets = { new: NEW_FIELD, clearCompleted: 'Clear completed', filter: 'Active', delete: 'Delete' };
@@ -65,7 +67,7 @@ export const bx = ({ port, session }) => {
       case 'fill': return [['fill', named(step.target), step.text]];
       case 'press': return [['press', step.key]];
       case 'click': return [['click', named(step.target)]];
-      case 'dblclick': return [['eval', dispatchDoubleClick(step.target.css)]];
+      case 'dblclick': return [quiet ? ['dblclick', named(step.target)] : ['eval', dispatchDoubleClick(step.target.css)]];
       case 'hover': return [['hover', named(step.target)]];
       case 'read': return [['eval', readAll(step.asserts)]];
       default: throw new Error(`Unknown action ${step.action}`);
@@ -75,7 +77,7 @@ export const bx = ({ port, session }) => {
     docs: async () => (await import('node:fs')).readFileSync(join(vendor, 'bx/docs/bx.md'), 'utf8'),
     version: async () => `bx ${(await execute(process.execPath, [script, '--version'], { env })).stdout.trim()}`,
     run: async (url, steps, { record, signal }) => {
-      const args = [['open', url], ...mergeAsserts(steps).flatMap(chain)].flatMap((part, index) => index ? ['+', ...part] : part);
+      const args = [[...(quiet ? ['-q'] : []), 'open', url], ...mergeAsserts(steps).flatMap(chain)].flatMap((part, index) => index ? ['+', ...part] : part);
       const { stdout } = await record(commandLine('bx', args), () => execute(process.execPath, [script, ...args], { env, signal }));
       return arrayLines(stdout).flat();
     },

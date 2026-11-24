@@ -51,28 +51,33 @@ Flashwright is the fastest, 1.45 times faster than Bun.
 | 8 | cypress | 38.4 [38.1, 38.9] | 39.0 | 144/144 | 5/5 | 0.0043 |
 
 **B. Driving tools, sorted by estimated agent cost.**
-bx is first under the rule, but the lead over browser-use is not robust: without the docs tokens browser-use is cheaper (US$ 0.0398 against 0.0417).
-agent-browser is the fastest, 6 times faster than bx for 48% more cost.
-3 complete rounds per tool, 24 scenarios per session.
+bx 0.3.0 is first, in both of its forms. With `-q` it also costs less than browser-use without the docs tokens (US$ 0.0385 against 0.0398); in its default form it does not (0.0417).
+bx and agent-browser tie in speed: bx is 0.3 s per round ahead, and the interval of the paired difference contains 0 ([-1.0, 0.3] for both forms).
+The rows marked † were measured on 2026-11-24 in an update run with only these three tools, 6 complete rounds; the others keep the first run, 3 rounds.
+Compare times only inside one run: the same agent-browser took 8.0 s in the first run and 7.2 s in the update run.
 
 | rank | tool | US$ per session [95% CI] | median s | p95 s | scenarios passed | defects caught | calls per scenario |
 |---|---|---|---|---|---|---|---|
-| 1 | bx | 0.0425 [0.0378, 0.0473] | 48.5 | 48.5 | 72/72 | 5/5 | 1.0 |
-| 2 | browser-use | 0.0449 [0.0408, 0.0490] | 64.4 | 65.9 | 72/72 | 5/5 | 1.0 |
-| 3 | agent-browser | 0.0629 [0.0576, 0.0683] | 8.0 | 8.9 | 72/72 | 5/5 | 1.0 |
-| 4 | surf | 0.0661 [0.0597, 0.0724] | 101.1 | 101.5 | 72/72 | 5/5 | 6.8 |
-| 5 | flashwright-mcp:code | 0.0727 [0.0674, 0.0780] | 19.1 | 19.2 | 72/72 | 5/5 | 1.0 |
-| 6 | playwright-mcp:code | 0.0728 [0.0675, 0.0781] | 20.6 | 21.6 | 72/72 | 5/5 | 1.0 |
-| 7 | flashwright-mcp:adaptive | 0.1286 [0.1172, 0.1400] | 16.9 | 16.9 | 72/72 | 5/5 | 7.8 |
-| 8 | flashwright-mcp:steps | 0.1286 [0.1172, 0.1400] | 46.5 | 46.9 | 72/72 | 5/5 | 7.8 |
-| 9 | playwright-mcp:steps | 0.1287 [0.1173, 0.1401] | 47.8 | 47.9 | 72/72 | 5/5 | 7.8 |
-| 10 | chrome-devtools-axi | 0.1700 [0.1509, 0.1894] | 153.3 | 153.5 | 72/72 | 5/5 | 8.1 |
+| 1 | bx:quiet (0.3.0) † | 0.0394 [0.0362, 0.0427] | 7.0 | 7.1 | 144/144 | 5/5 | 1.0 |
+| 2 | bx (0.3.0) † | 0.0425 [0.0393, 0.0459] | 7.0 | 7.1 | 144/144 | 5/5 | 1.0 |
+| 3 | browser-use | 0.0449 [0.0408, 0.0490] | 64.4 | 65.9 | 72/72 | 5/5 | 1.0 |
+| 4 | agent-browser † | 0.0628 [0.0590, 0.0667] | 7.2 | 7.4 | 142/144 | 5/5 | 1.0 |
+| 5 | surf | 0.0661 [0.0597, 0.0724] | 101.1 | 101.5 | 72/72 | 5/5 | 6.8 |
+| 6 | flashwright-mcp:code | 0.0727 [0.0674, 0.0780] | 19.1 | 19.2 | 72/72 | 5/5 | 1.0 |
+| 7 | playwright-mcp:code | 0.0728 [0.0675, 0.0781] | 20.6 | 21.6 | 72/72 | 5/5 | 1.0 |
+| 8 | flashwright-mcp:adaptive | 0.1286 [0.1172, 0.1400] | 16.9 | 16.9 | 72/72 | 5/5 | 7.8 |
+| 9 | flashwright-mcp:steps | 0.1286 [0.1172, 0.1400] | 46.5 | 46.9 | 72/72 | 5/5 | 7.8 |
+| 10 | playwright-mcp:steps | 0.1287 [0.1173, 0.1401] | 47.8 | 47.9 | 72/72 | 5/5 | 7.8 |
+| 11 | chrome-devtools-axi | 0.1700 [0.1509, 0.1894] | 153.3 | 153.5 | 72/72 | 5/5 | 8.1 |
 
-- bx belongs to the author of this repository.
+Superseded: bx 0.2.0, first run, was first with US$ 0.0425 and 48.5 s, 72/72.
+The first-run agent-browser row was US$ 0.0629 and 8.0 s, 72/72.
+
+- bx belongs to the author of this repository, and bx 0.3.0 was changed with these 24 scenarios in view.
 - The scenarios were chosen by the authors of flashwright, which is one of the tools measured.
-- agent-browser failed 1 scenario in round 4 of B, which is left out because the runner crashed before every tool finished it.
+- agent-browser failed `should-filter-active-todos` in rounds 5 and 6 of the update run (2 of 144, one flaky scenario), and once in round 4 of the first run, which is left out because the runner crashed before every tool finished it.
 - surf hung for 60 s once in each of the 4 unranked rounds, and never in the ranked ones.
-- Intervals in B overlap; the ranking uses the paired difference per scenario. Ranks 5 and 6 differ by 48 schema tokens.
+- Intervals in B overlap; the ranking uses the paired difference per scenario. Ranks 6 and 7 differ by 48 schema tokens.
 - Not measured: browse (extension not paired) and TestCafe in A (never connected to Chrome).
 - Cost is an estimate that leaves out agent reasoning and retries.
 

@@ -8,7 +8,7 @@ import { browseExtension, browsePairedMark, browseProfile } from './browse-env.m
 import { connectBrowser, evaluate, pageState } from './cdp.mjs';
 import { startChrome } from './chrome.mjs';
 import { defects } from './defects.mjs';
-import { agentBrowser, axi, browserUse, bx, surf, ToolError } from './drive-cli.mjs';
+import { agentBrowser, axi, browserUse, bx, bxQuiet, surf, ToolError } from './drive-cli.mjs';
 import { browseExecute, flashwrightMcpAdaptive, flashwrightMcpCode, flashwrightMcpSteps, playwrightMcpCode, playwrightMcpSteps } from './drive-mcp.mjs';
 import { deps, logs, results } from './paths.mjs';
 import { holds, scenarios } from './scenario-model.mjs';
@@ -18,6 +18,7 @@ const SCENARIO_TIMEOUT_MS = 60_000;
 
 const drivers = {
   bx: { create: bx },
+  'bx:quiet': { create: bxQuiet },
   'agent-browser': { create: agentBrowser },
   surf: { create: surf, extension: join(deps, 'node_modules/surf-cli/dist') },
   'browser-use': { create: browserUse },

@@ -282,11 +282,20 @@ The ranking rule, the metric definitions and the script rules are in `harness/e2
 - While debugging, browser-use got a wait after the filter click and a tab activation before hover; agent-browser got no such wait, and its failure is on that filter step.
 - Local Docker containers stayed up during the measurements.
 
+### Update run for bx 0.3.0 (2026-11-24)
+
+- bx 0.3.0 (commit `b436edc`) was measured with `bx:quiet` and agent-browser: 6 complete rounds, cap of 40 minutes, the rule and drivers committed before the rounds (`RANKING-RULE.md`, last section). Data: `results/e2e/bx-0.3.0/`.
+- Busy CPU over 15 s: 11.9% before and 9.9% after, measured by a script outside the runner.
+- The 8 other tools were not run again, because nothing in them changed. Cost comes from tokens of fixed scripts; it is comparable across runs. Time is not: it depends on the machine's state.
+- Positions come from `combine-update.mjs` and `analyze.mjs` (rounds 1 to 3 of each run). No pair of neighbors that mixes runs was decided by speed. The speed tie of bx and agent-browser uses the paired difference per scenario and round, with the bootstrap of the rule.
+- The machine was quieter in this run than in the first one, so its times do not show by how much bx became faster. Before the change, in other runs on this machine, bx 0.2.0 took 48.8 to 48.9 s per round.
+- agent-browser failed `should-filter-active-todos` twice.
+
 ### Limitations
 
 1. One small app, one machine, one day.
-2. The scenarios come from flashwright's authors; bx belongs to this repository's author, who also wrote the B scripts.
-3. Cost leaves out reasoning, retries and re-read context. The order of bx and browser-use depends on counting docs.
+2. The scenarios come from flashwright's authors; bx belongs to this repository's author, who also wrote the B scripts and changed bx 0.3.0 with these scenarios in view.
+3. Cost leaves out reasoning, retries and re-read context. The order of bx (default form) and browser-use depends on counting docs; that of `bx:quiet` does not.
 4. Fixed scripts do not show whether an agent would get the steps right.
 5. With 3 rounds, the B intervals reflect differences between scenarios more than variation between runs.
 6. Five defects are too few to estimate a false positive rate.
