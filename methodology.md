@@ -5,7 +5,8 @@ Before this file, the methodology lived only in the chat of the session that ran
 
 Sections 1 to 12 describe v1, the first run, as it was published.
 Section 13 describes v2, the rerun after an independent review, which supersedes the v1 ranking.
-The current report and every published number come from v2.
+The current report and every published agent number come from v2.
+Section 15 describes the e2e benchmark, which is separate.
 
 ## 1. Goal
 
@@ -246,3 +247,52 @@ The rule of `ranking-rule.md` was applied as written; its output is in `results/
 - Credentials (`creds.sh`), ground-truth files, `readings/`, screenshots, raw agent transcripts and logs. They contain client data: company names, property registrations and financial values.
 - In the published JSONL the search term is replaced with `<QUERY>`.
 - v2: the raw `stream-json` transcripts (`harness/agents-v2/`) and the playwright-mcp page dumps (`harness/.playwright-mcp/`) stay local. In `results/v2/agents.jsonl` and `pilot.jsonl`, `harness/redact-results.mjs` replaced client data in the agent's free-text `problems` note with `<CLIENT>` or `<REGISTRATION>` (17 of 95 notes); it also catches some harmless strings, such as a viewport size.
+
+## 15. E2E benchmark (2026-11-24)
+
+Separate from v1 and v2: it measures tools with fixed scripts, and no run calls an LLM.
+The ranking rule, the metric definitions and the script rules are in `harness/e2e/RANKING-RULE.md`, committed before the ranked runs.
+
+### What is measured
+
+- **A, committed suites:** the complete test command of flashwright, Playwright, Cypress, WebdriverIO, Selenium, Puppeteer, Nightwatch and Bun, from `bench/competitors` of flashwright at commit `12d1c84`. One worker, 7 files.
+- **B, driving tools:** bx, browser-use, agent-browser, surf, chrome-devtools-axi, playwright-mcp and flashwright-mcp. Each one gets a fixed script for the same steps and assertions, in its own idiom. The MCP servers run as one call per action (`steps`) and one script per scenario (`code`); flashwright-mcp also runs with `--adaptive-settle`.
+- flashwright-mcp is based on Playwright 1.64.1; playwright-mcp 0.0.85 uses 1.66.0-alpha-2026-11-09.
+
+### Scenarios, defects and the independent check
+
+- 24 TodoMVC scenarios, on fresh origins, so each starts with empty storage.
+- 5 builds carry one defect each (`defects.mjs`). `oracle.mjs` runs every scenario on every build over raw CDP, without a measured tool, and confirms which scenarios each defect must fail (`results/e2e/oracle.json`).
+- Each tool runs one probe scenario per defect. Every tool caught 5 of 5.
+- In B the tool's own output decides each assertion. After each scenario, the page state is read over CDP as an audit, and it never changes a verdict. It matched in every ranked scenario.
+
+### Execution
+
+- Windows 10, i3-9100F with 4 cores, 16 GB, Node 24.20, Chrome for Testing 156.0.8078.4, headless.
+- B starts a new Chrome and profile per tool and round. Tool order rotates. No fixed sleeps. Timeouts: 60 s per scenario, 180 s per suite.
+- Caps: 20 minutes for A, 40 for B. Only rounds that every tool completed count: 6 in A, 3 in B.
+- Cost: `o200k_base` tokens at Claude Sonnet 5.5 prices (US$ 2 and US$ 10 per million input and output tokens). B counts docs and schemas once per session, commands as output, tool outputs as input.
+- Intervals: 95% percentile bootstrap, 10,000 resamples, seed 1.
+
+### Deviations
+
+- Round 4 of B was dropped: the runner crashed (`EBUSY` on Chrome's port file, fixed since) before surf ran. It held one agent-browser failure, 95 of 96 with it, which leaves the ranking unchanged.
+- The analysis ran separately on the collected data because of that crash. After the fix, `run-all.mjs` ran end to end with 1 round, outside the ranking. The full ranked run has not been repeated in one command.
+- Two earlier attempts were discarded: one when the bun installer failed on its second run, one stopped for lack of memory.
+- While debugging, browser-use got a wait after the filter click and a tab activation before hover; agent-browser got no such wait, and its failure is on that filter step.
+- Local Docker containers stayed up during the measurements.
+
+### Limitations
+
+1. One small app, one machine, one day.
+2. The scenarios come from flashwright's authors; bx belongs to this repository's author, who also wrote the B scripts.
+3. Cost leaves out reasoning, retries and re-read context. The order of bx and browser-use depends on counting docs.
+4. Fixed scripts do not show whether an agent would get the steps right.
+5. With 3 rounds, the B intervals reflect differences between scenarios more than variation between runs.
+6. Five defects are too few to estimate a false positive rate.
+
+### Rerun
+
+`node harness/e2e/run-all.mjs` installs the pinned dependencies (about 2 GB, git-ignored), validates the builds, runs A and B and writes the tables.
+It does not install browser-use 1.0.3, which must be on the PATH, nor Chrome for Testing, which it takes from `CHROME_PATH` or the Playwright browser folder.
+browse needs `node harness/e2e/pair-browse.mjs` first; neither that script nor the browse driver has been run.

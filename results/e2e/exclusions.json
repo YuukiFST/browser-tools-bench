@@ -1,0 +1,7 @@
+[
+ {
+  "ranking": "A",
+  "tool": "testcafe",
+  "error": "ERROR Cannot establish one or more browser connections. 1 of 1 browser connections have not been established: - chromium:chrome.exe:headless (duas tentativas de correção: --hostname localhost com --disable-native-automation; stdio próprio para o comando start)"
+ }
+]
